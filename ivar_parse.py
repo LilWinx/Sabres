@@ -24,5 +24,3 @@ def generate_snpprofile(file, database, outfile):
     lineage_merge.drop(['Nucleotide', 'Note'], axis = 1, inplace = True)
     lineage_merge.to_csv(outfile, sep='\t', index = False)
     return lineage_merge
-
-#print(generate_snpprofile(file, database, outfile))
