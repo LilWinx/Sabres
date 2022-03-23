@@ -1,10 +1,6 @@
 import pandas as pd
 import numpy as np
 
-file = r"C:\Users\Winkie\Documents\21-R002-NT08Pr_t01.tsv"
-database = r"C:\Users\Winkie\Documents\resistance_markers.txt"
-outfile = r"C:\Users\Winkie\Documents\21-R002-NT08Pr_t01.snpprofile"
-
 def generate_snpprofile(file, database, outfile):
     data = pd.read_csv(file, sep='\t', header = 0)
     resistance_markers = pd.read_csv(database, sep='\t', header = 0)
