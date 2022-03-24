@@ -4,6 +4,7 @@ import numpy as np
 ignored_columns = ['REGION', 'REF_DP', 'REF_RV', 'REF_QUAL', 'ALT_RV', 'ALT_QUAL', 'GFF_FEATURE', 'REF_CODON', 'ALT_CODON', 'PVAL', 'PASS']
 neworder = ['REF', 'POS', 'ALT', 'REFPOSALT', 'TOTAL_DP', 'ALT_FREQ']
 choices = ('N/A', 'S')
+pd.options.mode.chained_assignment = None  # default='warn'
 
 def data_setup(file):
     # tsv file parsing and set up for removal
@@ -27,7 +28,6 @@ def data_setup(file):
     dfmerge = pd.merge(df, dfsns, on='POS', how='left').fillna('-')
     return dfmerge
         
-
 def resistance_addition(file, database):
     # merge the resistance database to the new dataframe 
     preres_df = pd.DataFrame(data_setup(file))
@@ -35,7 +35,7 @@ def resistance_addition(file, database):
     resdf = pd.DataFrame(resistance_markers)
     pd.set_option('display.max_rows', None)
     res_merge = pd.merge(preres_df, resdf, left_on='REFPOSALT', right_on='Mutation', how='left').fillna('-')
-    res_merge.drop(['Nucleotide', 'Note'], axis = 1, inplace = True)
+    res_merge.drop(['Nucleotide'], axis = 1, inplace = True)
     return res_merge
 
 def generate_snpprofile(file, database, outfile):
