@@ -9,8 +9,7 @@ def data_setup(file):
     # tsv file parsing and set up for removal
     data = pd.read_csv(file, sep='\t', header = 0)
     df = pd.DataFrame(data)
-    pd.set_option('display.max_rows', None)
-    
+        
     # remove unwanted columns and reorder
     df.drop(ignored_columns, axis = 1, inplace = True)
     df['REFPOSALT'] = df['REF'] + df['POS'].astype(str) + df['ALT']
@@ -28,20 +27,23 @@ def data_setup(file):
     return dfmerge
         
 
-def resistance_addition(file, database):
+def resistance_addition(preres_df, database):
     # merge the resistance database to the new dataframe 
-    preres_df = pd.DataFrame(data_setup(file))
     resistance_markers = pd.read_csv(database, sep='\t', header = 0)
     resdf = pd.DataFrame(resistance_markers)
-    pd.set_option('display.max_rows', None)
+    
     res_merge = pd.merge(preres_df, resdf, left_on='REFPOSALT', right_on='Mutation', how='left').fillna('-')
     res_merge.drop(['Nucleotide', 'Note'], axis = 1, inplace = True)
     return res_merge
 
 def generate_snpprofile(file, database, outfile):
+    pd.set_option('display.max_rows', None)
+    
+    # load data and merge it
+    file_data = data_setup(file)
+    resistance = resistance_addition(pd.DataFrame(file_data), database)
+    
     # print as separate file for easy manual checking.
-    snpprofile = pd.DataFrame(resistance_addition(file, database))
+    snpprofile = pd.DataFrame()
     snpprofile.to_csv(outfile, sep='\t', index = False)
-
-    # send to pull_resistance 
     return snpprofile
