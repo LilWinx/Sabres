@@ -9,21 +9,12 @@ There are two databases available, a Omicron/Delta only and a global antiviral d
 
 The database contains mutations against the following drugs:
 - Veklury (Remdesivir)
-<<<<<<< HEAD
 - Regen-Cov (Casirivimab and Imdevimab) [Discontinued - NO LONGER WORKS FOR OMICRON VARIANT]
 - Xevudy (Sotromivab)
 - Evusheld(Tixagevimab and Cilgavimab)
 - Paxlovid (Nirmatrelvir and Ritonavir)
 - Bamlanivimab and Etesevimab [Discontinued - NO LONGER WORKS FOR OMICRON VARIANT]
 - Bebtelovimab
-=======
-Regen-Cov (Casirivimab and Imdevimab) [Discontinued - NO LONGER WORKS FOR OMICRON VARIANT]
-Xevudy (Sotromivab)
-Evusheld(Tixagevimab and Cilgavimab)
-Paxlovid (Nirmatrelvir and Ritonavir)
-Bamlanivimab and Etesevimab [Discontinued - NO LONGER WORKS FOR OMICRON VARIANT]
-Bebtelovimab
->>>>>>> cb83361ee08fec99328d904d74507e0570bc6a3e
 
 Drugs with unavailable resistance mutations:
 - Lagevrio (Molnupiravir)
