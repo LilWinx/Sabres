@@ -8,7 +8,7 @@ The output will return only the mutation that matches with mutations listed in t
 There are two databases available, a Omicron/Delta only and a global antiviral database. This is because the two dominant circulating strains Delta and Omicron inherently carry resistance markers against existing drugs. 
 
 The database contains mutations against the following drugs:
-Veklury (Remdesivir)
+- Veklury (Remdesivir)
 Regen-Cov (Casirivimab and Imdevimab) [Discontinued - NO LONGER WORKS FOR OMICRON VARIANT]
 Xevudy (Sotromivab)
 Evusheld(Tixagevimab and Cilgavimab)
