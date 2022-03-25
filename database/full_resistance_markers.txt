@@ -1,0 +1,75 @@
+Protein	Nucleotide	Mutation	Interest	Note
+NSP5:T135I	10458	C10458T	Paxlovid Resistance (3.5-fold)	theoretical
+NSP5:S144A	10484	T10484G	Paxlovid Resistance (91.9-fold)	theoretical
+NSP5:H164N	10544	C10544A	Paxlovid Resistance (6.4-fold)	theoretical
+NSP5:H172Y	10568	C10568T	Paxlovid Resistance (233-fold)	theoretical
+NSP5:Q189K	10619	C10619A	Paxlovid Resistance (65.4-fold)	theoretical
+NSP5:D248E	10798	C10798A	Paxlovid Resistance (3.7-fold)	theoretical
+NSP5:D248E	10798	C10798G	Paxlovid Resistance (3.7-fold)	theoretical
+NSP12:F480L	14879	T14879A	Remdesivir Resistance (6-fold)	theoretical
+NSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	theoretical
+NSP12: V557L	15110	G15110C	Remdesivir Resistance (6-fold)	theoretical
+NSP12: V557L	15110	G15110T	Remdesivir Resistance (6-fold)	theoretical
+NSP12: E802D	15847	A15847C	Remdesivir Resistance (2-fold)	theoretical
+NSP12: E802D	15847	A15847T	Remdesivir Resistance (2-fold)	theoretical
+S:P337K	22571	CCT22571AAA	Sotromivab Resistance (>304-fold)	theoretical
+S:P337K	22571	CCT22571AAG	Sotromivab Resistance (>304-fold)	theoretical
+S:P337T	22571	C22571A	Sotromivab Resistance (10.62-fold)	theoretical
+S:P337L	22572	C22572T	Sotromivab Resistance (>192-fold)	theoretical
+S:P337R	22572	C22572G	Sotromivab Resistance (>192-fold)	theoretical
+S:P337H	22572	C22572A	Sotromivab Resistance (5.13-fold)	theoretical
+S:E340K	22580	G22580A	Sotromivab Resistance (>297-fold) - Manual Confirmation Required	confirmed
+S:E340Q	22580	G22580C	Sotromivab Resistance (>50-fold) - Manual Confirmation Required	confirmed
+S:E340A	22581	A22581C	Sotromivab Resistance (>100-fold) - Manual Confirmation Required	confirmed
+S:E340V	22581	A22581T	Sotromivab Resistance (>200-fold) - Manual Confirmation Required	theoretical
+S:E340G	22581	A22581G	Sotromivab Resistance (18.21-fold) - Manual Confirmation Required	confirmed
+S:T345P	22595	A22595C	Sotromivab Resistance (225-fold) - Manual Confirmation Required	theoretical
+S:R346I	22599	G22599T	Cilgavimab (EVUSHELD) Resistance (>200-fold)	theoretical
+S:K356T	22628	A22628C	Sotromivab Resistance (5.90-fold)	theoretical
+S:Q414R	22803	A22803G	Tixagevimab (EVUSHELD) Resistance (4.6-fold)	theoretical
+S:K417E	22811	A22811G	Casirivimab (Ronapreve) Resistance (182-fold)	theoretical
+S:K417N 	22813	G22813T	Casirivimab (Ronapreve) Resistance (7-fold) and Etesevimab Resistance	theoretical
+S:K417N 	22813	G22813C	Casirivimab (Ronapreve) Resistance (7-fold) and Etesevimab Resistance	theoretical
+S:K417R	22812	A22812G	Casirivimab (Ronapreve) Resistance (61-fold)	theoretical
+S:D420N	22820	G22820A	Etesevimab Resistance	theoretical
+S:L441N	22883	CT22883AA	Sotromivab Resistance (72-fold)	theoretical
+S:K444E	22892	A22892G	Cilgavimab (EVUSHELD) Resistance (>200-fold)	theoretical
+S:K444R	22892	AA22892CG	Cilgavimab (EVUSHELD) Resistance (>200-fold)	theoretical
+S:K444Q	22892	A22892C	Cilgavimab (EVUSHELD) Resistance (>200-fold), Imdevimab (Ronapreve) Resistance (>548-fold) and Bebtelovimab Resistance (208-fold)	theoretical
+S:K444N	22894	G22894C	Imdevimab (Ronapreve) Resistance (>755-fold) and Bebtelovimab Resistance (>1,901-fold)	theoretical
+S:K444N	22894	G22894T	Imdevimab (Ronapreve) Resistance (>755-fold) and Bebtelovimab Resistance (>1,901-fold)	theoretical
+S:K444T	22893	A22893C	Casirivimab and Imdevimab (Ronapreve) Resistance (6-fold) and Bebtelovimab Resistance (>1,814-fold)	theoretical
+S:V445A	22896	T22896C	Cilgavimab (EVUSHELD) Resistance (21- to 51-fold), Imdevimab (Ronapreve) Resistance (548-fold) and Bebtelovimab Resistance (111-fold)	theoretical
+S:V445F	22895	G22895T	Bebtelovimab Resistance (369-fold)	theoretical
+S:V445G	22896	T22896G	Bebtelovimab Resistance (>730-fold)	theoretical
+S:V445T	22895	GT22895AC	Casirivimab (Ronapreve) Resistance (107-fold)	theoretical
+S:G446V	22899	G22899T	Cilgavimab (EVUSHELD) Resistance (4.2-fold) and Bebtelovimab Resistance (8-fold)	theoretical
+S:G446D	22899	G22899A	Bebtelovimab Resistance (69-fold)	theoretical
+S:G446R	22898	GGT22898AGG	Bebtelovimab Resistance (7-fold)	theoretical
+S:G446R	22898	GGT22898AGA	Bebtelovimab Resistance (7-fold)	theoretical
+S:N460K	22942	T22942A	Etesevimab Resistance	theoretical
+S:N460K	22942	T22942G	Etesevimab Resistance	theoretical
+S:N460S	22941	A22941G	Etesevimab Resistance	theoretical
+S:N460T	22941	A22941C	Etesevimab Resistance	theoretical
+S:N460Y	22940	A22940T	Etesevimab Resistance	theoretical
+S:P499H	23058	C23058A	Bebtelovimab Resistance (>1,606-fold)	theoretical
+S:P499R	23058	C23058G	Bebtelovimab Resistance (>1,870-fold)	theoretical
+S:P499S	23057	CC23057AG	Bebtelovimab Resistance (25-fold)	theoretical
+S:N450K 	22912	T22912G	Cilgavimab (EVUSHELD) Resistance (9.1-fold)	theoretical
+S:L452R	22917	T22917G	Cilgavimab (EVUSHELD) Resistance (5.8-fold)	theoretical
+S:Y453F 	22920	A22920T	Casirivimab (Ronapreve) Resistance (>438-fold)	theoretical
+S:L455F 	22927	G22927T	Tixagevimab (EVUSHELD) Resistance (2.5- to 4.7-fold) and Casirivimab (Ronapreve) Resistance (80-fold)	theoretical
+S:L455F 	22927	G22927C	Tixagevimab (EVUSHELD) Resistance (2.5- to 4.7-fold) and Casirivimab (Ronapreve) Resistance (80-fold)	theoretical
+S:G476S	22988	G22988A	Tixagevimab (EVUSHELD) Resistance (3.3-fold)	theoretical
+S:E484D	23014	A23014T	Tixagevimab (EVUSHELD) Resistance (7.1-fold) and Bamlanivimab and Etesevimab Resistance (145-fold)	theoretical
+S:E484D	23014	A23014C	Tixagevimab (EVUSHELD) Resistance (7.1-fold) and Bamlanivimab and Etesevimab Resistance (145-fold)	theoretical
+S:E484K 	23012	G23012A	Tixagevimab and Cilgavimab (EVUSHELD) Resistance (5.8-fold), Casirivimab (Ronapreve) Resistance (25-fold) and Bamlanivimab and Etesevimab Resistance (24-fold)	theoretical
+S:E484Q	23012	G23012C	Tixagevimab (EVUSHELD) Resistance (2.4- to 5.4-fold) and Bamlanivimab and Etesevimab Resistance (17-fold)	theoretical
+S:F486S	23019	T23019C	Tixagevimab (EVUSHELD) Resistance (>600-fold)	theoretical
+S:F486V	23018	T23018G	Tixagevimab (EVUSHELD) Resistance (121- to 149-fold) and Casirivimab (Ronapreve) Resistance (>438-fold)	theoretical
+S:F490S	23030	TT23030AG	Bamlanivimab Resistance	theoretical
+S:Q493K	23039	C23039A	Tixagevimab and Cilgavimab (EVUSHELD) Resistance (3.4-fold) and Casirivimab (Ronapreve) Resistance (>438-fold)	theoretical
+S:Q493R	23040	A23040G	Tixagevimab (EVUSHELD) Resistance (7.9-fold) and Bamlanivimab and Etesevimab Resistance (1,054-fold)	theoretical
+S:S494P	23042	T23042C	Bamlanivimab Resistance	theoretical
+S:E990A	24531	A24531C	Tixagevimab and Cilgavimab (EVUSHELD) Resistance (5.7-fold)	theoretical
+S:T1009I	24588	C24588T	Tixagevimab and Cilgavimab (EVUSHELD) Resistance (4.5-fold)	theoretical
