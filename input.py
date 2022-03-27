@@ -1,9 +1,6 @@
-import sys
 import os
 import pull_resistance
 import argparse
-
-#file = sys.argv[1]
 
 parser = argparse.ArgumentParser(description='covid_res')
 parser.add_argument('--full', '-f', action='store_true', help='Use Full Database')

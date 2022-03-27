@@ -42,6 +42,3 @@ def generate_snpprofile(file, database, outfile):
     # print as separate file for easy manual checking.
     snpprofile = pd.DataFrame(resistance_addition(file, database))
     snpprofile.to_csv(outfile, sep='\t', index = False)
-
-    # send to pull_resistance 
-    return snpprofile
