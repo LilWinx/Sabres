@@ -37,15 +37,18 @@ python input.py --full [tsv file]
 ```
 
 FLAGS
+
 --full, -f uses the full database including drugs that no longer work for Omicron
 
 OUTPUT
+
 Displays the SNPs associated with resistance against SARS-CoV-2 antivirals.
+
 A SNPProfile file is also generated which displays all the SNPs of the tsv in a human-readable format with accompanying resistance markers.
+
 The final column denotes whether the resistance marker has been confirmed in wild-type virus.
  - confirmed    observed in clinical isolates
  - theoretical  cell culture assays with the mutation demonstrate resistance
-
 
 ## Dependencies
 Pandas https://pandas.pydata.org/
