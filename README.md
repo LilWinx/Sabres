@@ -34,6 +34,7 @@ python input.py [tsv file]
 OR
 ```
 python input.py --full [tsv file]
+```
 
 FLAGS
 --full, -f uses the full database including drugs that no longer work for Omicron
