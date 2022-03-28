@@ -1,3 +1,4 @@
+import sys
 import os
 import pull_resistance
 import argparse
@@ -10,13 +11,17 @@ args = vars(parser.parse_args())
 dirname = os.path.dirname(__file__)
 database = os.path.join(dirname, "database/resistance_markers.txt")
 full_database = os.path.join(dirname, "database/full_resistance_markers.txt")
-outfile = os.path.join(os.path.dirname(args['input']), os.path.splitext(os.path.basename(args['input']))[0] + '.snpprofile')
 
-if args['full']:
-	results = pull_resistance.get_resistance_only(args['input'], full_database, outfile)
-	if results:
-		print(results)
-else:
-    results = pull_resistance.get_resistance_only(args['input'], database, outfile)
-    if results:
-        print(results)
+sys.stdout = open((args['input']) + '/resistant_isolates.txt', "w")
+for file in os.listdir(args['input']):
+    filename = os.path.join(args['input'], os.fsdecode(file))
+    outfile = os.path.join(args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile')
+    if filename.endswith(".tsv"):
+        if args['full']:
+            results = pull_resistance.get_resistance_only(filename, full_database, outfile)
+            if results:
+                print(results)
+        else:
+            results = pull_resistance.get_resistance_only(filename, database, outfile)
+            if results:
+                print(results)

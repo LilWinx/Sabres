@@ -29,11 +29,11 @@ Database Date: 25th March 2022
 The tool defaults to not include drugs that no longer work.
 
 ```
-python input.py [tsv file]
+python input.py [Path to folder with TSV files]
 ```
 OR
 ```
-python input.py --full [tsv file]
+python input.py --full [Path to folder with TSV files]
 ```
 
 FLAGS
