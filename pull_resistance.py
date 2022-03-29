@@ -12,4 +12,4 @@ def get_resistance_only(file, database, outfile):
     resistance_df.drop(drop_columns, axis = 1, inplace = True)
 
     if resistance_df.empty == False:
-        return resistance_df.to_csv(index = False, header = False, sep = '\t').rstrip()
+        return resistance_df
