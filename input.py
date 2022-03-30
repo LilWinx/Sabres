@@ -20,11 +20,20 @@ for file in os.listdir(args['input']):
     outfile = os.path.join(args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile')
     if filename.endswith(".tsv"):
         if args['full']:
-            results = pull_resistance.get_resistance_only(filename, full_database, outfile)
+            results = pull_resistance.get_resistance_ivar(filename, full_database, outfile)
             if results is not None and results.empty == False:
                 output_csvs.append(results)
         else:
-            results = pull_resistance.get_resistance_only(filename, database, outfile)
+            results = pull_resistance.get_resistance_ivar(filename, database, outfile)
+            if results is not None and results.empty == False:
+                output_csvs.append(results)
+    if filename.endswith(".vcf"):
+        if args['full']:
+            results = pull_resistance.get_resistance_varscan(filename, full_database, outfile)
+            if results is not None and results.empty == False:
+                output_csvs.append(results)
+        else:
+            results = pull_resistance.get_resistance_varscan(filename, database, outfile)
             if results is not None and results.empty == False:
                 output_csvs.append(results)
 
