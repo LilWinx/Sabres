@@ -38,11 +38,15 @@ python input.py --full [Path to folder with TSV files]
 
 FLAGS
 
+```
 --full, -f uses the full database including drugs that no longer work for Omicron
+```
 
 OUTPUT
 
-Displays the SNPs associated with resistance against SARS-CoV-2 antivirals.
+Displays the list SNPs associated with resistance against SARS-CoV-2 antivirals within the dataset (resistant_isolates.txt).
+
+Counts of strains carrying the type of resistance marker (summary_counts.txt)
 
 A SNPProfile file is also generated which displays all the SNPs of the tsv in a human-readable format with accompanying resistance markers.
 
@@ -53,4 +57,14 @@ The final column denotes whether the resistance marker has been confirmed in wil
 ## Dependencies
 Pandas https://pandas.pydata.org/
 
+
+## File Preparation
+iVar outputs are split into their respective folders.
+
+So to prep your data, the easiest solution is to copy the tsv files into a new folder and run the script directly on that folder
+
+A useful script would be
+```
+cp **/*.tsv >> [New Folder]
+```
 
