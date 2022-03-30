@@ -38,7 +38,9 @@ python input.py --full [Path to folder with TSV files]
 
 FLAGS
 
+```
 --full, -f uses the full database including drugs that no longer work for Omicron
+```
 
 OUTPUT
 
@@ -55,4 +57,14 @@ The final column denotes whether the resistance marker has been confirmed in wil
 ## Dependencies
 Pandas https://pandas.pydata.org/
 
+
+## File Preparation
+iVar outputs are split into their respective folders.
+
+So to prep your data, the easiest solution is to copy the tsv files into a new folder and run the script directly on that folder
+
+A useful script would be
+```
+cp **/*.tsv >> [New Folder]
+```
 
