@@ -1,1 +1,36 @@
-NSP5:T135I	10458	C10458T	Paxlovid Resistance (3.5-fold)	theoreticalNSP5:S144A	10484	T10484G	Paxlovid Resistance (91.9-fold)	theoreticalNSP5:H164N	10544	C10544A	Paxlovid Resistance (6.4-fold)	theoreticalNSP5:H172Y	10568	C10568T	Paxlovid Resistance (233-fold)	theoreticalNSP5:Q189K	10619	C10619A	Paxlovid Resistance (65.4-fold)	theoreticalNSP5:D248E	10798	C10798A	Paxlovid Resistance (3.7-fold)	theoreticalNSP5:D248E	10798	C10798G	Paxlovid Resistance (3.7-fold)	theoreticalNSP12:F480L	14879	T14879A	Remdesivir Resistance (6-fold)	theoreticalNSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	theoreticalNSP12: V557L	15110	G15110C	Remdesivir Resistance (6-fold)	theoreticalNSP12: V557L	15110	G15110T	Remdesivir Resistance (6-fold)	theoreticalNSP12: E802D	15847	A15847C	Remdesivir Resistance (2-fold)	theoreticalNSP12: E802D	15847	A15847T	Remdesivir Resistance (2-fold)	theoreticalS:P337K	22571	CCT22571AAA	Sotromivab Resistance (>304-fold)	theoreticalS:P337K	22571	CCT22571AAG	Sotromivab Resistance (>304-fold)	theoreticalS:P337T	22571	C22571A	Sotromivab Resistance (10.62-fold)	theoreticalS:P337L	22572	C22572T	Sotromivab Resistance (>192-fold)	theoreticalS:P337R	22572	C22572G	Sotromivab Resistance (>192-fold)	theoreticalS:P337H	22572	C22572A	Sotromivab Resistance (5.13-fold)	theoreticalS:E340K	22580	G22580A	Sotromivab Resistance (>297-fold) - Manual Confirmation Required	confirmedS:E340Q	22580	G22580C	Sotromivab Resistance (>50-fold) - Manual Confirmation Required	confirmedS:E340A	22581	A22581C	Sotromivab Resistance (>100-fold) - Manual Confirmation Required	confirmedS:E340V	22581	A22581T	Sotromivab Resistance (>200-fold) - Manual Confirmation Required	theoreticalS:E340G	22581	A22581G	Sotromivab Resistance (18.21-fold) - Manual Confirmation Required	confirmedS:T345P	22595	A22595C	Sotromivab Resistance (225-fold)	theoreticalS:K356T	22628	A22628C	Sotromivab Resistance (5.90-fold)	theoreticalS:L441N	22883	CT22883AA	Sotromivab Resistance (72-fold)	theoreticalS:V445F	22895	G22895T	Bebtelovimab Resistance (369-fold)	theoreticalS:V445G	22896	T22896G	Bebtelovimab Resistance (>730-fold)	theoreticalS:G446R	22898	GGT22898AGG	Bebtelovimab Resistance (7-fold)	theoreticalS:G446R	22898	GGT22898AGA	Bebtelovimab Resistance (7-fold)	theoreticalS:G446D	22899	G22899A	Bebtelovimab Resistance (69-fold)	theoreticalS:P499S	23057	CC23057AG	Bebtelovimab Resistance (25-fold)	theoreticalS:P499H	23058	C23058A	Bebtelovimab Resistance (>1,606-fold)	theoreticalS:P499R	23058	C23058G	Bebtelovimab Resistance (>1,870-fold)	theoretical
+Protein	Nucleotide	Mutation	Interest	Note
+NSP5:T135I	10458	C10458T	Paxlovid Resistance (3.5-fold)	theoretical
+NSP5:S144A	10484	T10484G	Paxlovid Resistance (91.9-fold)	theoretical
+NSP5:H164N	10544	C10544A	Paxlovid Resistance (6.4-fold)	theoretical
+NSP5:H172Y	10568	C10568T	Paxlovid Resistance (233-fold)	theoretical
+NSP5:Q189K	10619	C10619A	Paxlovid Resistance (65.4-fold)	theoretical
+NSP5:D248E	10798	C10798A	Paxlovid Resistance (3.7-fold)	theoretical
+NSP5:D248E	10798	C10798G	Paxlovid Resistance (3.7-fold)	theoretical
+NSP12:F480L	14879	T14879A	Remdesivir Resistance (6-fold)	theoretical
+NSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	theoretical
+NSP12: V557L	15110	G15110C	Remdesivir Resistance (6-fold)	theoretical
+NSP12: V557L	15110	G15110T	Remdesivir Resistance (6-fold)	theoretical
+NSP12: E802D	15847	A15847C	Remdesivir Resistance (2-fold)	theoretical
+NSP12: E802D	15847	A15847T	Remdesivir Resistance (2-fold)	theoretical
+S:P337K	22571	CCT22571AAA	Sotromivab Resistance (>304-fold)	theoretical
+S:P337K	22571	CCT22571AAG	Sotromivab Resistance (>304-fold)	theoretical
+S:P337T	22571	C22571A	Sotromivab Resistance (10.62-fold)	theoretical
+S:P337L	22572	C22572T	Sotromivab Resistance (>192-fold)	theoretical
+S:P337R	22572	C22572G	Sotromivab Resistance (>192-fold)	theoretical
+S:P337H	22572	C22572A	Sotromivab Resistance (5.13-fold)	theoretical
+S:E340K	22580	G22580A	Sotromivab Resistance (>297-fold) - Manual Confirmation Required	confirmed
+S:E340Q	22580	G22580C	Sotromivab Resistance (>50-fold) - Manual Confirmation Required	confirmed
+S:E340A	22581	A22581C	Sotromivab Resistance (>100-fold) - Manual Confirmation Required	confirmed
+S:E340V	22581	A22581T	Sotromivab Resistance (>200-fold) - Manual Confirmation Required	theoretical
+S:E340G	22581	A22581G	Sotromivab Resistance (18.21-fold) - Manual Confirmation Required	confirmed
+S:T345P	22595	A22595C	Sotromivab Resistance (225-fold)	theoretical
+S:K356T	22628	A22628C	Sotromivab Resistance (5.90-fold)	theoretical
+S:L441N	22883	CT22883AA	Sotromivab Resistance (72-fold)	theoretical
+S:V445F	22895	G22895T	Bebtelovimab Resistance (369-fold)	theoretical
+S:V445G	22896	T22896G	Bebtelovimab Resistance (>730-fold)	theoretical
+S:G446R	22898	GGT22898AGG	Bebtelovimab Resistance (7-fold)	theoretical
+S:G446R	22898	GGT22898AGA	Bebtelovimab Resistance (7-fold)	theoretical
+S:G446D	22899	G22899A	Bebtelovimab Resistance (69-fold)	theoretical
+S:P499S	23057	CC23057AG	Bebtelovimab Resistance (25-fold)	theoretical
+S:P499H	23058	C23058A	Bebtelovimab Resistance (>1,606-fold)	theoretical
+S:P499R	23058	C23058G	Bebtelovimab Resistance (>1,870-fold)	theoretical
