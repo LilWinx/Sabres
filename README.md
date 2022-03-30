@@ -8,6 +8,8 @@ There are two databases available, a Omicron/Delta only and a global antiviral d
 The database was generated using product information sheets for each drug. e.g. 
 https://www.pfizermedicalinformation.com/en-us/nirmatrelvir-tablets-ritonavir-tablets/clinical-pharmacology
 
+and the curated database collated by Stanford https://covdb.stanford.edu/page/susceptibility-data/
+
 
 The full database contains mutations against the following drugs:
 |Brand Name|Drug Name|Agency Approval|Citation|Notes|
