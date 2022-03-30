@@ -15,16 +15,17 @@ The full database contains mutations against the following drugs:
 |Brand Name|Drug Name|Agency Approval|Citation|Notes|
 |----------|---------|---------------|--------|-----|
 |Veklury|Remdesivir|FDA and TGA approved|10.1371/journal.ppat.1009929||\-|
-|Xevudy|Sotromivab|FDA and TGA approved|\-|\-|
+|Xevudy|Sotromivab|FDA and TGA approved|10.1056/NEJMc2120219|\-|
 |Evusheld|Tixagevimab and Cilgavimab|FDA and TGA approved|\-|\-|
 |Paxlovid|Nirmatrelvir and Ritonavir|FDA and TGA approved|\-|\-|
+|\-|Bebtelovimab|FDA Only|\-|\-|
+|Regikrona|Regdanvimab|FDA and TGA approved|\-|\-|
 |\-|Bamlanivimab and Etesevimab|FDA and TGA approved|\-|Discontinued - NO LONGER WORKS FOR OMICRON VARIANT|
 |Regen-Cov|Casirivimab and Imdevimab|FDA and TGA approved|\-|Discontinued - NO LONGER WORKS FOR OMICRON VARIANT|
-|\-|Bebtelovimab|FDA Only|\-|\-|
+
 
 Drugs with unavailable resistance mutations:
 - Lagevrio (Molnupiravir) [FDA and TGA approved]
-- Regikrona (Regdanvimab) [FDA and TGA approved]
 
 Database Date: 25th March 2022
 
