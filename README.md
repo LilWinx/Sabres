@@ -18,6 +18,7 @@ The full database contains mutations against the following drugs:
 |Paxlovid|Nirmatrelvir and Ritonavir|FDA and TGA approved|\-|\-|
 |\-|Bamlanivimab and Etesevimab|FDA and TGA approved|\-|Discontinued - NO LONGER WORKS FOR OMICRON VARIANT|
 |Regen-Cov|Casirivimab and Imdevimab|FDA and TGA approved|\-|Discontinued - NO LONGER WORKS FOR OMICRON VARIANT|
+|\-|Bebtelovimab|FDA Only|\-|\-|
 
 Drugs with unavailable resistance mutations:
 - Lagevrio (Molnupiravir) [FDA and TGA approved]
