@@ -1,3 +1,4 @@
+Protein	Nucleotide	Mutation	Interest	Note
 NSP5:Y54A	10214	TA10214GC	Nirmatrelvir (Paxlovid) Resistance (23.6-fold)	theoretical
 NSP5:T135I	10458	C10458T	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	theoretical
 NSP5:F140A	10472	TT10472GC	Nirmatrelvir (Paxlovid) Resistance (39-fold)	theoretical
