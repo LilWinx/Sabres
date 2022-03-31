@@ -1,9 +1,14 @@
+import os
 import pandas as pd
 import numpy as np
 from io import StringIO
+import pangolin_parse as pp
 
 pd.set_option('display.max_rows', None)
 pd.options.mode.chained_assignment = None  # default='warn'
+drop_columns_pango= ['Nucleotide', 'Mutation', 'name']
+drop_columns = ['Nucleotide', 'Mutation']
+neworder_varscan_pango = ['Filename', 'Lineage', 'REF', 'POS', 'ALT', 'REFPOSALT', 'HET', 'DP', 'FREQ', 'Protein', 'Interest', 'Note']
 
 def file_cleanup(file):
     with open(file, 'r') as vcf:
@@ -36,7 +41,26 @@ def resistance_addition(file, database):
     res_merge.drop(['Nucleotide'], axis = 1, inplace = True)
     return res_merge
 
-def generate_snpprofile(file, database, outfile):
+def varscan_pango(file, database, pango):
+    pango_df = pd.DataFrame(pp.lineage_addition(pango))
+    varscan_df = pd.DataFrame(resistance_addition(file, database))
+    varscan_df['Filename'] = os.path.splitext(os.path.basename(file))[0]
+    varscan_df['Filename'] = varscan_df['Filename'].str.replace("_t01","") #this wont work for everyone as only my lab adds _ivar to file names, prior to pangolin
+    pango_res_merge = pd.merge(pango_df, varscan_df, left_on='name', right_on='Filename').fillna('-')
+    pango_res_merge.drop(drop_columns_pango, axis = 1, inplace = True)
+    pango_res_merge=pango_res_merge.reindex(columns=neworder_varscan_pango)
+    
+    return pango_res_merge
+
+def generate_snpprofile(file, database, pango, outfile):
+    # print as separate file for easy manual checking.
+    snpprofile = pd.DataFrame(varscan_pango(file, database, pango))
+    snpprofile.to_csv(outfile, sep='\t', index = False)
+    
+    #send to pull_resistance
+    return snpprofile
+    
+def generate_snpprofile_xpango(file, database, outfile):
     # print as separate file for easy manual checking.
     snpprofile = pd.DataFrame(resistance_addition(file, database))
     snpprofile.to_csv(outfile, sep='\t', index = False)

@@ -6,12 +6,14 @@ import pandas as pd
 
 parser = argparse.ArgumentParser(description='covid_res')
 parser.add_argument('--full', '-f', action='store_true', help='Use Full Database')
+parser.add_argument('--lineage', '-l', help = 'Add Lineage Information')
 parser.add_argument('input', help='Input file')
 args = vars(parser.parse_args())
 
 dirname = os.path.dirname(__file__)
 database = os.path.join(dirname, "database/resistance_markers.txt")
 full_database = os.path.join(dirname, "database/full_resistance_markers.txt")
+pango = os.path.join(args['lineage']) #returns /Users/winx/Documents/pangolin_testdir
 
 output_csvs= []
 
@@ -23,6 +25,14 @@ for file in os.listdir(args['input']):
             results = pull_resistance.get_resistance_ivar(filename, full_database, outfile)
             if results is not None and results.empty == False:
                 output_csvs.append(results)
+        if args['lineage']:
+            results = pull_resistance.res_ivar_pango(filename, database, pango, outfile)
+            if results is not None and results.empty == False:
+                output_csvs.append(results)
+        if args['full'] and args['lineage']:
+            results = pull_resistance.res_ivar_pango(filename, full_database, pango, outfile)
+            if results is not None and results.empty == False:
+                output_csvs.append(results)
         else:
             results = pull_resistance.get_resistance_ivar(filename, database, outfile)
             if results is not None and results.empty == False:
@@ -30,6 +40,14 @@ for file in os.listdir(args['input']):
     if filename.endswith(".vcf"):
         if args['full']:
             results = pull_resistance.get_resistance_varscan(filename, full_database, outfile)
+            if results is not None and results.empty == False:
+                output_csvs.append(results)
+        if args['lineage']:
+            results = pull_resistance.res_varscan_pango(filename, database, pango, outfile)
+            if results is not None and results.empty == False:
+                output_csvs.append(results)
+        if args['full'] and args['lineage']:
+            results = pull_resistance.res_varscan_pango(filename, full_database, pango, outfile)
             if results is not None and results.empty == False:
                 output_csvs.append(results)
         else:
@@ -46,6 +64,3 @@ with open((args['input']) + '/resistant_isolates.txt', "w") as output:
 
 with open((args['input']) + '/summary_counts.txt', 'w') as summary:
     summary.write(counts.replace('Name: Interest, dtype: int64', ''))
-
-
-
