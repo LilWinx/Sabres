@@ -21,15 +21,15 @@ for file in os.listdir(args['input']):
     filename = os.path.join(args['input'], os.fsdecode(file))
     outfile = os.path.join(args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile')
     if filename.endswith(".tsv"):
-        if args['full']:
+        if args['full'] and not args['lineage'] != None:
             results = pull_resistance.get_resistance_ivar(filename, full_database, outfile)
             if results is not None and results.empty == False:
                 output_csvs.append(results)
-        if args['lineage']:
+        if args['lineage'] and not args['full']:
             results = pull_resistance.res_ivar_pango(filename, database, pango, outfile)
             if results is not None and results.empty == False:
                 output_csvs.append(results)
-        if args['full'] and args['lineage']:
+        if args['full'] and args['lineage'] != None:
             results = pull_resistance.res_ivar_pango(filename, full_database, pango, outfile)
             if results is not None and results.empty == False:
                 output_csvs.append(results)

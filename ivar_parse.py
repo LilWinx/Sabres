@@ -50,9 +50,9 @@ def ivar_pango(file, database, pango):
     ivar_df['Filename'] = ivar_df['Filename'].str.replace("_t01","") #this wont work for everyone as only my lab adds _ivar to file names, prior to pangolin
     pango_res_merge = pd.merge(pango_df, ivar_df, left_on='name', right_on='Filename').fillna('-')
     pango_res_merge.drop(drop_columns_pango, axis = 1, inplace = True)
-    pango_res_merge=pango_res_merge.reindex(columns=neworder_ivar_pango)
+    pango_res_clean = pango_res_merge.reindex(columns=neworder_ivar_pango)
     
-    return pango_res_merge
+    return pango_res_clean
 
 def generate_snpprofile(file, database, pango, outfile):
     # print as separate file for easy manual checking.
