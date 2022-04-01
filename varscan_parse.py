@@ -38,14 +38,14 @@ def resistance_addition(file, database):
     resistance_markers = pd.read_csv(database, sep='\t', header = 0)
     resdf = pd.DataFrame(resistance_markers)
     res_merge = pd.merge(preres_df, resdf, left_on='REFPOSALT', right_on='Mutation', how='left').fillna('-')
-    res_merge.drop(['Nucleotide'], axis = 1, inplace = True)
+#    res_merge.drop(drop_columns, axis = 1, inplace = True)
     return res_merge
 
 def varscan_pango(file, database, pango):
     pango_df = pd.DataFrame(pp.lineage_addition(pango))
     varscan_df = pd.DataFrame(resistance_addition(file, database))
     varscan_df['Filename'] = os.path.splitext(os.path.basename(file))[0]
-    varscan_df['Filename'] = varscan_df['Filename'].str.replace("_t01","") #this wont work for everyone as only my lab adds _ivar to file names, prior to pangolin
+    varscan_df['Filename'] = varscan_df['Filename'].str.replace(".varscan.snps","", regex = True)
     pango_res_merge = pd.merge(pango_df, varscan_df, left_on='name', right_on='Filename').fillna('-')
     pango_res_merge.drop(drop_columns_pango, axis = 1, inplace = True)
     pango_res_clean=pango_res_merge.reindex(columns=neworder_varscan_pango)
@@ -63,6 +63,7 @@ def generate_snpprofile(file, database, pango, outfile):
 def generate_snpprofile_xpango(file, database, outfile):
     # print as separate file for easy manual checking.
     snpprofile = pd.DataFrame(resistance_addition(file, database))
+    snpprofile.drop(drop_columns, axis = 1, inplace = True)
     snpprofile.to_csv(outfile, sep='\t', index = False)
     
     #send to pull_resistance

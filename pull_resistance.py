@@ -33,12 +33,11 @@ def res_ivar_pango(file, database, pango, outfile):
         return res_ivar_pango_df
 
 def res_varscan_pango(file, database, pango, outfile):
-    ivar_pango_df = pd.DataFrame(varscan_parse.generate_snpprofile(file, database, pango, outfile))
-    res_ivar_pango_df = ivar_pango_df[ivar_pango_df['Interest'].str.contains('Resistance')]
+    varscan_pango_df = pd.DataFrame(varscan_parse.generate_snpprofile(file, database, pango, outfile))
+    res_varscab_pango_df = varscan_pango_df[varscan_pango_df['Interest'].str.contains('Resistance')]
     
-    if res_ivar_pango_df.empty == False:
-        return res_ivar_pango_df
-
+    if res_varscab_pango_df.empty == False:
+        return res_varscab_pango_df
 
 
 
