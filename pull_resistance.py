@@ -1,4 +1,3 @@
-from fileinput import filename
 import ivar_parse
 import varscan_parse
 import os
