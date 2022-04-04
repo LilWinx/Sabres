@@ -18,54 +18,65 @@ def file_cleanup(file):
                 oneline += line
         return oneline
 
+def file2df(file):
+    return pd.read_csv(StringIO(file_cleanup(file)), sep='\t', header = 0)
+
 def data_setup(file):
-    df = pd.read_csv(StringIO(file_cleanup(file)), sep='\t', header = 0)
-    if df.empty == False:
-        df.drop(df.columns[[0, 2, 5, 6, 8]], axis = 1, inplace = True)
-        df = df[['REF', 'POS', 'ALT', 'INFO', 'Sample1']]
-        df[['adp', 'wt', 'HET', 'hom', 'nc']] = df.INFO.str.split(';', expand=True)
-        df.drop(['adp', 'wt', 'hom', 'nc', 'INFO'], axis = 1, inplace = True)
-        df[['GT', 'GQ', 'SDP', 'DP', 'RD', 'AD', 'FREQ', 'PVAL', 'RBQ', 'ABQ', 'RDF', 'RDR', 'ADF', 'ADR']] = df.Sample1.str.split(':', expand=True)
-        df.drop(['GT', 'GQ', 'SDP', 'RD', 'AD', 'PVAL', 'RBQ', 'ABQ', 'RDF', 'RDR', 'ADF', 'ADR', 'Sample1'], axis = 1, inplace = True)
-        df['REFPOSALT'] = df['REF'] + df['POS'].astype(str) + df['ALT']
-        neworder = ['REF', 'POS', 'ALT', 'REFPOSALT', 'HET', 'DP', 'FREQ']
-        df=df.reindex(columns=neworder)
-        result = df.sort_values (by = 'POS')
-        return result
-    else:
-        pass
+    df = pd.DataFrame(file2df(file))
+    if df.empty:
+        return df
+    df.drop(df.columns[[0, 2, 5, 6, 8]], axis = 1, inplace = True)
+    df = df[['REF', 'POS', 'ALT', 'INFO', 'Sample1']]
+    df[['adp', 'wt', 'HET', 'hom', 'nc']] = df.INFO.str.split(';', expand=True)
+    df.drop(['adp', 'wt', 'hom', 'nc', 'INFO'], axis = 1, inplace = True)
+    df[['GT', 'GQ', 'SDP', 'DP', 'RD', 'AD', 'FREQ', 'PVAL', 'RBQ', 'ABQ', 'RDF', 'RDR', 'ADF', 'ADR']] = df.Sample1.str.split(':', expand=True)
+    df.drop(['GT', 'GQ', 'SDP', 'RD', 'AD', 'PVAL', 'RBQ', 'ABQ', 'RDF', 'RDR', 'ADF', 'ADR', 'Sample1'], axis = 1, inplace = True)
+    df['REFPOSALT'] = df['REF'] + df['POS'].astype(str) + df['ALT']
+    neworder = ['REF', 'POS', 'ALT', 'REFPOSALT', 'HET', 'DP', 'FREQ']
+    df=df.reindex(columns=neworder)
+    result = df.sort_values (by = 'POS')
+    return result
+
 
 def resistance_addition(file, database):
-    preres_df = pd.DataFrame(data_setup(file))
+    preres_df = data_setup(file)
+    if preres_df.empty == True:
+        return preres_df
     resistance_markers = pd.read_csv(database, sep='\t', header = 0)
     resdf = pd.DataFrame(resistance_markers)
     res_merge = pd.merge(preres_df, resdf, left_on='REFPOSALT', right_on='Mutation', how='left').fillna('-')
-#    res_merge.drop(drop_columns, axis = 1, inplace = True)
     return res_merge
-
+    
 def varscan_pango(file, database, pango):
-    pango_df = pd.DataFrame(pp.lineage_addition(pango))
-    varscan_df = pd.DataFrame(resistance_addition(file, database))
+    pango_df = pp.lineage_addition(pango)
+    varscan_df = resistance_addition(file, database)
+    if varscan_df.empty == True:
+        return varscan_df
     varscan_df['Filename'] = os.path.splitext(os.path.basename(file))[0]
     varscan_df['Filename'] = varscan_df['Filename'].str.replace(".varscan.snps","", regex = True)
-    pango_res_merge = pd.merge(pango_df, varscan_df, left_on='name', right_on='Filename').fillna('-')
-    pango_res_merge.drop(drop_columns_pango, axis = 1, inplace = True)
-    pango_res_clean=pango_res_merge.reindex(columns=neworder_varscan_pango)
+    varscan_df['Lineage'] = varscan_df['Filename'].map(pango_df.set_index('name')['Lineage']).fillna('-')
+    varscan_df.drop(drop_columns, axis = 1, inplace = True)
+    pango_res_clean=varscan_df.reindex(columns=neworder_varscan_pango)
+    return pango_res_clean
     
 
 def generate_snpprofile(file, database, pango, outfile):
     # print as separate file for easy manual checking.
-    snpprofile = pd.DataFrame(varscan_pango(file, database, pango))
+    snpprofile = varscan_pango(file, database, pango)
+    if snpprofile.empty == True:
+        return snpprofile
     snpprofile.to_csv(outfile, sep='\t', index = False)
-    
     #send to pull_resistance
     return snpprofile
+   
 
 def generate_snpprofile_xpango(file, database, outfile):
     # print as separate file for easy manual checking.
-    snpprofile = pd.DataFrame(resistance_addition(file, database))
+    snpprofile = resistance_addition(file, database)
+    if snpprofile.empty == True:
+        return snpprofile
     snpprofile.drop(drop_columns, axis = 1, inplace = True)
     snpprofile.to_csv(outfile, sep='\t', index = False)
-    
     #send to pull_resistance
     return snpprofile
+

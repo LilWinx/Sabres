@@ -10,9 +10,9 @@ def format_resistance(filename, data):
     if filename.endswith(".tsv"):
         data = data.reindex(columns=neworder_ivar).fillna("-")
     elif filename.endswith(".vcf"):
-        data = data.reindex(columns=neworder_varscan)
-    data = data[data['Interest'].str.contains('Resistance')]
+        data = data.reindex(columns=neworder_varscan).fillna("-")
     if data.empty == False:
+        data = data[data['Interest'].str.contains('Resistance')]
         return data
 
 def get_res_xpango(filename, database, outfile):
@@ -32,7 +32,6 @@ def get_res_pango(filename, database, pango, outfile):
         df = varscan_parse.generate_snpprofile(filename, database, pango, outfile)
     else:
         raise Exception ("Incompatible Filetype")
-    
     return format_resistance(filename, df)
 
 

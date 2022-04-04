@@ -22,7 +22,7 @@ output_csvs= []
 for file in os.listdir(args['input']):
     filename = os.path.join(args['input'], os.fsdecode(file))
     outfile = os.path.join(args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile')
-    if filename.endswith((".snpprofile", ".txt")):
+    if filename.endswith((".snpprofile", ".txt")) or filename == ".DS_Store":
         continue
     if is_lineage:
         pango = os.path.join(args['lineage']) #returns /Users/winx/Documents/pangolin_testdir
