@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 neworder_ivar = ['Filename', 'Lineage', 'REF', 'POS', 'ALT', 'REFPOSALT', 'TOTAL_DP', 'ALT_FREQ', 'REF_AA', 'ALT_AA', 'SNS', 'Protein', 'Interest', 'Note']
-neworder_varscan = ['Filename', 'Lineage', 'POS', 'ALT', 'REFPOSALT', 'HET', 'DP', 'FREQ', 'Protein', 'Interest', 'Note']
+neworder_varscan = ['Filename', 'Lineage', 'REF', 'POS', 'ALT', 'REFPOSALT', 'HET', 'DP', 'FREQ', 'Protein', 'Interest', 'Note']
 
 def format_resistance(filename, data):
     if filename.endswith(".tsv"):
