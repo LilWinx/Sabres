@@ -13,47 +13,27 @@ args = vars(parser.parse_args())
 dirname = os.path.dirname(__file__)
 database = os.path.join(dirname, "database/resistance_markers.txt")
 full_database = os.path.join(dirname, "database/full_resistance_markers.txt")
-pango = os.path.join(args['lineage']) #returns /Users/winx/Documents/pangolin_testdir
+
+is_lineage = bool(args['lineage'] != None)
+db_selection = full_database if args['full'] else database
 
 output_csvs= []
 
 for file in os.listdir(args['input']):
     filename = os.path.join(args['input'], os.fsdecode(file))
     outfile = os.path.join(args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile')
-    if filename.endswith(".tsv"):
-        if args['full'] and not args['lineage'] != None:
-            results = pull_resistance.get_resistance_ivar(filename, full_database, outfile)
-            if results is not None and results.empty == False:
-                output_csvs.append(results)
-        if args['lineage'] and not args['full']:
-            results = pull_resistance.res_ivar_pango(filename, database, pango, outfile)
-            if results is not None and results.empty == False:
-                output_csvs.append(results)
-        if args['full'] and args['lineage'] != None:
-            results = pull_resistance.res_ivar_pango(filename, full_database, pango, outfile)
-            if results is not None and results.empty == False:
-                output_csvs.append(results)
-        else:
-            results = pull_resistance.get_resistance_ivar(filename, database, outfile)
-            if results is not None and results.empty == False:
-                output_csvs.append(results)
-    if filename.endswith(".vcf"):
-        if args['full']:
-            results = pull_resistance.get_resistance_varscan(filename, full_database, outfile)
-            if results is not None and results.empty == False:
-                output_csvs.append(results)
-        if args['lineage']:
-            results = pull_resistance.res_varscan_pango(filename, database, pango, outfile)
-            if results is not None and results.empty == False:
-                output_csvs.append(results)
-        if args['full'] and args['lineage']:
-            results = pull_resistance.res_varscan_pango(filename, full_database, pango, outfile)
-            if results is not None and results.empty == False:
-                output_csvs.append(results)
-        else:
-            results = pull_resistance.get_resistance_varscan(filename, database, outfile)
-            if results is not None and results.empty == False:
-                output_csvs.append(results)
+    if filename.endswith((".snpprofile", ".txt")):
+        continue
+    if is_lineage:
+        pango = os.path.join(args['lineage']) #returns /Users/winx/Documents/pangolin_testdir
+        results = pull_resistance.get_res_pango(filename, database, pango, outfile)
+        if results is not None and results.empty == False:
+            output_csvs.append(results)
+    else:
+        results =pull_resistance.get_res_xpango(filename, database, outfile)
+        if results is not None and results.empty == False:
+            output_csvs.append(results)
+
 
 res_df = pd.concat(output_csvs)
 string = res_df.to_csv(index = False, sep = '\t')
