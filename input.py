@@ -26,11 +26,11 @@ for file in os.listdir(args['input']):
         continue
     if is_lineage:
         pango = os.path.join(args['lineage']) #returns /Users/winx/Documents/pangolin_testdir
-        results = pull_resistance.get_res_pango(filename, database, pango, outfile)
+        results = pull_resistance.get_res_pango(filename, db_selection, pango, outfile)
         if results is not None and results.empty == False:
             output_csvs.append(results)
     else:
-        results =pull_resistance.get_res_xpango(filename, database, outfile)
+        results =pull_resistance.get_res_xpango(filename, db_selection, outfile)
         if results is not None and results.empty == False:
             output_csvs.append(results)
 
