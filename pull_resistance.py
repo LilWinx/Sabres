@@ -40,4 +40,3 @@ def get_res_pango(filename, database, pango, outfile):
 
 
 
-
