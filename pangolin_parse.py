@@ -13,11 +13,10 @@ def data_setup(pango_data):
         for folder in dirs:
             dig_for_file = os.path.join(pango_data, folder + '/lineage_report.csv')
             with open(dig_for_file, 'r') as lineage_csv:
-                with open(pangolin_data, 'w'):
-                    for line in lineage_csv:
-                        pass
-                    last_line = line
+                with open(pangolin_data, 'w') as combined_csv:
+                    last_line = lineage_csv.readlines()[-1]
                     pango_line += last_line
+                    combined_csv.write(pango_line)
         return pango_line
 
 def lineage_addition(pango_data):
