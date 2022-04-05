@@ -8,6 +8,7 @@ pd.set_option('display.max_rows', None)
 drop_columns_pango= ['Nucleotide', 'Mutation', 'name']
 drop_columns = ['Nucleotide', 'Mutation']
 neworder_varscan_pango = ['Filename', 'Lineage', 'REF', 'POS', 'ALT', 'REFPOSALT', 'HET', 'DP', 'FREQ', 'Protein', 'Interest', 'Note']
+neworder_varscan = ['REF', 'POS', 'ALT', 'REFPOSALT', 'HET', 'DP', 'FREQ', 'Protein', 'Interest', 'Note']
 
 def file_cleanup(file):
     with open(file, 'r') as vcf:
@@ -19,6 +20,7 @@ def file_cleanup(file):
         return oneline
 
 def file2df(file):
+    print("Reading File:", file)
     return pd.read_csv(StringIO(file_cleanup(file)), sep='\t', header = 0)
 
 def data_setup(file):
@@ -76,6 +78,7 @@ def generate_snpprofile_xpango(file, database, outfile):
     if snpprofile.empty == True:
         return snpprofile
     snpprofile.drop(drop_columns, axis = 1, inplace = True)
+    snpprofile.reindex(columns=neworder_varscan)
     snpprofile.to_csv(outfile, sep='\t', index = False)
     #send to pull_resistance
     return snpprofile

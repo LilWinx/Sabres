@@ -22,7 +22,7 @@ output_csvs= []
 for file in os.listdir(args['input']):
     filename = os.path.join(args['input'], os.fsdecode(file))
     outfile = os.path.join(args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile')
-    if filename.endswith((".tsv", ".vcf")):
+    if filename.endswith((".tsv", ".vcf")) and os.stat(filename).st_size != 0:
     #if filename.endswith((".snpprofile", ".txt", ".DS_Store"))
     #    continue
         if is_lineage:
