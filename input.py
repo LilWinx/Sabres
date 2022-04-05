@@ -22,17 +22,18 @@ output_csvs= []
 for file in os.listdir(args['input']):
     filename = os.path.join(args['input'], os.fsdecode(file))
     outfile = os.path.join(args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile')
-    if filename.endswith((".snpprofile", ".txt")) or filename == ".DS_Store":
-        continue
-    if is_lineage:
-        pango = os.path.join(args['lineage']) #returns /Users/winx/Documents/pangolin_testdir
-        results = pull_resistance.get_res_pango(filename, db_selection, pango, outfile)
-        if results is not None and results.empty == False:
-            output_csvs.append(results)
-    else:
-        results =pull_resistance.get_res_xpango(filename, db_selection, outfile)
-        if results is not None and results.empty == False:
-            output_csvs.append(results)
+    if filename.endswith((".tsv", ".vcf")):
+    #if filename.endswith((".snpprofile", ".txt", ".DS_Store"))
+    #    continue
+        if is_lineage:
+            pango = os.path.join(args['lineage']) #returns /Users/winx/Documents/pangolin_testdir
+            results = pull_resistance.get_res_pango(filename, db_selection, pango, outfile)
+            if results is not None and results.empty == False:
+                output_csvs.append(results)
+        else:
+            results =pull_resistance.get_res_xpango(filename, db_selection, outfile)
+            if results is not None and results.empty == False:
+                output_csvs.append(results)
 
 
 res_df = pd.concat(output_csvs)
