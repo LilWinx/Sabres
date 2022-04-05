@@ -62,8 +62,8 @@ def generate_snpprofile_xpango(file, database, outfile):
     # print as separate file for easy manual checking.
     snpprofile = resistance_addition(file, database)
     snpprofile.drop(drop_columns, axis = 1, inplace = True)
-    snpprofile.reindex(columns=neworder_ivar)
-    snpprofile.to_csv(outfile, sep='\t', index = False)
+    snp_csv = snpprofile.reindex(columns=neworder_ivar)
+    snp_csv.to_csv(outfile, sep='\t', index = False)
     
     #send to pull_resistance
     return snpprofile

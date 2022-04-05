@@ -78,8 +78,8 @@ def generate_snpprofile_xpango(file, database, outfile):
     if snpprofile.empty == True:
         return snpprofile
     snpprofile.drop(drop_columns, axis = 1, inplace = True)
-    snpprofile.reindex(columns=neworder_varscan)
-    snpprofile.to_csv(outfile, sep='\t', index = False)
+    snp_csv = snpprofile.reindex(columns=neworder_varscan)
+    snp_csv.to_csv(outfile, sep='\t', index = False)
     #send to pull_resistance
     return snpprofile
 
