@@ -25,4 +25,3 @@ def lineage_addition(pango_data):
     filt_lin_df.columns = ['name', 'Lineage']
     filt_lin_df['name'] = filt_lin_df['name'].str.replace("_ivar","") #this wont work for everyone as only my lab adds _ivar to file names, prior to pangolin
     return filt_lin_df
-

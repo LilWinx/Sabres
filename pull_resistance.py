@@ -33,8 +33,3 @@ def get_res_pango(filename, database, pango, outfile):
     else:
         raise Exception ("Incompatible Filetype")
     return format_resistance(filename, df)
-
-
-
-
-

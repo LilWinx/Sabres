@@ -17,11 +17,11 @@ def file2df(file):
 def data_setup(file):
     # tsv file parsing and set up for removal
     df = pd.DataFrame(file2df(file))
-    
+
     # remove unwanted columns and reorder
     df.drop(ignored_columns, axis = 1, inplace = True)
     df['REFPOSALT'] = df['REF'] + df['POS'].astype(str) + df['ALT']
-    
+
     # calculate synonymous and non-synonymous mutations
     conditions = [
         (df['REF_AA'] == "NA") & (df['ALT_AA'] == "NA"),
@@ -29,9 +29,9 @@ def data_setup(file):
     ]
     df['SNS'] = np.select(conditions, choices, default='NS')
     return df
-        
+
 def resistance_addition(file, database):
-    # merge the resistance database to the new dataframe 
+    # merge the resistance database to the new dataframe
     preres_df = data_setup(file)
     resistance_markers = pd.read_csv(database, sep='\t', header = 0)
     resdf = pd.DataFrame(resistance_markers)
@@ -53,7 +53,7 @@ def generate_snpprofile(file, database, pango, outfile):
     # print as separate file for easy manual checking.
     snpprofile = ivar_pango(file, database, pango)
     snpprofile.to_csv(outfile, sep='\t', index = False)
-    
+
     #send to pull_resistance
     return snpprofile
 
@@ -64,6 +64,6 @@ def generate_snpprofile_xpango(file, database, outfile):
     snpprofile.drop(drop_columns, axis = 1, inplace = True)
     snp_csv = snpprofile.reindex(columns=neworder_ivar)
     snp_csv.to_csv(outfile, sep='\t', index = False)
-    
+
     #send to pull_resistance
     return snpprofile

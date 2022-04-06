@@ -48,7 +48,7 @@ def resistance_addition(file, database):
     resdf = pd.DataFrame(resistance_markers)
     res_merge = pd.merge(preres_df, resdf, left_on='REFPOSALT', right_on='Mutation', how='left').fillna('-')
     return res_merge
-    
+
 def varscan_pango(file, database, pango):
     pango_df = pp.lineage_addition(pango)
     varscan_df = resistance_addition(file, database)
@@ -60,7 +60,7 @@ def varscan_pango(file, database, pango):
     varscan_df.drop(drop_columns, axis = 1, inplace = True)
     pango_res_clean=varscan_df.reindex(columns=neworder_varscan_pango)
     return pango_res_clean
-    
+
 
 def generate_snpprofile(file, database, pango, outfile):
     # print as separate file for easy manual checking.
@@ -70,7 +70,7 @@ def generate_snpprofile(file, database, pango, outfile):
     snpprofile.to_csv(outfile, sep='\t', index = False)
     #send to pull_resistance
     return snpprofile
-   
+
 
 def generate_snpprofile_xpango(file, database, outfile):
     # print as separate file for easy manual checking.
@@ -82,4 +82,3 @@ def generate_snpprofile_xpango(file, database, outfile):
     snp_csv.to_csv(outfile, sep='\t', index = False)
     #send to pull_resistance
     return snpprofile
-

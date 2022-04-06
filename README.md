@@ -4,8 +4,8 @@ A simple tool that scans VCF files for SARS-CoV-2 Antiviral Resistance
 
 The tool takes an iVar (https://github.com/andersen-lab/ivar) output (.tsv) or Varscan (http://varscan.sourceforge.net/) output (.vcf) and parses it for mutations curated in our database. The output will return only the mutation that matches with mutations listed in the database
 
-There are two databases available, a Omicron/Delta only and a global antiviral database (--full). This is because the two dominant circulating strains Delta and Omicron inherently carry resistance markers against existing drugs. 
-The database was generated using product information sheets for each drug. e.g. 
+There are two databases available, a Omicron/Delta only and a global antiviral database (--full). This is because the two dominant circulating strains Delta and Omicron inherently carry resistance markers against existing drugs.
+The database was generated using product information sheets for each drug. e.g.
 https://www.pfizermedicalinformation.com/en-us/nirmatrelvir-tablets-ritonavir-tablets/clinical-pharmacology
 
 and the curated database collated by Stanford https://covdb.stanford.edu/page/susceptibility-data/
@@ -71,4 +71,3 @@ A useful script would be
 ```
 cp **/*.tsv >> [New Folder]
 ```
-
