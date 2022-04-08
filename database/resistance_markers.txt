@@ -1,47 +1,322 @@
 Protein	Nucleotide	Mutation	Interest	Note
-NSP5:Y54A	10214	TA10214GC	Nirmatrelvir (Paxlovid) Resistance (23.6-fold)	theoretical
-NSP5:T135I	10458	C10458T	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	theoretical
-NSP5:F140A	10472	TT10472GC	Nirmatrelvir (Paxlovid) Resistance (39-fold)	theoretical
-NSP5:S144A	10484	T10484G	Nirmatrelvir (Paxlovid) Resistance (91.9-fold)	theoretical
-NSP5:H164N	10544	C10544A	Nirmatrelvir (Paxlovid) Resistance (6.4-fold)	theoretical
-NSP5:E166A	10551	A10551C	Nirmatrelvir (Paxlovid) Resistance (33.4-fold)	theoretical
-NSP5:H172Y	10568	C10568T	Nirmatrelvir (Paxlovid) Resistance (233-fold)	theoretical
-NSP5:Q189K	10619	C10619A	Nirmatrelvir (Paxlovid) Resistance (65.4-fold)	theoretical
-NSP5:D248E	10798	C10798A	Nirmatrelvir (Paxlovid) Resistance (3.7-fold)	theoretical
-NSP5:D248E	10798	C10798G	Nirmatrelvir (Paxlovid) Resistance (3.7-fold)	theoretical
-NSP12:F480L	14879	T14879A	Remdesivir Resistance (6-fold)	theoretical
-NSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	theoretical
-NSP12:V557L	15110	G15110C	Remdesivir Resistance (6-fold)	theoretical
-NSP12:V557L	15110	G15110T	Remdesivir Resistance (6-fold)	theoretical
-NSP12:E802D	15847	A15847C	Remdesivir Resistance (2-fold)	theoretical
-NSP12:E802D	15847	A15847T	Remdesivir Resistance (2-fold)	theoretical
-S:P337K	22571	CCT22571AAA	Sotromivab Resistance (>304-fold)	theoretical
-S:P337K	22571	CCT22571AAG	Sotromivab Resistance (>304-fold)	theoretical
-S:P337T	22571	C22571A	Sotromivab Resistance (10.62-fold)	theoretical
-S:P337L	22572	C22572T	Sotromivab Resistance (>192-fold)	theoretical
-S:P337R	22572	C22572G	Sotromivab Resistance (>192-fold)	theoretical
-S:P337H	22572	C22572A	Sotromivab Resistance (5.13-fold)	theoretical
+-	241	C241T	Epsilon (B.1.427-like)	confirmed
+ORF1ab:S135R	670	T670G	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+-	733	T733C	Gamma (P.1-like)	confirmed
+-	832	C832T	Omicron (BA.3-like)	confirmed
+-	835	C835T	B.1.617.3-like	confirmed
+ORF1ab:L205V	878	C878G	Zeta (P.2-like)	alignment
+-	913	C913T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+ORF1a:T265I	1059	C1059T	Beta (B.1.351-like), Epsilon (B.1.427-like), Epsilon (B.1.429-like), Iota (B.1.526-like)	confirmed
+-	1498	C1498T	Eta (B.1.525-like)	confirmed
+-	1807	A1807G	Eta (B.1.525-like)	confirmed
+-	2749	C2749T	Gamma (P.1-like)	confirmed
+ORF1ab:T842I	2790	C2790T	Omicron (BA.2-like)	confirmed
+ORF1ab:K856R	2831	A2832G	Omicron (BA.1-like)	confirmed
+-	3037	C3037T	Epsilon (B.1.427-like), Omicron (Unassigned), Iota (B.1.526-like), Mu (B.1.621-like)	confirmed
+ORF1ab:T1001I	3267	C3267T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+ORF1a:T1055A	3428	A3428G	Mu (B.1.621-like)	alignment
+-	3457	C3457T	B.1.617.1-like	confirmed
+ORF1ab:S1188L	3828	C3828T	Gamma (P.1-like)	confirmed
+-	3961	C3961T	B.1.1.318-like	confirmed
+ORF1a:T1246I	4002	C4002T	Lambda (C.37-like)	alignment
+ORF1a:A1306S	4181	G4181T	Delta (AY.4-like)	confirmed
+ORF1ab:G1307S	4184	G4184A	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+-	4321	C4321T	Omicron (BA.2-like)	confirmed
+ORF1a:T1538I	4878	C4878T	Mu (B.1.621-like)	alignment
+NSP3:D736G	4926	A4926G	Theta (P.3-like)	alignment
+NSP3:L741F	4940	C4940T	A.23.1-like	alignment
+NSP3:T749I	4965	C4965T	B.1.617.1-like	alignment
+ORF1ab:K1655N	5230	G5230T	Beta (B.1.351-like)	confirmed
+-	5386	T5386G	Omicron (BA.1-like)	confirmed
+ORF1ab:A1708D	5387	C5388A	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+ORF1ab:K1795Q	5648	A5648C	Gamma (P.1-like)	confirmed
+-	5986	C5986T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+-	6037	C6037T	Mu (B.1.621-like)	confirmed
+ORF1a:P2046L	6402	C6402T	Delta (AY.4-like)	confirmed
+-	6513	AGTT6512A	Omicron (BA.1-like)	confirmed
+ORF1ab:I2230T	6954	T6954C	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+ORF1a:P2287S	7124	C7124T	Lambda (C.37-like), Delta (AY.4-like)	confirmed
+NSP3:A1526V	7296	C7296T	B.1.617.3-like	alignment
+ORF1a:F2387V	7424	T7424G	Lambda (C.37-like)	alignment
+-	7564	C7564A	Theta (P.3-like)	confirmed
+NSP3:K1693N	7798	G7798T	B.1.1.318-like	alignment
+ORF1a:A2529V	7851	C7851T	Delta (AY.4-like)	alignment
+NSP3:T1830I	8208	C8208T	B.1.617.3-like	alignment
+ORF1ab:A2710T	8393	G8393A	Omicron (BA.1-like)	confirmed
+-	8593	T8593C	Eta (B.1.525-like)	confirmed
+-	8986	C8986T	Delta (AY.4-like)	confirmed
+ORF1a:V2930L	9053	G9053C	Delta (AY.4-like)	confirmed
+NSP4:T173I	9072	C9072T	B.1.1.318-like	alignment
+ORF1ab:L3027F	9344	C9344T	Omicron (BA.2-like)	confirmed
+-	9424	A9424G	Omicron (BA.2-like)	confirmed
+ORF1ab:T3090I	9534	C9534T	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+-	9565	C9565T	Eta (B.1.525-like)	confirmed
+ORF1ab:L3201F	9866	C9866T	Omicron (BA.2-like)	confirmed
+ORF1a:L3201P	9867	T9867C	Lambda (C.37-like), Iota (B.1.526-like), Theta (P.3-like)	NSP4:L438P - theoretical
+NSP4:A446V	9891	C9891T	B.1.1.318-like	confirmed
+ORF1a:T3255I	10029	C10029T	Lambda (C.37-like), Mu (B.1.621-like), Delta (AY.4-like), Omicron (Unassigned)	confirmed
+ORF1a:G3278S	10097	G10097A	Lambda (C.37-like), Paxlovid Resistance (4.4-fold)	NSP5:G15S - confirmed
+NSP5:T21I	10116	C10116T	B.1.1.318-like	alignment
+-	10198	C10198T	Omicron (BA.2-like)	confirmed
+NSP5:Y54A	10214	TA10214GC	Nirmatrelvir (Paxlovid) Resistance (23.6-fold)	predicted
+ORF1ab:K3353R	10323	A10323G	Beta (B.1.351-like)	confirmed
+-	10447	G10447A	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+ORF1ab:P3395H	10448	C10449A	Omicron (Unassigned)	confirmed
+NSP5:T135I	10458	C10458T	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	predicted
+NSP5:F140A	10472	TT10472GC	Nirmatrelvir (Paxlovid) Resistance (39-fold)	predicted
+NSP5:S144A	10484	T10484G	Nirmatrelvir (Paxlovid) Resistance (91.9-fold)	predicted
+NSP5:H164N	10544	C10544A	Nirmatrelvir (Paxlovid) Resistance (6.4-fold)	predicted
+NSP5:E166A	10551	A10551C	Nirmatrelvir (Paxlovid) Resistance (33.4-fold)	predicted
+NSP5:H172Y	10568	C10568T	Nirmatrelvir (Paxlovid) Resistance (233-fold)	predicted
+NSP5:Q189K	10619	C10619A	Nirmatrelvir (Paxlovid) Resistance (65.4-fold)	predicted
+NSP5:A194S	10634	G10634T	B.1.617.3-like	alignment
+NSP5:D248E	10798	C10798A	Nirmatrelvir (Paxlovid) Resistance (3.7-fold)	predicted
+NSP5:D248E	10798	C10798G	Nirmatrelvir (Paxlovid) Resistance (3.7-fold)	predicted
+ORF1a:T3646A	11201	A11201G	B.1.617.1-like, Delta (AY.4-like)	NSP6:T77A
+NSP6:M86I	11230	G11230T	A.23.1-like	alignment
+-	11235	C11235T	Omicron (BA.3-like)	confirmed
+NSP6:L98F	11266	G11266T	A.23.1-like	alignment
+-	11287	GTCTGGTTTT11287G	Beta (B.1.351-like), Gamma (P.1-like), B.1.1.318-like	confirmed
+ORF1ab:L3674F	11287	G11287C	Omicron (BA.1-like)	alignment
+ORF1ab:SGF3675-	11288	TCTGGTTTT11288-	Omicron (Unassigned), Alpha (B.1.1.7-like), B.1.1.7-like+E484K, Iota (B.1.526-like), Lambda (C.37-like)	
+NSP6:D112E	11308	C11308A	Theta (P.3-like)	alignment
+NSP6:A117V	11321	C11322T	B.1.617.3-like	alignment
+-	11332	A11332G	Delta (AY.4-like)	confirmed
+ORF1a:Q3729R	11451	A11451G	Mu (B.1.621-like)	alignment
+NSP6:M183I	11521	G11521T	A.23.1-like	alignment
+ORF1ab:I3758V	11537	A11537G	Omicron (BA.1-like)	confirmed
+-	11824	C11824T	Zeta (P.2-like)	confirmed
+-	12049	C12049T	Theta (P.3-like)	confirmed
+NSP7:L71F	12053	C12053T	Theta (P.3-like)	alignment
+-	12778	C12778T	Gamma (P.1-like)	confirmed
+ORF1a:I4205V	12878	A12878G	Epsilon (B.1.429-like)	alignment
+-	12880	C12880T	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+-	12964	A12964G	Zeta (P.2-like)	confirmed
+-	13057	A13057T	Mu (B.1.621-like)	confirmed
+-	13195	T13195C	Omicron (BA.1-like)	confirmed
+-	13713	G13713A	Epsilon (B.1.427-like)	confirmed
+-	13860	C13860T	Gamma (P.1-like)	confirmed
+ORF1b:P314L	14407	C14408T	Eta (B.1.525-like), Lambda (C.37-like), Iota (B.1.526-like), Mu (B.1.621-like), Delta (AY.4-like), Omicron (Unassigned)	NSP12:P323F
+-	14676	C14676T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+NSP12:F480L	14879	T14879A	Remdesivir Resistance (6-fold)	predicted
+NSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	predicted
+NSP12:V557L	15110	G15110C	Remdesivir Resistance (6-fold)	predicted
+NSP12:V557L	15110	G15110T	Remdesivir Resistance (6-fold)	predicted
+-	15240	C15240T	Omicron (BA.1-like)	confirmed
+-	15279	C15279T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+ORF1b:G662S	15451	G15451A	Delta (AY.4-like)	confirmed
+-	15714	C15714T	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+NSP12:E802D	15847	A15847C	Remdesivir Resistance (2-fold)	predicted
+NSP12:E802D	15847	A15847T	Remdesivir Resistance (2-fold)	predicted
+-	16176	T16176C	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+-	16293	C16293T	B.1.617.3-like	confirmed
+ORF1b:P1000L	16466	C16466T	Delta (AY.4-like)	confirmed
+ORF1b:Q1011H	16500	A16500C	Iota (B.1.526-like)	alignment
+ORF1b:D1183Y	17014	G17014T	Epsilon (B.1.427-like), Epsilon (B.1.429-like)	confirmed
+NSP13:A368V	17339	C17339T	Theta (P.3-like)	alignment
+ORF1ab:R5716C	17410	C17410T	Omicron (BA.2-like)	confirmed
+ORF1b:P1342S	17491	C17491T	Mu (B.1.621-like)	alignment
+NSP13:M429I	17523	G17523T	B.1.617.1-like	alignment
+ORF1ab:I5967V	18164	A18163G	Omicron (BA.3-like), Omicron (Unassigned)	guess
+-	18171	C18171T	Eta (B.1.525-like)	confirmed
+-	18877	C18877T	Mu (B.1.621-like)	confirmed
+-	19035	T19035C	Mu (B.1.621-like)	confirmed
+ORF1b:A1918V	19220	C19220T	Delta (AY.4-like)	confirmed
+ORF1ab:T6564I	19955	C19955T	Omicron (BA.2-like)	confirmed
+-	20055	A20055G	Omicron (BA.2-like)	confirmed
+-	20148	C20148T	Mu (B.1.621-like)	confirmed
+-	20262	A20262G	Iota (B.1.526-like)	confirmed
+NSP15:K259R	20395	A20396G	B.1.617.1-like	confirmed
+NSP15:V320M	20578	G20578A	B.1.1.318-like	alignment
+-	20724	A20724G	Eta (B.1.525-like)	confirmed
+S:L5F	21575	C21575T	Iota (B.1.526-like)	confirmed
+S:T19R	21618	C21618G	Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N, B.1.617.3-like	confirmed
+S:T19I	21618	C21618T	Omicron (BA.2-like)	confirmed
+S:T20N	21620	C21621A	Gamma (P.1-like)	confirmed
+-	21632	TTACCCCCTG21632T	Omicron (BA.2-like)	confirmed
+S:P26S	21638	C21638T	Gamma (P.1-like)	confirmed
+S:S13I	21653	TC21653AT	Epsilon (B.1.427-like), Epsilon (B.1.429-like)	guess
+S:Q52R	21717	A21717G	Eta (B.1.525-like)	alignment
+S:A67V	21762	C21762T	Omicron (BA.1-like), Omicron (BA.3-like)	confirmed
+S:HV69-	21764	ATACATG21764A	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	guess deleted in ref
+-	21766	TACATGT21766T	Omicron (BA.1-like), Omicron (BA.3-like)	confirmed
+S:G75V	21786	G21786T	Lambda (C.37-like)	alignment
+S:T76I	21789	C21789T	Lambda (C.37-like)	alignment
+S:D80A	21801	A21801C	Beta (B.1.351-like)	confirmed
+S:T95I	21846	C21846T	Iota (B.1.526-like), Mu (B.1.621-like), Omicron (BA.1-like), B.1.1.318-like	confirmed
+S:R102I	21867	G21867T	A.23.1-like	alignment
+-	21980	TTTTTGGGTG21980T	Theta (P.3-like)	alignment
+-	21986	GGTGTTTATT21986G	Omicron (BA.1-like), Omicron (BA.3-like)	confirmed
+S:G142D	21987	G21987A	Delta (B.1.617.2-like), Omicron (Unassigned)	confirmed
+-	21991	TTAT21991T	B.1.1.318-like	alignment
+S:Y144-	21992	TATT21992T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	alignment
+S:Y145N	21995	T21995A	Mu (B.1.621-like)	guess
+S:W152C	22018	G22018T	Epsilon (B.1.427-like), Epsilon (B.1.429-like)	alignment
+-	22028	GAGTTCA22028G	Delta (AY.4-like)	confirmed
+S:F157L	22031	C22033A	A.23.1-like	alignment
+-	22194	AATT22193A	Omicron (BA.1-like), Omicron (BA.3-like)	confirmed
+-	22200	T22200G	Omicron (BA.2-like)	confirmed
+-	22205	T22204TGAGCCAGAA	Omicron (BA.1-like)	confirmed
+S:D215G	22206	A22206G	Beta (B.1.351-like)	confirmed
+-	22280	ACTTTACTTG22280A	Beta (B.1.351-like)	confirmed
+S:RSYLTPG246-	22298	AGAAGTTATTTGACTCCTGGTGGTG22298A	Lambda (C.37-like)	confirmed
+S:D253G	22320	A22320G	Iota (B.1.526-like)	alignment
+S:P337K	22571	CCT22571AAA	Sotromivab Resistance (>304-fold)	predicted
+S:P337K	22571	CCT22571AAG	Sotromivab Resistance (>304-fold)	predicted
+S:P337T	22571	C22571A	Sotromivab Resistance (10.62-fold)	predicted
+S:P337L	22572	C22572T	Sotromivab Resistance (>192-fold)	predicted
+S:P337R	22572	C22572G	Sotromivab Resistance (>192-fold)	predicted
+S:P337H	22572	C22572A	Sotromivab Resistance (5.13-fold)	predicted
+S:G339D	22578	G22578A	Omicron (Unassigned)	confirmed
 S:E340K	22580	G22580A	Sotromivab Resistance (>297-fold) - Manual Confirmation Required	confirmed
 S:E340Q	22580	G22580C	Sotromivab Resistance (>50-fold) - Manual Confirmation Required	confirmed
 S:E340A	22581	A22581C	Sotromivab Resistance (>100-fold) - Manual Confirmation Required	confirmed
-S:E340V	22581	A22581T	Sotromivab Resistance (>200-fold) - Manual Confirmation Required	theoretical
+S:E340V	22581	A22581T	Sotromivab Resistance (>200-fold) - Manual Confirmation Required	predicted
 S:E340G	22581	A22581G	Sotromivab Resistance (18.21-fold) - Manual Confirmation Required	confirmed
-S:T345P	22595	A22595C	Sotromivab Resistance (225-fold) - Manual Confirmation Required	theoretical
-S:K356T	22628	A22628C	Sotromivab Resistance (5.90-fold)	theoretical
-S:S371L	22673	TC22673CT	Sotrovimab Resistance (19-fold)	theoretical
-S:S371F	22674	C22674T	Sotrovimab Resistance (13-fold)	theoretical
-S:K444Q	22892	A22892C	Bebtelovimab Resistance (208-fold)	theoretical
-S:K444T	22893	A22893C	Bebtelovimab Resistance (>1,814-fold)	theoretical
-S:K444N	22894	G22894C	Bebtelovimab Resistance (>1,901-fold)	theoretical
-S:K444N	22894	G22894T	Bebtelovimab Resistance (>1,901-fold)	theoretical
-S:V445F	22895	G22895T	Bebtelovimab Resistance (369-fold)	theoretical
-S:V445A	22896	T22896C	Bebtelovimab Resistance (111-fold)	theoretical
-S:V445G	22896	T22896G	Bebtelovimab Resistance (>730-fold)	theoretical
-S:V445A	22896	T22896C	Bebtelovimab Resistance (111-fold)	theoretical
-S:G446R	22898	GGT22898AGG	Bebtelovimab Resistance (7-fold)	theoretical
-S:G446R	22898	GGT22898AGA	Bebtelovimab Resistance (7-fold)	theoretical
-S:G446V	22899	G22899T	Bebtelovimab Resistance (8-fold)	theoretical
-S:G446D	22899	G22899A	Bebtelovimab Resistance (69-fold)	theoretical
-S:P499S	23057	CC23057AG	Bebtelovimab Resistance (25-fold)	theoretical
-S:P499H	23058	C23058A	Bebtelovimab Resistance (>1,606-fold)	theoretical
-S:P499R	23058	C23058G	Bebtelovimab Resistance (>1,870-fold)	theoretical
+S:T345P	22595	A22595C	Sotromivab Resistance (225-fold) - Manual Confirmation Required	predicted
+S:R346K	22598	G22599A	Mu (B.1.621-like)	alignment
+S:K356T	22628	A22628C	Sotromivab Resistance (5.90-fold)	predicted
+S:V367F	22661	G22661T	A.23.1-like	alignment
+S:S371L	22673	TC22673CT	Omicron (BA.1-like), Sotrovimab Resistance (19-fold)	predicted
+S:S371F	22674	C22674T	Omicron (BA.2-like), Omicron (BA.3-like), Sotrovimab Resistance (13-fold)	confirmed
+S:S373P	22679	T22679C	Omicron (Unassigned)	confirmed
+S:S375F	22685	C22686T	Omicron (Unassigned)	confirmed
+S:T376A	22688	A22688G	Omicron (BA.2-like)	confirmed
+S:D405N	22755	G22775A	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+S:R408S	22784	A22786C	Omicron (BA.2-like)	confirmed
+S:K417T	22812	A22812C	Gamma (P.1-like)	confirmed
+S:K417N	22813	G22813T	Delta (B.1.617.2-like) +K417N, Omicron (Unassigned)	confirmed
+S:N440K	22880	T22882G	Omicron (Unassigned)	confirmed
+S:K444Q	22892	A22892C	Bebtelovimab Resistance (208-fold)	predicted
+S:K444T	22893	A22893C	Bebtelovimab Resistance (>1,814-fold)	predicted
+S:K444N	22894	G22894C	Bebtelovimab Resistance (>1,901-fold)	predicted
+S:K444N	22894	G22894T	Bebtelovimab Resistance (>1,901-fold)	predicted
+S:V445F	22895	G22895T	Bebtelovimab Resistance (369-fold)	predicted
+S:V445A	22896	T22896C	Bebtelovimab Resistance (111-fold)	predicted
+S:V445G	22896	T22896G	Bebtelovimab Resistance (>730-fold)	predicted
+S:G446R	22898	GGT22898AGG	Bebtelovimab Resistance (7-fold)	predicted
+S:G446R	22898	GGT22898AGA	Bebtelovimab Resistance (7-fold)	predicted
+S:G446S	22898	G22907A	Omicron (BA.1-like), Omicron (BA.3-like)	confirmed
+S:G446V	22899	G22899T	Bebtelovimab Resistance (8-fold)	predicted
+S:G446D	22899	G22899A	Bebtelovimab Resistance (69-fold)	predicted
+S:L452R	22917	T22917G	Epsilon (B.1.427-like), Epsilon (B.1.429-like), B.1.617.1-like, Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N, B.1.617.3-like	confirmed
+S:L452Q	22917	T22917A	Lambda (C.37-like)	alignment
+S:S477N	22992	G22992A	Iota (B.1.526-like), Omicron (Unassigned)	confirmed
+S:T478K	22995	C22995A	Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N, Omicron (Unassigned)	confirmed
+S:E484Q	23012	G23012C	B.1.617.1-like, B.1.617.3-like	alignment
+S:E484K	23012	G23012A	Beta (B.1.351-like), Zeta (P.2-like), Iota (B.1.526-like), Gamma (P.1-like), Mu (B.1.621-like), Eta (B.1.525-like), B.1.1.7-like+E484K, Theta (P.3-like), B.1.1.318-like	confirmed
+S:E484A	23012	A23013C	Omicron (Unassigned)	confirmed
+S:F490S	23031	T23031C	Lambda (C.37-like)	alignment
+S:Q493R	23039	A23040G	Omicron (Unassigned)	confirmed
+S:G496S	23048	G23048A	Omicron (BA.1-like)	confirmed
+S:Q498R	23054	A23055G	Omicron (Unassigned)	confirmed
+S:P499S	23057	CC23057AG	Bebtelovimab Resistance (25-fold)	predicted
+S:P499H	23058	C23058A	Bebtelovimab Resistance (>1,606-fold)	predicted
+S:P499R	23058	C23058G	Bebtelovimab Resistance (>1,870-fold)	predicted
+S:N501Y	23063	A23063T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K, Beta (B.1.351-like), Gamma (P.1-like), Theta (P.3-like), Mu (B.1.621-like), Omicron (Unassigned)	confirmed
+S:Y505H	23075	T23075C	Omicron (Unassigned)	confirmed
+S:T547K	23202	C23202A	Omicron (BA.1-like)	confirmed
+S:A570D	23270	C23271A	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+-	23287	T23287C	B.1.1.318-like	confirmed
+-	23341	T23341C	Theta (P.3-like)	confirmed
+S:Q613H	23401	G23401T	A.23.1-like	alignment
+S:D614G	23402	A23403G	Epsilon (B.1.427-like), Epsilon (B.1.429-like), Lambda (C.37-like), Omicron (Unassigned), Iota (B.1.526-like), Mu (B.1.621-like)	confirmed
+S:H655Y	23525	C23525T	Omicron (Unassigned)	confirmed
+S:Q677H	23593	G23593C	Eta (B.1.525-like)	alignment
+S:N679K	23597	T23599G	Omicron (Unassigned)	confirmed
+S:P681H	23604	C23604A	Alpha (B.1.1.7-like), B.1.1.7-like+E484K, Mu (B.1.621-like), Theta (P.3-like), B.1.1.318-like, Omicron (Unassigned)	confirmed
+S:P681R	23604	C23604G	B.1.617.1-like, Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N, B.1.617.3-like, A.23.1-like	confirmed
+S:A701V	23664	C23664T	Beta (B.1.351-like), Iota (B.1.526-like)	confirmed
+S:T716I	23709	C23709T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+S:N764K	23854	C23854A	Omicron (Unassigned)	confirmed
+S:D796H	23948	G23948C	B.1.1.318-like	alignment
+S:D796Y	23948	G23948T	Omicron (Unassigned)	confirmed
+S:N856K	24130	C24130A	Omicron (BA.1-like)	confirmed
+S:T859N	24137	C24138A	Lambda (C.37-like)	alignment
+-	24187	T24187A	Theta (P.3-like)	confirmed
+S:F888L	24224	T24224Y	Eta (B.1.525-like)	Y????
+-	24349	T24349C	Epsilon (B.1.429-like)	confirmed
+S:D950N	24410	G24410A	Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N, B.1.617.3-like, Mu (B.1.621-like)	confirmed
+S:Q954H	24424	A24424T	Omicron (Unassigned)	confirmed
+S:Q957R	24432	A24432G	Iota (B.1.526-like)	alignment
+S:N969K	24467	T24469A	Omicron (Unassigned)	confirmed
+S:L981F	24503	C24503T	Omicron (BA.1-like)	confirmed
+S:S982A	24506	T24506G	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+S:T1027I	24641	C24642T	Gamma (P.1-like)	confirmed
+-	24748	C24748T	Eta (B.1.525-like)	confirmed
+S:E1092K	24836	G24836A	Theta (P.3-like)	alignment
+S:H1101Y	24863	C24863T	Theta (P.3-like)	alignment
+S:D1118H	24914	G24914C	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+-	25000	C25000T	Omicron (BA.1-like), Omicron (BA.2-like)	confirmed
+S:V1176F	25088	G25088T	Theta (P.3-like)	confirmed
+-	25276	C25276A	B.1.1.318-like	confirmed
+ORF3a:S26L	25469	C25469T	B.1.617.1-like, Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N	confirmed
+ORF3a:P42L	25517	C25517T	Iota (B.1.526-like)	alignment
+ORF3a:Q57H	25561	G25563T	Epsilon (B.1.427-like), Epsilon (B.1.429-like), Beta (B.1.351-like), Iota (B.1.526-like), Mu (B.1.621-like)	confirmed
+-	25584	C25584T	Omicron (BA.1-like), Omicron (BA.2-like)	confirmed
+ORF3a:S171L	25904	C25904T	Beta (B.1.351-like)	confirmed
+ORF3a:T223V	26059	AC26059GT	Omicron (BA.3-like)	guess
+-	26060	C26060T	Omicron (BA.2-like)	confirmed
+E:T9I	26269	C26270T	Omicron (Unassigned)	guess
+E:L21F	26305	C26305T	Eta (B.1.525-like)	guess
+E:P71L	26455	C26456T	Beta (B.1.351-like)	alignment
+-	26492	A26492T	Mu (B.1.621-like)	confirmed
+M:D3G	26539	A26539G	Omicron (BA.1-like)	alignment
+M:Q19E	26577	C26577G	Omicron (Unassigned)	confirmed
+-	26681	C26681T	Epsilon (B.1.427-like), Epsilon (B.1.429-like)	confirmed
+M:A63T	26709	G26709A	Omicron (Unassigned)	confirmed
+M:I82T	26767	T26767C	Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N, Eta (B.1.525-like), B.1.1.318-like	confirmed
+-	26801	C26801T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+-	26858	C26858T	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+-	27259	A27259C	Omicron (Unassigned)	confirmed
+ORF6:D61L	27382	GAT27382CTC	Omicron (BA.2-like)	alignment
+-	27384	T27384C	B.1.617.3-like	confirmed
+ORF7a:V82A	27638	T27638C	B.1.617.1-like, Delta (B.1.617.2-like), B.1.617.3-like, Delta (B.1.617.2-like) +K417N	confirmed
+ORF7a:T120I	27752	C27752T	Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N	confirmed
+-	27807	C27807T	Omicron (Unassigned)	confirmed
+-	27874	C27874T	Delta (AY.4-like)	confirmed
+-	27886	AAACGAACATGAAATT27886A	B.1.1.318-like	alignment
+-	27890	G27890T	Epsilon (B.1.429-like)	confirmed
+ORF8:K2Q	27897	A27897C	Theta (P.3-like)	alignment
+ORF8:T11K	27924	C27925A	Mu (B.1.621-like)	alignment
+ORF8:T11I	27925	C27925T	Iota (B.1.526-like)	alignment
+ORF8:T26I	27969	C27970T	B.1.617.3-like	alignment
+ORF8:Q27*	27972	C27972T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	alignment
+ORF8:P38S	28005	C28005T	Mu (B.1.621-like)	alignment
+ORF8:R52I	28048	G28048T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+-	28070	TA28270T	Delta (AY.4-like), Iota (B.1.526-like)	confirmed
+ORF8:S67F	28093	C28093T	Mu (B.1.621-like)	alignment
+ORF8:Y73C	28111	A28111G	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	alignment
+ORF8:L84S	28143	T28144C	A.23.1-like	confirmed
+ORF8:E92K	28167	G28167A	Gamma (P.1-like), A.23.1-like	confirmed
+ORF8:E106*	28209	G28209T	B.1.1.318-like	alignment
+-	28247	AGATTTC28247A	Delta (AY.4-like)	confirmed
+-	28253	C28253T	Zeta (P.2-like)	confirmed
+-	28262	GAACA28262G	Gamma (P.1-like)	alignment
+-	28271	A28271G	B.1.1.318-like	confirmed
+-	28271	A28271T	Omicron (Unassigned)	confirmed
+-	28272	A28272T	Epsilon (B.1.427-like), Epsilon (B.1.429-like), Mu (B.1.621-like)	confirmed
+N:D3L	28280	GAT28280CTA	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	alignment
+N:P13L	28311	T28311C	Iota (B.1.526-like)	confirmed
+-	28362	GGAGAACGCA28361G	Omicron (Unassigned)	confirmed
+N:D63G	28461	A28461G	Delta (B.1.617.2-like), Delta (B.1.617.2-like) +K417N	confirmed
+N:P67S	28472	C28472T	B.1.617.3-like	alignment
+N:P80R	28512	C28512G	Gamma (P.1-like)	confirmed
+N:A119S	28628	G28628T	Zeta (P.2-like)	alignment
+-	28699	A28699G	Eta (B.1.525-like)	confirmed
+N:P199L	28868	C28869T	Iota (B.1.526-like)	guess
+N:S202N	28877	G28878A	A.23.1-like	alignment
+N:S202R	28879	T28879G	Iota (B.1.526-like)	alignment
+N:R203M	28880	G28881T	B.1.617.1-like, Delta (B.1.617.2-like), B.1.617.3-like, Delta (B.1.617.2-like) +K417N	confirmed
+N:R203K	28881	G28881A	Omicron (Unassigned), Lambda (C.37-like)	confirmed
+N:G204R	28883	G28883C	Lambda (C.37-like), Zeta (P.2-like)	confirmed
+N:T205I	28887	C28887T	Epsilon (B.1.427-like), Epsilon (B.1.429-like), Beta (B.1.351-like), Mu (B.1.621-like)	confirmed
+-	28895	GCTA28895G	B.1.1.318-like	alignment
+N:G214C	28913	G28913T	Lambda (C.37-like)	alignment
+N:G215C	28916	G28916T	Delta (AY.4-like)	confirmed
+N:M234I	28973	G28975T	Zeta (P.2-like), Iota (B.1.526-like)	alignment
+N:S235F	28976	C28977T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
+N:D377Y	29402	G29402T	Delta (B.1.617.2-like), B.1.617.3-like, Delta (B.1.617.2-like) +K417N	confirmed
+N:S413R	29510	A29510C	Omicron (BA.2-like), Omicron (BA.3-like)	confirmed
+-	29543	G29543T	Eta (B.1.525-like)	confirmed
+-	29742	G29742T	Delta (AY.4-like)	confirmed
