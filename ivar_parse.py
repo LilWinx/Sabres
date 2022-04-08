@@ -5,11 +5,13 @@ import pangolin_parse as pp
 
 ignored_columns = ['REGION', 'REF_DP', 'REF_RV', 'REF_QUAL', 'ALT_RV', 'ALT_QUAL', 'GFF_FEATURE', 'REF_CODON', 'ALT_CODON', 'PVAL', 'PASS']
 neworder_ivar_pango = ['Filename', 'Lineage', 'REF', 'POS', 'ALT', 'REFPOSALT', 'TOTAL_DP', 'ALT_FREQ', 'REF_AA', 'ALT_AA', 'SNS', 'Protein', 'Interest', 'Note']
+neworder_ivar = ['REF', 'POS', 'ALT', 'REFPOSALT', 'TOTAL_DP', 'ALT_FREQ', 'REF_AA', 'ALT_AA', 'SNS', 'Protein', 'Interest', 'Note']
 choices = ('N/A', 'S')
 drop_columns = ['Nucleotide', 'Mutation']
 pd.set_option('display.max_rows', None)
 
 def file2df(file):
+    print("Reading File:", file)
     return pd.read_csv(file, sep ='\t', header = 0)
 
 def data_setup(file):
@@ -60,7 +62,8 @@ def generate_snpprofile_xpango(file, database, outfile):
     # print as separate file for easy manual checking.
     snpprofile = resistance_addition(file, database)
     snpprofile.drop(drop_columns, axis = 1, inplace = True)
-    snpprofile.to_csv(outfile, sep='\t', index = False)
+    snp_csv = snpprofile.reindex(columns=neworder_ivar)
+    snp_csv.to_csv(outfile, sep='\t', index = False)
     
     #send to pull_resistance
     return snpprofile

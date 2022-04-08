@@ -14,7 +14,7 @@ and the curated database collated by Stanford https://covdb.stanford.edu/page/su
 The full database contains mutations against the following drugs:
 |Brand Name|Drug Name|Agency Approval|Citation|Notes|
 |----------|---------|---------------|--------|-----|
-|Veklury|Remdesivir|FDA and TGA approved|10.1371/journal.ppat.1009929||\-|
+|Veklury|Remdesivir|FDA and TGA approved|10.1371/journal.ppat.1009929, 10.1038/s41467-022-29104-y||\-|
 |Xevudy|Sotromivab|FDA and TGA approved|10.1056/NEJMc2120219|\-|
 |Evusheld|Tixagevimab and Cilgavimab|FDA and TGA approved|\-|\-|
 |Paxlovid|Nirmatrelvir and Ritonavir|FDA and TGA approved|\-|\-|
