@@ -56,7 +56,7 @@ def varscan_pango(file, database, pango):
         return varscan_df
     varscan_df['Filename'] = os.path.splitext(os.path.basename(file))[0]
     varscan_df['Filename'] = varscan_df['Filename'].str.replace(".varscan.snps","", regex = True)
-    varscan_df['Lineage'] = varscan_df['Filename'].map(pango_df.set_index('name')['Lineage']).fillna('-')
+    varscan_df['Lineage'] = varscan_df['Filename'].map(pango_df.drop_duplicates(subset=['name'], keep='first').set_index('name')['Lineage']).fillna('-')
     varscan_df.drop(drop_columns, axis = 1, inplace = True)
     pango_res_clean=varscan_df.reindex(columns=neworder_varscan_pango)
     return pango_res_clean

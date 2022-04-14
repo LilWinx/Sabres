@@ -17,12 +17,11 @@ def data_setup(pango_data):
                     last_line = lineage_csv.readlines()[-1]
                     pango_line += last_line
                     combined_csv.write(pango_line)
-        return pango_line
 
 def lineage_addition(pango_data):
-    lineage_df = pd.read_csv(StringIO(data_setup(pango_data)), sep=',', header = None)
+    pangolin_data = os.path.join(pango_data, 'pangolin_lineage.csv')
+    lineage_df = pd.read_csv(pangolin_data, sep=',', header = None)
     filt_lin_df = lineage_df.iloc[:, [0,1]]
     filt_lin_df.columns = ['name', 'Lineage']
     filt_lin_df['name'] = filt_lin_df['name'].str.replace("_ivar","") #this wont work for everyone as only my lab adds _ivar to file names, prior to pangolin
     return filt_lin_df
-

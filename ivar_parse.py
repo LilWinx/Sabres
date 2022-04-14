@@ -44,7 +44,7 @@ def ivar_pango(file, database, pango):
     ivar_df['Filename'] = os.path.splitext(os.path.basename(file))[0]
     str_rm = '|'.join(['_t01', '_q20t01'])
     ivar_df['Filename'] = ivar_df['Filename'].str.replace(str_rm, '') #this wont work for everyone as only my lab adds _ivar to file names, prior to pangolin
-    ivar_df['Lineage'] = ivar_df['Filename'].map(pango_df.set_index('name')['Lineage']).fillna('-')
+    ivar_df['Lineage'] = ivar_df['Filename'].map(pango_df.drop_duplicates(subset=['name'], keep='first').set_index('name')['Lineage']).fillna('-')
     ivar_df.drop(drop_columns, axis = 1, inplace = True)
     pango_res_clean = ivar_df.reindex(columns=neworder_ivar_pango)
     return pango_res_clean

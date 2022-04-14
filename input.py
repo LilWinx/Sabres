@@ -1,6 +1,7 @@
 import sys
 import os
 import pull_resistance
+import pangolin_parse
 import argparse
 import pandas as pd
 
@@ -18,7 +19,11 @@ is_lineage = bool(args['lineage'] != None)
 db_selection = full_database if args['full'] else database
 
 output_csvs= []
-
+if is_lineage:
+    pango = os.path.join(args['lineage'])
+    pango_data = pangolin_parse.data_setup(pango)
+    print("Pangolin Lineage file successfully generated")
+    
 for file in os.listdir(args['input']):
     filename = os.path.join(args['input'], os.fsdecode(file))
     outfile = os.path.join(args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile')
