@@ -1,5 +1,6 @@
-import sys
+import datetime
 import os
+from time import time
 import pull_resistance
 import pangolin_parse
 import argparse
@@ -14,6 +15,8 @@ args = vars(parser.parse_args())
 dirname = os.path.dirname(__file__)
 database = os.path.join(dirname, "database/resistance_markers.txt")
 full_database = os.path.join(dirname, "database/full_resistance_markers.txt")
+now = datetime.datetime.now()
+time_log = now.strftime("%Y-%m-%d %H:%M:%S")
 
 is_lineage = bool(args['lineage'] != None)
 db_selection = full_database if args['full'] else database
@@ -22,7 +25,7 @@ output_csvs= []
 if is_lineage:
     pango = os.path.join(args['lineage'])
     pango_data = pangolin_parse.data_setup(pango)
-    print("Pangolin Lineage file successfully generated")
+    print(f"{time_log}: Pangolin Lineage file successfully generated")
     
 for file in os.listdir(args['input']):
     filename = os.path.join(args['input'], os.fsdecode(file))

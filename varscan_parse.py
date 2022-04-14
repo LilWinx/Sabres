@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from io import StringIO
 import pangolin_parse as pp
+import datetime
 
 pd.set_option('display.max_rows', None)
 drop_columns_pango= ['Nucleotide', 'Mutation', 'name']
@@ -20,7 +21,9 @@ def file_cleanup(file):
         return oneline
 
 def file2df(file):
-    print("Reading File:", file)
+    now = datetime.datetime.now()
+    time_log = now.strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{time_log}: Reading File - {file}")
     return pd.read_csv(StringIO(file_cleanup(file)), sep='\t', header = 0)
 
 def data_setup(file):

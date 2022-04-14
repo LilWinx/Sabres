@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 import pangolin_parse as pp
+import datetime
 
 ignored_columns = ['REGION', 'REF_DP', 'REF_RV', 'REF_QUAL', 'ALT_RV', 'ALT_QUAL', 'GFF_FEATURE', 'REF_CODON', 'ALT_CODON', 'PVAL', 'PASS']
 neworder_ivar_pango = ['Filename', 'Lineage', 'REF', 'POS', 'ALT', 'REFPOSALT', 'TOTAL_DP', 'ALT_FREQ', 'REF_AA', 'ALT_AA', 'SNS', 'Protein', 'Interest', 'Note']
@@ -11,7 +12,9 @@ drop_columns = ['Nucleotide', 'Mutation']
 pd.set_option('display.max_rows', None)
 
 def file2df(file):
-    print("Reading File:", file)
+    now = datetime.datetime.now()
+    time_log = now.strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{time_log}: Reading File - {file}")
     return pd.read_csv(file, sep ='\t', header = 0)
 
 def data_setup(file):
