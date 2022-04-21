@@ -100,8 +100,8 @@ ORF1b:P314L	14407	C14408T	Eta (B.1.525-like), Lambda (C.37-like), Iota (B.1.526-
 -	14676	C14676T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
 NSP12:F480L	14879	T14879A	Remdesivir Resistance (6-fold)	predicted
 NSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	predicted
-NSP12:V557L	15110	G15110C	Remdesivir Resistance (6-fold)	predicted
-NSP12:V557L	15110	G15110T	Remdesivir Resistance (6-fold)	predicted
+NSP12:V557L	15109	G15109C	Remdesivir Resistance (6-fold)	predicted
+NSP12:V557L	15109	G15109T	Remdesivir Resistance (6-fold)	predicted
 NSP12:V557I	15109	G15109A	Molnupiravir Resistance (2-fold)	predicted
 -	15240	C15240T	Omicron (BA.1-like)	confirmed
 -	15279	C15279T	Alpha (B.1.1.7-like), B.1.1.7-like+E484K	confirmed
