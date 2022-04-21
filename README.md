@@ -1,4 +1,4 @@
-# covid_res
+# Sabres
 
 A simple tool that scans VCF files for SARS-CoV-2 Antiviral Resistance
 
@@ -72,3 +72,7 @@ A useful script would be
 cp **/*.tsv >> [New Folder]
 ```
 
+## Nomenclature
+(S)ARS-CoV-2 (A)ntimicro(B)ial (RES)istance 
+
+We promise we didn't fat finger the B instead of the V
