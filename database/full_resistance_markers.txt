@@ -174,6 +174,8 @@ S:E340Q	22580	G22580C	Sotromivab Resistance (>50-fold) - Manual Confirmation Req
 S:E340A	22581	A22581C	Sotromivab Resistance (>100-fold) - Manual Confirmation Required	confirmed
 S:E340G	22581	A22581G	Sotromivab Resistance (18.21-fold) - Manual Confirmation Required	confirmed
 S:E340V	22581	A22581T	Sotromivab Resistance (>200-fold) - Manual Confirmation Required	predicted
+S:E340D	22582	A22582C	Sotromivab Resistance (Unknown Fold Change)	predicted
+S:E340D	22582	A22582T	Sotromivab Resistance (Unknown Fold Change)	predicted
 S:T345P	22595	A22595C	Sotromivab Resistance (225-fold) - Manual Confirmation Required	predicted
 S:R346K	22598	G22599A	Mu (B.1.621-like)	alignment
 S:R346I	22599	G22599T	Cilgavimab (EVUSHELD) Resistance (>200-fold)	predicted
