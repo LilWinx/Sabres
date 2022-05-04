@@ -99,6 +99,7 @@ ORF1a:I4205V	12878	A12878G	Epsilon (B.1.429)	alignment
 -	13860	C13860T	Gamma (P.1)	confirmed
 ORF1b:P314L	14407	C14408T	Eta (B.1.525), Lambda (C.37), Iota (B.1.526), Mu (B.1.621), Delta (AY.4), Omicron (Unassigned)	NSP12:P323F
 -	14676	C14676T	Alpha (B.1.1.7), B.1.1.7+E484K	confirmed
+NSP12:A97V	13730	C13730T	Remdesivir Resistance (20-fold)	predicted
 NSP12:F480L	14879	T14879A	Remdesivir Resistance (6-fold)	predicted
 NSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	predicted
 NSP12:V557L	15109	G15109C	Remdesivir Resistance (6-fold)	predicted
