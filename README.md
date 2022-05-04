@@ -22,7 +22,7 @@ The full database contains mutations against the following drugs:
 |Evusheld|Tixagevimab and Cilgavimab|FDA and TGA approved|\-|Not in Full Database|
 |Regikrona|Regdanvimab|FDA and TGA approved|\-|Not in Full Database|
 |\-|Bamlanivimab and Etesevimab|FDA and TGA approved|\-|Not in Full Database|
-|Regen-Cov|Casirivimab and Imdevimab|FDA and TGA approved|\-|Not in Full Database|
+|Ronapreve|Casirivimab and Imdevimab|FDA and TGA approved|\-|Not in Full Database|
 
 Database Date: 22nd April 2022
 
