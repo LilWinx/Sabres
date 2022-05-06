@@ -19,10 +19,10 @@ The full database contains mutations against the following drugs:
 |\-|Bebtelovimab|FDA Only|\-|\-|
 |Paxlovid|Nirmatrelvir and Ritonavir|FDA and TGA approved|\-|\-|
 |Lagevrio|Molnupiravir|FDA and TGA approved|10.1128/JVI.01348-19|\-|
-|Evusheld|Tixagevimab and Cilgavimab|FDA and TGA approved|\-|Not in Full Database|
-|Regikrona|Regdanvimab|FDA and TGA approved|\-|Not in Full Database|
-|\-|Bamlanivimab and Etesevimab|FDA and TGA approved|\-|Not in Full Database|
-|Ronapreve|Casirivimab and Imdevimab|FDA and TGA approved|\-|Not in Full Database|
+|Evusheld|Tixagevimab and Cilgavimab|FDA and TGA approved|\-|Not in default database|
+|Regikrona|Regdanvimab|FDA and TGA approved|\-|Not in default database|
+|\-|Bamlanivimab and Etesevimab|FDA and TGA approved|\-|Not in default database|
+|Ronapreve|Casirivimab and Imdevimab|FDA and TGA approved|\-|Not in default database|
 
 Database Date: 22nd April 2022
 
