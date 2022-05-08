@@ -38,15 +38,15 @@ neworder_varscan = [
     'Note'
 ]
 
-def format_resistance(filename, data):
+def format_resistance(data, vcall):
     """
     cleaning up the lines containing resistance markers
     """
-    if filename.endswith(".tsv"):
+    if vcall == "ivar":
         data = data.reindex(
             columns=neworder_ivar
         ).fillna("-")
-    elif filename.endswith(".vcf"):
+    elif vcall == "varscan":
         data = data.reindex(
             columns=neworder_varscan
         ).fillna("-")
@@ -54,44 +54,44 @@ def format_resistance(filename, data):
         data = data[data['Interest'].str.contains('Resistance')]
         return data
 
-def get_res_xpango(filename, database, outfile):
+def get_res_xpango(filename, database, outfile, vcall):
     """
     Checks filetypes and raises exceptions if filetype is incompatible
     """
-    if filename.endswith(".tsv"):
+    if vcall == "ivar":
         res_xpango_df = pd.DataFrame(
             ivar_parse.generate_snpprofile_xpango(
                 filename, database, outfile
             )
         )
-    elif filename.endswith(".vcf"):
+    elif vcall == "varscan":
         res_xpango_df = pd.DataFrame(
             varscan_parse.generate_snpprofile_xpango(
                 filename, database, outfile
             )
         )
     else:
-        raise Exception ("Incompatible Filetype")
+        raise Exception ("Incompatible Variant Caller")
     res_xpango_df['Filename'] = os.path.splitext(
         os.path.basename(
             filename
         )
     )[0]
-    return format_resistance(filename, res_xpango_df)
+    return format_resistance(res_xpango_df, vcall)
 
-def get_res_pango(filename, database, pango, outfile):
+def get_res_pango(filename, database, pango, outfile, vcall):
     """
     If --pangolin flag is used
     Checks filetypes and raises exceptions if filetype is incompatible
     """
-    if filename.endswith(".tsv"):
+    if vcall == "ivar":
         res_pango_df = ivar_parse.generate_snpprofile(
             filename, database, pango, outfile
         )
-    elif filename.endswith(".vcf"):
+    elif vcall == "varscan":
         res_pango_df = varscan_parse.generate_snpprofile(
             filename, database, pango, outfile
         )
     else:
-        raise Exception ("Incompatible Filetype")
-    return format_resistance(filename, res_pango_df)
+        raise Exception ("Incompatible Variant Caller")
+    return format_resistance(res_pango_df, vcall)
