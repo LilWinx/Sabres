@@ -71,7 +71,7 @@ def get_res_xpango(filename, database, outfile, vcall):
             )
         )
     else:
-        raise Exception ("Incompatible Variant Caller")
+        raise Exception ("Incompatible Variant Caller: " + vcall)
     res_xpango_df['Filename'] = os.path.splitext(
         os.path.basename(
             filename
@@ -93,5 +93,5 @@ def get_res_pango(filename, database, pango, outfile, vcall):
             filename, database, pango, outfile
         )
     else:
-        raise Exception ("Incompatible Variant Caller")
+        raise Exception ("Incompatible Variant Caller: " + vcall)
     return format_resistance(res_pango_df, vcall)

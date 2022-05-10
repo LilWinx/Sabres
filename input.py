@@ -14,7 +14,7 @@ import pangolin_parse
 parser = argparse.ArgumentParser(description='Sabres')
 parser.add_argument('--full', '-f', action='store_true', help='Use Full Database')
 parser.add_argument('--lineage', '-l', help = 'Add Lineage Information')
-parser.add_argument('--vcall', '-v', required=True, help = 'Specify variant caller software used')
+parser.add_argument('--vcall', '-v', choices=['ivar', 'varscan'], required=True, help = 'Specify variant caller software used')
 parser.add_argument('input', help='Input file')
 args = vars(parser.parse_args())
 
