@@ -1,4 +1,4 @@
-![alt text](https://github.com/LilWinx/Sabres/tree/main/assets/sabres_logo.png)
+![sabres_logo](https://user-images.githubusercontent.com/93765714/167744118-11e06611-6f86-47be-86c9-aeadf2c33adb.png)
 
 # SABRes
 
