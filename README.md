@@ -1,3 +1,5 @@
+![alt text](https://github.com/LilWinx/Sabres/tree/main/assets/sabres_logo.png)
+
 # SABRes
 
 A simple tool that scans VCF files for SARS-CoV-2 Antiviral Resistance
