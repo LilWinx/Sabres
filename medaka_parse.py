@@ -12,7 +12,7 @@ import medaka_cleanup as mc
 
 now = datetime.datetime.now()
 time_log = now.strftime("%Y-%m-%d %H:%M:%S")
-drop_columns = 
+drop_columns = ['Nucleotide', 'Mutation']
 pd.set_option('display.max_rows', None)
 
 def gen_per_sample_add_res(column, sample_df, database):
@@ -59,6 +59,9 @@ def generate_snpprofile_pango(file, column, sample_df, database, pango):
     ).fillna('-')
     if snpprofile.empty is True:
         return snpprofile
+    snpprofile.drop(
+        ['Nucleotide', 'Mutation', 'name', column], axis = 1, inplace = True
+    )
     snpprofile.to_csv(
             sep_outfile, sep='\t', index = False
         )
@@ -75,9 +78,12 @@ def generate_snpprofile_xpango(file, column, sample_df, database):
     snpprofile = gen_per_sample_add_res(column, sample_df, database)
     if snpprofile.empty is True:
         return snpprofile
+    snpprofile.drop(
+        ['Nucleotide', 'Mutation', column], axis = 1, inplace = True
+    )
     snpprofile.to_csv(
-            sep_outfile, sep='\t', index = False
-        )
+        sep_outfile, sep='\t', index = False
+    )
 
     print(f"{time_log}: Generating File - {column}.snpprofile")
     #send to pull_resistance

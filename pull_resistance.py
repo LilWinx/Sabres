@@ -52,6 +52,8 @@ def format_resistance(data, vcall):
         data = data.reindex(
             columns=neworder_varscan
         ).fillna("-")
+    elif vcall == "medaka":
+        data = data # for sanity sake
     if data.empty is False:
         data = data[data['Interest'].str.contains('Resistance')]
         return data
@@ -66,13 +68,13 @@ def get_res_xpango(filename, database, outfile, vcall):
                 filename, database, outfile
             )
         )
-    if vcall == "varscan":
+    elif vcall == "varscan":
         res_xpango_df = pd.DataFrame(
             varscan_parse.generate_snpprofile_xpango(
                 filename, database, outfile
             )
         )
-    if vcall == "medaka":
+    elif vcall == "medaka":
         res_xpango_df = pd.DataFrame(
             medaka_cleanup.splitting_vcf_xpango(
                 filename, database
@@ -80,11 +82,13 @@ def get_res_xpango(filename, database, outfile, vcall):
         )
     else:
         raise Exception ("Incompatible Variant Caller: " + vcall)
+    
     res_xpango_df['Filename'] = os.path.splitext(
         os.path.basename(
             filename
         )
     )[0]
+
     return format_resistance(res_xpango_df, vcall)
 
 def get_res_pango(filename, database, pango, outfile, vcall):
@@ -96,13 +100,13 @@ def get_res_pango(filename, database, pango, outfile, vcall):
         res_pango_df = ivar_parse.generate_snpprofile(
             filename, database, pango, outfile
         )
-    if vcall == "varscan":
+    elif vcall == "varscan":
         res_pango_df = varscan_parse.generate_snpprofile(
             filename, database, pango, outfile
         )
     elif vcall == "medaka":
-        res_pango_df = medaka_cleanup.generate_snpprofile(
-            filename, database, pango, outfile
+        res_pango_df = medaka_cleanup.splitting_vcf_pango(
+            filename, database, pango
         )
     else:
         raise Exception ("Incompatible Variant Caller: " + vcall)

@@ -53,7 +53,7 @@ def splitting_vcf_pango(file, database, pango):
     exploded_df['ALT'] = exploded_df['alt']
     exploded_df.drop(exploded_df.columns[len(exploded_df.columns)-1], axis=1, inplace=True)
     for column in exploded_df.columns[9:]:
-        mp.generate_snpprofile_pango(file, column, exploded_df, database, pango)
+        return mp.generate_snpprofile_pango(file, column, exploded_df, database, pango)
 
 def splitting_vcf_xpango(file, database):
     vcf_df = pd.DataFrame(file2df(file))
@@ -71,4 +71,4 @@ def splitting_vcf_xpango(file, database):
     exploded_df['ALT'] = exploded_df['alt']
     exploded_df.drop(exploded_df.columns[len(exploded_df.columns)-1], axis=1, inplace=True)
     for column in exploded_df.columns[9:]:
-        mp.generate_snpprofile_xpango(file, column, exploded_df, database)
+        return mp.generate_snpprofile_xpango(file, column, exploded_df, database)
