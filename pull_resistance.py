@@ -6,7 +6,8 @@ import os
 import pandas as pd
 import ivar_parse
 import varscan_parse
-import medaka_parse
+import medaka_cleanup
+import pangolin_parse
 
 neworder_ivar = [
     'Filename',
@@ -65,10 +66,16 @@ def get_res_xpango(filename, database, outfile, vcall):
                 filename, database, outfile
             )
         )
-    elif vcall == "varscan":
+    if vcall == "varscan":
         res_xpango_df = pd.DataFrame(
             varscan_parse.generate_snpprofile_xpango(
                 filename, database, outfile
+            )
+        )
+    if vcall == "medaka":
+        res_xpango_df = pd.DataFrame(
+            medaka_cleanup.splitting_vcf_xpango(
+                filename, database
             )
         )
     else:
@@ -94,8 +101,8 @@ def get_res_pango(filename, database, pango, outfile, vcall):
             filename, database, pango, outfile
         )
     elif vcall == "medaka":
-        res_pango_df = medaka_parse.generate_snpprofile(
-            
+        res_pango_df = medaka_cleanup.generate_snpprofile(
+            filename, database, pango, outfile
         )
     else:
         raise Exception ("Incompatible Variant Caller: " + vcall)

@@ -43,7 +43,7 @@ if is_lineage:
     print(f"{time_log}: Pangolin Lineage file successfully generated")
 
 # loop through all the files in the designated input folder
-if args['vcall'] is "ivar" or "varscan":
+if args['vcall'] is ["ivar", "varscan"]:
     for file in os.listdir(args['input']):
         filename = os.path.join(args['input'], os.fsdecode(file))
         outfile = os.path.join(
@@ -65,7 +65,7 @@ if args['vcall'] is "ivar" or "varscan":
                 )
                 if results is not None and results.empty is False:
                     output_csvs.append(results)
-elif args['vcall'] is "medaka":
+elif args['vcall'] == "medaka":
     file = os.path.join(args['input'])
     outfile = os.path.join(
         args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile'
@@ -74,14 +74,14 @@ elif args['vcall'] is "medaka":
         pango = os.path.join(
                     args['lineage']
                 )
-        results = pull_resistance.
+        results = pull_resistance.get_res_pango(file, database, pango, outfile, args['vcall'])
         if results is not None and results.empty is False:
                     output_csvs.append(results)
     else:
-        results =pull_resistance.
+        results =pull_resistance.get_res_xpango(file, database, outfile, args['vcall'])
         if results is not None and results.empty is False:
                     output_csvs.append(results)
-                    
+"""
 # generate the summary files
 res_df = pd.concat(output_csvs)
 string = res_df.to_csv(index = False, sep = '\t')
@@ -94,3 +94,4 @@ with open((args['input']) + '/resistant_isolates.txt', "w") as output:
 ## list resistant markers and the number of isolates containing that marker
 with open((args['input']) + '/summary_counts.txt', 'w') as summary:
     summary.write(counts.replace('Name: Interest, dtype: int64', ''))
+"""
