@@ -14,7 +14,7 @@ import pangolin_parse
 parser = argparse.ArgumentParser(description='Sabres')
 parser.add_argument('--full', '-f', action='store_true', help='Use Full Database')
 parser.add_argument('--lineage', '-l', help = 'Add Lineage Information')
-parser.add_argument('--vcall', '-v', choices=['ivar', 'varscan'], required=True, help = 'Specify variant caller software used')
+parser.add_argument('--vcall', '-v', choices=['ivar', 'varscan', 'medaka'], required=True, help = 'Specify variant caller software used')
 parser.add_argument('input', help='Input file')
 args = vars(parser.parse_args())
 
@@ -43,29 +43,45 @@ if is_lineage:
     print(f"{time_log}: Pangolin Lineage file successfully generated")
 
 # loop through all the files in the designated input folder
-for file in os.listdir(args['input']):
-    filename = os.path.join(args['input'], os.fsdecode(file))
+if args['vcall'] is "ivar" or "varscan":
+    for file in os.listdir(args['input']):
+        filename = os.path.join(args['input'], os.fsdecode(file))
+        outfile = os.path.join(
+            args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile'
+        )
+        if filename.endswith((".tsv", ".vcf")) and os.stat(filename).st_size != 0:
+            if is_lineage:
+                pango = os.path.join(
+                    args['lineage']
+                )
+                results = pull_resistance.get_res_pango(
+                    filename, db_selection, pango, outfile, args['vcall']
+                )
+                if results is not None and results.empty is False:
+                    output_csvs.append(results)
+            else:
+                results = pull_resistance.get_res_xpango(
+                    filename, db_selection, outfile, args['vcall']
+                )
+                if results is not None and results.empty is False:
+                    output_csvs.append(results)
+elif args['vcall'] is "medaka":
+    file = os.path.join(args['input'])
     outfile = os.path.join(
         args['input'], os.path.splitext(os.path.basename(file))[0] + '.snpprofile'
     )
-    if filename.endswith((".tsv", ".vcf")) and os.stat(filename).st_size != 0:
-        if is_lineage:
-            pango = os.path.join(
-                args['lineage']
-            )
-            results = pull_resistance.get_res_pango(
-                filename, db_selection, pango, outfile, args['vcall']
-            )
-            if results is not None and results.empty is False:
-                output_csvs.append(results)
-        else:
-            results =pull_resistance.get_res_xpango(
-                filename, db_selection, outfile, args['vcall']
-            )
-            if results is not None and results.empty is False:
-                output_csvs.append(results)
-
-
+    if is_lineage:
+        pango = os.path.join(
+                    args['lineage']
+                )
+        results = pull_resistance.
+        if results is not None and results.empty is False:
+                    output_csvs.append(results)
+    else:
+        results =pull_resistance.
+        if results is not None and results.empty is False:
+                    output_csvs.append(results)
+                    
 # generate the summary files
 res_df = pd.concat(output_csvs)
 string = res_df.to_csv(index = False, sep = '\t')
