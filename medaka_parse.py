@@ -6,11 +6,16 @@ Unfortunately, medaka does not provide frequency of the mutation, so the mutatio
 import os
 import datetime
 import pandas as pd
-import numpy as np
 from io import StringIO
+import pangolin_parse as pp
 
-file = "/Users/winx/Documents/testfile_medaka.vcf"
-outfile = "/Users/winx/Documents/testfile_medaka.snpprofile"
+#file = "/Users/winx/Documents/testfile_medaka.vcf"
+file = "C:\\Users\\Winkie\\Documents\\testfile_medaka.vcf"
+#outfile = "/Users/winx/Documents/testfile_medaka.snpprofile"
+outfile = "C:\\Users\\Winkie\\Documents\\testfile_medaka.snpprofile"
+database = "C:\\Users\\Winkie\\Documents\\full_resistance_markers.txt"
+now = datetime.datetime.now()
+time_log = now.strftime("%Y-%m-%d %H:%M:%S")
 
 pd.set_option('display.max_rows', None)
 
@@ -36,7 +41,7 @@ def file2df(file):
     print(f"{time_log}: Reading File - {file}")
     return pd.read_csv(StringIO(file_cleanup(file)), sep='\t', header = 0)
 
-def splitting_vcf(file, outfile):
+def splitting_vcf(file, database):
     vcf_df = pd.DataFrame(file2df(file))
     if vcf_df.empty:
         return vcf_df
@@ -48,16 +53,13 @@ def splitting_vcf(file, outfile):
     combined_df = pd.concat([vcf_df.iloc[:, :9], appended_data], axis = 1)
     combined_df = combined_df[combined_df.columns.drop(list(combined_df.filter(regex='_1')))]
     combined_df.columns = combined_df.columns.str.rstrip("_0")
-    combined_df.ALT = combined_df.ALT.str.split(',')
-    combined_df.explode('ALT')
-    #for column in combined_df.columns[9:]:
-    #    gen_per_sample(file, column, combined_df)
-    combined_df.to_csv(outfile, sep = '\t', index = False)
+    exploded_df = combined_df.assign(alt=combined_df.ALT.str.split(',')).explode('alt').reset_index(drop=True)
+    exploded_df['ALT'] = exploded_df['alt']
+    exploded_df.drop(exploded_df.columns[len(exploded_df.columns)-1], axis=1, inplace=True)
+    for column in exploded_df.columns[9:]:
+        generate_snpprofile_pango(file, column, exploded_df, database)
 
-def gen_per_sample(file, column, sample_df):
-    now = datetime.datetime.now()
-    time_log = now.strftime("%Y-%m-%d %H:%M:%S")
-    sep_outfile = os.path.join(os.path.dirname(file), column + '.snpprofile')
+def gen_per_sample_add_res(column, sample_df, database):
     sample_df[['DPS', 'Pool', 'DP']] = sample_df.INFO.str.split(';', expand=True)
     sample_df['DP'] = sample_df['DP'].str.replace("DP=", "")
     sample_df['Filename'] = str(column)
@@ -76,7 +78,57 @@ def gen_per_sample(file, column, sample_df):
             column
             ]
         ).fillna("-")
-    print(f"{time_log}: Generating File - {column}.snpprofile")
-    sample_data.to_csv(sep_outfile, sep = '\t', index = False)
+    if sample_data.empty is True:
+        return sample_data
+    resistance_markers = pd.read_csv(
+        database, sep='\t', header = 0
+    )
+    resdf = pd.DataFrame(resistance_markers)
+    res_merge = pd.merge(
+        sample_data, resdf, left_on='REFPOSALT', right_on='Mutation', how='left'
+    ).fillna('-')
+    return res_merge
 
-print(splitting_vcf(file, outfile))
+def generate_snpprofile_pango(file, column, sample_df, database, pango):
+    """
+    #print as separate file for easy manual checking.
+    """
+    sep_outfile = os.path.join(os.path.dirname(file), column + '.snpprofile')
+    snpprofile = gen_per_sample_add_res(column, sample_df, database)
+    pango_df = pp.lineage_addition(pango)
+    snpprofile['Lineage'] = snpprofile['Filename'].map(
+        pango_df.drop_duplicates(
+            subset=['name'], keep='first'
+        ).set_index('name')['Lineage']
+    ).fillna('-')
+    if snpprofile.empty is True:
+        return snpprofile
+    snpprofile.to_csv(
+            sep_outfile, sep='\t', index = False
+        )
+
+    print(f"{time_log}: Generating File - {column}.snpprofile")
+    #send to pull_resistance
+    return snpprofile
+
+def generate_snpprofile_xpango(file, database, outfile):
+    """
+    #print as separate file for easy manual checking.
+"""
+    snpprofile = resistance_addition(file, database)
+    if snpprofile.empty is True:
+        return snpprofile
+    snpprofile.drop(
+        drop_columns, axis = 1, inplace = True
+    )
+    snp_csv = snpprofile.reindex(
+        columns=neworder_varscan)
+    snp_csv.to_csv(
+        outfile, sep='\t', index = False
+    )
+    #send to pull_resistance
+    return snpprofile
+
+"""
+
+print(splitting_vcf(file, database))

@@ -6,6 +6,7 @@ import os
 import pandas as pd
 import ivar_parse
 import varscan_parse
+import medaka_parse
 
 neworder_ivar = [
     'Filename',
@@ -88,9 +89,13 @@ def get_res_pango(filename, database, pango, outfile, vcall):
         res_pango_df = ivar_parse.generate_snpprofile(
             filename, database, pango, outfile
         )
-    elif vcall == "varscan":
+    if vcall == "varscan":
         res_pango_df = varscan_parse.generate_snpprofile(
             filename, database, pango, outfile
+        )
+    elif vcall == "medaka":
+        res_pango_df = medaka_parse.generate_snpprofile(
+            
         )
     else:
         raise Exception ("Incompatible Variant Caller: " + vcall)
