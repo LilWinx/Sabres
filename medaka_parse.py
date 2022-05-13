@@ -5,7 +5,6 @@ Unfortunately, medaka does not provide frequency of the mutation, so the mutatio
 
 import os
 import datetime
-from random import sample
 import pandas as pd
 import numpy as np
 from io import StringIO
@@ -49,11 +48,11 @@ def splitting_vcf(file, outfile):
     combined_df = pd.concat([vcf_df.iloc[:, :9], appended_data], axis = 1)
     combined_df = combined_df[combined_df.columns.drop(list(combined_df.filter(regex='_1')))]
     combined_df.columns = combined_df.columns.str.rstrip("_0")
-    combined_df['ALT'] = combined_df['ALT'].astype(str)
-    exploded_df = combined_df.set_index(['ALT']).apply(lambda x: x.str.split(',').explode()).reset_index()
-    for column in exploded_df.columns[9:]:
-        gen_per_sample(file, column, exploded_df)
-    exploded_df.to_csv(outfile, sep = '/t', index = False)
+    combined_df.ALT = combined_df.ALT.str.split(',')
+    combined_df.explode('ALT')
+    #for column in combined_df.columns[9:]:
+    #    gen_per_sample(file, column, combined_df)
+    combined_df.to_csv(outfile, sep = '\t', index = False)
 
 def gen_per_sample(file, column, sample_df):
     now = datetime.datetime.now()
