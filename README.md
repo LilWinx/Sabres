@@ -26,7 +26,7 @@ The full database contains mutations against the following drugs:
 |\-|Bamlanivimab and Etesevimab|FDA and TGA approved|10.1056/NEJMc2119407|Not in default database|
 |Ronapreve|Casirivimab and Imdevimab|FDA and TGA approved|10.1016/j.bbrc.2021.06.016|Not in default database|
 
-Database Date: 22nd April 2022
+Database Date: 25th May 2022
 
 ## Usage
 The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains
@@ -58,6 +58,9 @@ The final column denotes whether the resistance marker has been confirmed in wil
 
 ## Dependencies
 Pandas https://pandas.pydata.org/
+
+## Future Additions
+ - Nanopore Medaka VCF capabilities
 
 ## Nomenclature
 (S)ARS-CoV-2 (A)ntimicro(B)ial (RES)istance 
