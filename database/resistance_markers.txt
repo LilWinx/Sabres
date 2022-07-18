@@ -58,6 +58,7 @@ ORF1a:T3255I	10029	C10029T	Lambda (C.37), Mu (B.1.621), Delta (AY.4), Omicron (U
 ORF1a:G3278S	10097	G10097A	Lambda (C.37), Paxlovid Resistance (4.4-fold)	NSP5:G15S - confirmed
 NSP5:T21I	10116	C10116T	B.1.1.318	alignment
 -	10198	C10198T	Omicron (BA.2, BA.4 and BA.5)	confirmed
+NSP5:L50F	10202	C10202T	Nirmatrelvir (Paxlovid) Resistance (with E166V)	predicted
 NSP5:Y54A	10214	TA10214GC	Nirmatrelvir (Paxlovid) Resistance (23.6-fold)	predicted
 ORF1ab:K3353R	10323	A10323G	Beta (B.1.351)	confirmed
 -	10447	G10447A	Omicron (BA.2, BA.3, BA.4, and BA.5)	confirmed
@@ -67,6 +68,7 @@ NSP5:F140A	10472	TT10472GC	Nirmatrelvir (Paxlovid) Resistance (39-fold)	predicte
 NSP5:S144A	10484	T10484G	Nirmatrelvir (Paxlovid) Resistance (91.9-fold)	predicted
 NSP5:H164N	10544	C10544A	Nirmatrelvir (Paxlovid) Resistance (6.4-fold)	predicted
 NSP5:E166A	10551	A10551C	Nirmatrelvir (Paxlovid) Resistance (33.4-fold)	predicted
+NSP5:E166V	10551	A10551R	Nirmatrelvir (Paxlovid) Resistance (Unknown Fold Change)
 NSP5:H172Y	10568	C10568T	Nirmatrelvir (Paxlovid) Resistance (233-fold)	predicted
 NSP5:Q189K	10619	C10619A	Nirmatrelvir (Paxlovid) Resistance (65.4-fold)	predicted
 NSP5:A194S	10634	G10634T	B.1.617.3	alignment
