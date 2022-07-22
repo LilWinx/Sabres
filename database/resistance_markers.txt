@@ -115,6 +115,7 @@ NSP12:E802D	15846	G15846T	Remdesivir Resistance (2-fold)	confirmed
 NSP12:E802D	15846	G15846C	Remdesivir Resistance (2-fold)	predicted
 NSP12:E802D	15847	A15847C	Remdesivir Resistance (2-fold)	predicted
 NSP12:E802D	15847	A15847T	Remdesivir Resistance (2-fold)	predicted
+NSP12:V792I	15814	A15814G	Remdesivir Resistance (Unknown Fold Change)	observed
 -	16176	T16176C	Alpha (B.1.1.7), B.1.1.7+E484K	confirmed
 -	16293	C16293T	B.1.617.3	confirmed
 ORF1b:P1000L	16466	C16466T	Delta (AY.4)	confirmed

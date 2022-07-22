@@ -107,6 +107,7 @@ NSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	predicted
 NSP12:V557I	15109	G15109A	Molnupiravir Resistance (2-fold)	predicted
 NSP12:V557L	15109	G15109C	Remdesivir Resistance (6-fold)	predicted
 NSP12:V557L	15109	G15109T	Remdesivir Resistance (6-fold)	predicted
+NSP12:V792I	15814	A15814G	Remdesivir Resistance (Unknown Fold Change)	observed
 -	15240	C15240T	Omicron (BA.1)	confirmed
 -	15279	C15279T	Alpha (B.1.1.7), B.1.1.7+E484K	confirmed
 ORF1b:G662S	15451	G15451A	Delta (AY.4)	confirmed
