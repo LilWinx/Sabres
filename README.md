@@ -41,7 +41,7 @@ FLAGS
 ```
 --full, -f uses the full database including drugs that no longer work for Omicron
 --lineage, -l [Folder] adds Lineage data to resistance list
---vcall, -v [options: ivar or varscan]
+--vcall, -v [options: ivar, varscan or medaka]
 ```
 
 OUTPUT
@@ -60,7 +60,7 @@ The final column denotes whether the resistance marker has been confirmed in wil
 Pandas https://pandas.pydata.org/
 
 ## Future Additions
- - Nanopore Medaka VCF capabilities
+ - Continuous updates as resistance markers are identified
 
 ## Nomenclature
 (S)ARS-CoV-2 (A)ntimicro(B)ial (RES)istance 
