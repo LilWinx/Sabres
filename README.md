@@ -28,6 +28,10 @@ The full database contains mutations against the following drugs:
 
 Database Date: 25th May 2022
 
+## How it works
+![sabres_flowchart](https://user-images.githubusercontent.com/93765714/184043283-821ca835-d72c-43ff-8609-1ea5f09b2645.png)
+
+
 ## Usage
 The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains
 Example usage
