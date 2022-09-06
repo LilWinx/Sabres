@@ -17,9 +17,14 @@ def csv_export_pull_resistance(outname, dataframe_file):
     dataframe_file.to_csv(
             sep_outfile, sep='\t', index = False
         )
+
     if dataframe_file.empty is False:
         res_data = dataframe_file[dataframe_file['Interest'].str.contains('Resistance')]
+        if res_data.empty:
+            res_data = dataframe_file[0:0]
         return res_data
+
+    return []
 
 def data_append(res_data):
     """
@@ -66,10 +71,17 @@ def format_resistance(input_file, database, vcall, pango, pango_data):
     """
     cleaning up the lines containing resistance markers
     """
+    
+    res_df= pd.DataFrame
     import_res_df = file_folder_loop(input_file, database, vcall, pango, pango_data)
-    res_df = pd.concat(import_res_df)
-    string = res_df.to_csv(index = False, sep = '\t')
-    counts = str(res_df['Interest'].value_counts())
+
+    if not import_res_df == []:
+        res_df = pd.concat(import_res_df)
+        string = res_df.to_csv(index = False, sep = '\t')
+        counts = str(res_df['Interest'].value_counts())
+    else:
+        string=""
+        counts=""
 
     ## list of all resistant isolates from the input folder
     with open((input_file) + '/resistant_isolates.txt', "w") as output:
@@ -78,4 +90,5 @@ def format_resistance(input_file, database, vcall, pango, pango_data):
     ## list resistant markers and the number of isolates containing that marker
     with open((input_file) + '/summary_counts.txt', 'w') as summary:
         summary.write(counts.replace('Name: Interest, dtype: int64', ''))
-        return res_df
+
+    return res_df
