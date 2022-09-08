@@ -15,18 +15,24 @@ def csv_export_pull_resistance(outname, dataframe_file):
     """
     generates the csv output "snpprofile" and extracts the resistant only lines
     """
-    sep_outfile = os.path.join(outname + '.snpprofile.tab')
-    dataframe_file.to_csv(
-            sep_outfile, sep='\t', index = False
-        )
+    sep_outfile = os.path.join(outname + '_snpprofile.tab')
 
     if dataframe_file.empty is False:
         res_data = dataframe_file[dataframe_file['Interest'].str.contains('Resistance')]
         if res_data.empty:
             res_data = dataframe_file[0:0]
-        return res_data
+        else:
+            ## parse the resistance strings into separate columns
+            res_parsed = res_data.apply(lambda x: split_resistance(x["Interest"]), axis=1, result_type='expand')
+            res_parsed = res_parsed.fillna("")
+            res_data = pd.concat([res_data, res_parsed], axis=1)
+    else:
+        res_data = dataframe_file[0:0]
 
-    return []
+    res_data.to_csv(
+            sep_outfile, sep='\t', index = False
+        )
+    return res_data
 
 def data_append(res_data):
     """
@@ -94,3 +100,31 @@ def format_resistance(input_file, database, vcall, pango, pango_data, outdir):
         summary.write(counts.replace('Name: Interest, dtype: int64', ''))
 
     return res_df
+
+def split_resistance(s):
+    """
+    split the resistance list string into separate columns per marker/drug
+    """
+    ret_drugs = []
+    ret_folds = []
+
+    #replace all the separation point "," with ";" for easy splitting
+    s = s.replace("), ", "); ")
+    s = s.replace(") and ", "); ")
+    s = s.replace("K, ", "K; ")
+    s = s.replace("N, ", "N; ")
+    s = s.replace("8, ", "8; ")
+    s = s.replace("7.3, ", "7.3; ")
+    s = s.replace("1, ", "1; ")
+
+    s = s.split(";")
+    for item in s:
+        drug = item.partition("Resistance (")[0].strip()
+        fold = item.partition("Resistance (")[2].partition(")")[0].strip()
+        if fold == "":
+            fold = "Y"
+        ret_drugs.append(re.sub("^and | Resistance$", "", drug))
+        ret_folds.append(fold)
+
+    ret=pd.Series(ret_folds, index=ret_drugs)
+    return ret
