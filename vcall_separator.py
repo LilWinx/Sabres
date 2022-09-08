@@ -17,6 +17,7 @@ def csv_export_pull_resistance(outname, dataframe_file):
     """
     generates the csv output "snpprofile" and extracts the resistant only lines
     """
+
     sep_outfile = os.path.join(outname + "_snpprofile.tab")
 
     if dataframe_file.empty is False:
@@ -52,9 +53,8 @@ def file_folder_loop(input_file, database, vcall, pango, pango_data, outdir):
     if vcall == "varscan":
         for file in os.listdir(input_file):
             filename = os.path.join(input_file, os.fsdecode(file))
-            outname = os.path.join(
-                outdir, input_file, os.path.splitext(os.path.basename(file))[0]
-            )
+            outname = os.path.join(outdir, file)
+
             if (
                 filename.endswith((".vcf"))
                 and os.stat(filename).st_size != 0
@@ -73,10 +73,10 @@ def file_folder_loop(input_file, database, vcall, pango, pango_data, outdir):
                 data_append(res_data)
     elif vcall == "ivar":
         for file in os.listdir(input_file):
+
             filename = os.path.join(input_file, os.fsdecode(file))
-            outname = os.path.join(
-                outdir, input_file, os.path.splitext(os.path.basename(file))[0]
-            )
+            outname = os.path.join(outdir, file)
+
             if (
                 filename.endswith((".tsv"))
                 and os.stat(filename).st_size != 0
@@ -115,11 +115,11 @@ def format_resistance(input_file, database, vcall, pango, pango_data, outdir):
         counts = ""
 
     ## list of all resistant isolates from the input folder
-    with open("%s/%s/resistant_isolates.tab" % (outdir, input_file), "w") as output:
+    with open("%s/resistant_isolates.tab"%outdir, "w") as output:
         output.write(string.replace("\r\n", "\n"))
 
     ## list resistant markers and the number of isolates containing that marker
-    with open("%s/%s/summary_counts.txt" % (outdir, input_file), "w") as summary:
+    with open("%s/summary_counts.txt"%outdir, "w") as summary:
         summary.write(counts.replace("Name: Interest, dtype: int64", ""))
 
     return res_df
