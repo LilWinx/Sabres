@@ -20,16 +20,16 @@ parser.add_argument(
     required=True,
     help="Specify variant caller software used",
 )
-parser.add_argument("--output", "-o", help="Output directory to write to")
+parser.add_argument("--outdir", "-o", help="Output directory to write to")
 parser.add_argument("input", help="Input directory or file")
 args = vars(parser.parse_args())
 
-if not args["output"]:
-    args["output"] = args["input"]
+if not args["outdir"]:
+    args["outdir"] = args["input"]
 
 print(
-    "Launching Sabres on %s files in directory %s and writing output files to directory %s"
-    % (args["vcall"], args["input"], args["output"])
+    "Launching Sabres on %s files in directory %s and writing outdir files to directory %s"
+    % (args["vcall"], args["input"], args["outdir"])
 )
 
 # database locations + time logs
@@ -55,7 +55,7 @@ if is_medaka:
         args["vcall"],
         is_lineage,
         args["lineage"],
-        args["output"],
+        args["outdir"],
     )
 
 if args["vcall"] in ["ivar", "varscan"]:
@@ -65,5 +65,5 @@ if args["vcall"] in ["ivar", "varscan"]:
         args["vcall"],
         is_lineage,
         args["lineage"],
-        args["output"],
+        args["outdir"],
     )

@@ -43,7 +43,7 @@ python input.py --vcall varscan/ivar [Path to folder with TSV or VCF files]
 FLAGS
 
 ```
---output, -o [Folder] optional folder to write output files to 
+--outdir, -o [Folder] optional folder to write output files to 
 --full, -f uses the full database including drugs that no longer work for Omicron
 --lineage, -l [Folder] adds Lineage data to resistance list
 --vcall, -v [options: ivar, varscan or medaka]
