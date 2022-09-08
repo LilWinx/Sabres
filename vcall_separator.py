@@ -5,15 +5,17 @@ samples in the script that contains resistance markers.
 
 import os
 import pandas as pd
+import regex as re
 import add_resistance as ar
 import add_lineage as al
+
 
 output_csvs= []
 def csv_export_pull_resistance(outname, dataframe_file):
     """
     generates the csv output "snpprofile" and extracts the resistant only lines
     """
-    sep_outfile = os.path.join(outname + '.snpprofile')
+    sep_outfile = os.path.join(outname + '.snpprofile.tab')
     dataframe_file.to_csv(
             sep_outfile, sep='\t', index = False
         )
@@ -33,14 +35,14 @@ def data_append(res_data):
     if res_data is not None and res_data.empty is False:
         output_csvs.append(res_data)
 
-def file_folder_loop(input_file, database, vcall, pango, pango_data):
+def file_folder_loop(input_file, database, vcall, pango, pango_data, outdir):
     """
     Loop all the varscan and ivar files
     """
     if vcall == "varscan":
         for file in os.listdir(input_file):
             filename = os.path.join(input_file, os.fsdecode(file))
-            outname = os.path.join(input_file, os.path.splitext(
+            outname = os.path.join(outdir, input_file, os.path.splitext(
                 os.path.basename(file)
             )[0])
             if filename.endswith((".vcf")) and os.stat(filename).st_size != 0 and pango is not True:
@@ -54,7 +56,7 @@ def file_folder_loop(input_file, database, vcall, pango, pango_data):
     elif vcall == "ivar":
         for file in os.listdir(input_file):
             filename = os.path.join(input_file, os.fsdecode(file))
-            outname = os.path.join(input_file, os.path.splitext(
+            outname = os.path.join(outdir, input_file, os.path.splitext(
                 os.path.basename(file)
             )[0])
             if filename.endswith((".tsv")) and os.stat(filename).st_size != 0 and pango is not True:
@@ -67,13 +69,13 @@ def file_folder_loop(input_file, database, vcall, pango, pango_data):
                 data_append(res_data)
     return output_csvs
 
-def format_resistance(input_file, database, vcall, pango, pango_data):
+def format_resistance(input_file, database, vcall, pango, pango_data, outdir):
     """
     cleaning up the lines containing resistance markers
     """
-    
+
     res_df= pd.DataFrame
-    import_res_df = file_folder_loop(input_file, database, vcall, pango, pango_data)
+    import_res_df = file_folder_loop(input_file, database, vcall, pango, pango_data, outdir)
 
     if not import_res_df == []:
         res_df = pd.concat(import_res_df)
@@ -84,11 +86,11 @@ def format_resistance(input_file, database, vcall, pango, pango_data):
         counts=""
 
     ## list of all resistant isolates from the input folder
-    with open((input_file) + '/resistant_isolates.txt', "w") as output:
+    with open( '%s/%s/resistant_isolates.tab'%(outdir, input_file), "w") as output:
         output.write(string.replace('\r\n', '\n'))
 
     ## list resistant markers and the number of isolates containing that marker
-    with open((input_file) + '/summary_counts.txt', 'w') as summary:
+    with open( '%s/%s/summary_counts.txt'%(outdir, input_file), 'w') as summary:
         summary.write(counts.replace('Name: Interest, dtype: int64', ''))
 
     return res_df

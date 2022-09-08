@@ -22,8 +22,16 @@ parser.add_argument(
         'ivar', 'varscan', 'medaka'
     ], required=True, help = 'Specify variant caller software used'
 )
-parser.add_argument('input', help='Input file')
+parser.add_argument(
+    '--output', '-o', help = 'Output directory to write to'
+)
+parser.add_argument('input', help='Input directory or file')
 args = vars(parser.parse_args())
+
+if not args['output']:
+    args['output'] = args['input']
+
+print("Launching Sabres on %s files in directory %s and writing output files to directory %s"%(args['vcall'], args['input'], args['output']))
 
 # database locations + time logs
 dirname = os.path.dirname(__file__)
@@ -48,7 +56,7 @@ if is_lineage:
     print(f"{time_log}: Pangolin Lineage file successfully generated")
 
 if is_medaka:
-    mc.format_resistance(args['input'], database, args['vcall'], is_lineage, args['lineage'])
+    mc.format_resistance(args['input'], database, args['vcall'], is_lineage, args['lineage'], args['output'])
 
 if args['vcall'] in ["ivar", "varscan"]:
-    vs.format_resistance(args['input'], database, args['vcall'], is_lineage, args['lineage'])
+    vs.format_resistance(args['input'], database, args['vcall'], is_lineage, args['lineage'], args['output'])
