@@ -5,7 +5,7 @@ samples in the script that contains resistance markers.
 
 import os
 import pandas as pd
-import regex as re
+import re
 import add_resistance as ar
 import add_lineage as al
 

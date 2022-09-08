@@ -33,7 +33,7 @@ Database Date: 25th May 2022
 
 
 ## Usage
-The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains
+The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains.
 Example usage
 
 ```
@@ -43,6 +43,7 @@ python input.py --vcall varscan/ivar [Path to folder with TSV or VCF files]
 FLAGS
 
 ```
+--output, -o [Folder] optional folder to write output files to 
 --full, -f uses the full database including drugs that no longer work for Omicron
 --lineage, -l [Folder] adds Lineage data to resistance list
 --vcall, -v [options: ivar, varscan or medaka]
@@ -50,13 +51,13 @@ FLAGS
 
 OUTPUT
 
-Displays the list SNPs associated with resistance against SARS-CoV-2 antivirals within the dataset (resistant_isolates.txt).
+Generates a list SNPs associated with resistance against SARS-CoV-2 antivirals within the dataset (resistant_isolates.txt).
 
 Counts of strains carrying the type of resistance marker (summary_counts.txt)
 
-A SNPProfile file is also generated which displays all the SNPs of the tsv in a human-readable format with accompanying resistance markers.
+A per-isolate snpprofile.tab file is also generated which displays all the per-isolate SNPs a human-readable format with any accompanying resistance markers.
 
-The final column denotes whether the resistance marker has been confirmed in wild-type virus.
+The "Note" column denotes whether the resistance marker has been confirmed in wild-type virus.
  - confirmed    observed in clinical isolates
  - theoretical  cell culture assays with the mutation demonstrate resistance
 
