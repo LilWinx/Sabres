@@ -169,23 +169,23 @@ S:D215G	22206	A22206G	Beta (B.1.351)	confirmed
 -	22280	ACTTTACTTG22280A	Beta (B.1.351)	confirmed
 S:RSYLTPG246-	22298	AGAAGTTATTTGACTCCTGGTGGTG22298A	Lambda (C.37)	confirmed
 S:D253G	22320	A22320G	Iota (B.1.526)	alignment
-S:P337K	22571	CCT22571AAA	Sotromivab Resistance (>304-fold)	predicted
-S:P337K	22571	CCT22571AAG	Sotromivab Resistance (>304-fold)	predicted
-S:P337T	22571	C22571A	Sotromivab Resistance (10.62-fold)	predicted
-S:P337L	22572	C22572T	Sotromivab Resistance (>192-fold)	predicted
-S:P337R	22572	C22572G	Sotromivab Resistance (>192-fold)	predicted
-S:P337H	22572	C22572A	Sotromivab Resistance (5.13-fold)	predicted
+S:P337K	22571	CCT22571AAA	Sotrovimab Resistance (>304-fold)	predicted
+S:P337K	22571	CCT22571AAG	Sotrovimab Resistance (>304-fold)	predicted
+S:P337T	22571	C22571A	Sotrovimab Resistance (10.62-fold)	predicted
+S:P337L	22572	C22572T	Sotrovimab Resistance (>192-fold)	predicted
+S:P337R	22572	C22572G	Sotrovimab Resistance (>192-fold)	predicted
+S:P337H	22572	C22572A	Sotrovimab Resistance (5.13-fold)	predicted
 S:G339D	22578	G22578A	Omicron (Unassigned)	confirmed
-S:E340K	22580	G22580A	Sotromivab Resistance (>297-fold) - Manual Confirmation Required	confirmed
-S:E340Q	22580	G22580C	Sotromivab Resistance (>50-fold) - Manual Confirmation Required	confirmed
-S:E340A	22581	A22581C	Sotromivab Resistance (>100-fold) - Manual Confirmation Required	confirmed
-S:E340G	22581	A22581G	Sotromivab Resistance (18.21-fold) - Manual Confirmation Required	confirmed
-S:E340V	22581	A22581T	Sotromivab Resistance (>200-fold) - Manual Confirmation Required	predicted
-S:E340D	22582	A22582C	Sotromivab Resistance (Unknown Fold Change)	predicted
-S:E340D	22582	A22582T	Sotromivab Resistance (Unknown Fold Change)	predicted
-S:T345P	22595	A22595C	Sotromivab Resistance (225-fold) - Manual Confirmation Required	predicted
+S:E340K	22580	G22580A	Sotrovimab Resistance (>297-fold) - Manual Confirmation Required	confirmed
+S:E340Q	22580	G22580C	Sotrovimab Resistance (>50-fold) - Manual Confirmation Required	confirmed
+S:E340A	22581	A22581C	Sotrovimab Resistance (>100-fold) - Manual Confirmation Required	confirmed
+S:E340G	22581	A22581G	Sotrovimab Resistance (18.21-fold) - Manual Confirmation Required	confirmed
+S:E340V	22581	A22581T	Sotrovimab Resistance (>200-fold) - Manual Confirmation Required	predicted
+S:E340D	22582	A22582C	Sotrovimab Resistance (Unknown Fold Change)	predicted
+S:E340D	22582	A22582T	Sotrovimab Resistance (Unknown Fold Change)	predicted
+S:T345P	22595	A22595C	Sotrovimab Resistance (225-fold) - Manual Confirmation Required	predicted
 S:R346K	22598	G22599A	Mu (B.1.621)	alignment
-S:K356T	22628	A22628C	Sotromivab Resistance (5.90-fold)	predicted
+S:K356T	22628	A22628C	Sotrovimab Resistance (5.90-fold)	predicted
 S:V367F	22661	G22661T	A.23.1	alignment
 S:S371L	22673	TC22673CT	Omicron (BA.1-like), Sotrovimab Resistance (19-fold)	predicted
 S:S371L	22673	TC22673CT	Omicron (BA.1)	22682 on alignment - theoretical
@@ -286,7 +286,7 @@ ORF6:D61L	27382	GAT27382CTC	Omicron (BA.2 and BA.4)	alignment
 -	27384	T27384C	B.1.617.3	confirmed
 ORF7a:V82A	27638	T27638C	B.1.617.1, Delta (B.1.617.2), B.1.617.3, Delta (B.1.617.2) +K417N	confirmed
 ORF7a:T120I	27752	C27752T	Delta (B.1.617.2), Delta (B.1.617.2) +K417N	confirmed
--	27788	G27788T	Omicron (BA.4)	
+-	27788	G27788T	Omicron (BA.4)
 -	27807	C27807T	Omicron (Unassigned)	confirmed
 -	27874	C27874T	Delta (AY.4)	confirmed
 -	27886	AAACGAACATGAAATT27886A	B.1.1.318	alignment

@@ -6,8 +6,8 @@ A simple tool that scans VCF files for SARS-CoV-2 Antiviral Resistance
 
 The tool takes an iVar (https://github.com/andersen-lab/ivar) output (.tsv) or Varscan (http://varscan.sourceforge.net/) output (.vcf) and parses it for mutations curated in our database. The output will return only the mutation that matches with mutations listed in the database
 
-There are two databases available, a filtered and a global antiviral database (--full). This is because the two dominant circulating strains Delta and Omicron inherently carry resistance markers against existing drugs. 
-The database was generated using product information sheets for each drug. e.g. 
+There are two databases available, a filtered and a global antiviral database (--full). This is because the two dominant circulating strains Delta and Omicron inherently carry resistance markers against existing drugs.
+The database was generated using product information sheets for each drug. e.g.
 https://www.pfizermedicalinformation.com/en-us/nirmatrelvir-tablets-ritonavir-tablets/clinical-pharmacology
 
 and the curated database collated by Stanford https://covdb.stanford.edu/page/susceptibility-data/
@@ -17,7 +17,7 @@ The full database contains mutations against the following drugs:
 |Brand Name|Drug Name|Agency Approval|Citation|Notes|
 |----------|---------|---------------|--------|-----|
 |Veklury|Remdesivir|FDA and TGA approved|10.1371/journal.ppat.1009929, 10.1038/s41467-022-29104-y|\-|
-|Xevudy|Sotromivab|FDA and TGA approved|10.1056/NEJMc2120219, 10.1101/2022.04.06.487325 |\-|
+|Xevudy|Sotrovimab|FDA and TGA approved|10.1056/NEJMc2120219, 10.1101/2022.04.06.487325 |\-|
 |\-|Bebtelovimab|FDA Only|10.1101/2021.04.30.442182|\-|
 |Paxlovid|Nirmatrelvir and Ritonavir|FDA and TGA approved|10.1016/j.bmcl.2022.128629|\-|
 |Lagevrio|Molnupiravir|FDA and TGA approved|10.1128/JVI.01348-19|\-|
@@ -67,6 +67,6 @@ Pandas https://pandas.pydata.org/
  - Continuous updates as resistance markers are identified
 
 ## Nomenclature
-(S)ARS-CoV-2 (A)ntimicro(B)ial (RES)istance 
+(S)ARS-CoV-2 (A)ntimicro(B)ial (RES)istance
 
 We promise we didn't fat finger the B instead of the V
