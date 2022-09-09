@@ -21,15 +21,15 @@ parser.add_argument(
     help="Specify variant caller software used",
 )
 parser.add_argument("--outdir", "-o", help="Output directory to write to")
-parser.add_argument("input", help="Input directory or file")
+parser.add_argument("--input", "-i", required=True, help="Input directory or file")
 args = vars(parser.parse_args())
 
 if not args["outdir"]:
     args["outdir"] = args["input"]
 
 print(
-    "Launching Sabres on %s files in directory %s and writing outdir files to directory %s"
-    % (args["vcall"], args["input"], args["outdir"])
+    "Launching Sabres on %s with variant caller %s and writing output files to directory %s"
+    % (args["input"], args["vcall"], args["outdir"])
 )
 
 # database locations + time logs
