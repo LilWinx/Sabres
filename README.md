@@ -43,10 +43,11 @@ python input.py --vcall varscan/ivar [Path to folder with TSV or VCF files]
 FLAGS
 
 ```
---outdir, -o [Folder] optional folder to write output files to 
+--outdir, -o [Folder] optional folder to write output files to
 --full, -f uses the full database including drugs that no longer work for Omicron
 --lineage, -l [Folder] adds Lineage data to resistance list
 --vcall, -v [options: ivar, varscan or medaka]
+--input, -i [path] path to folder or file to run on
 ```
 
 OUTPUT
@@ -58,8 +59,9 @@ Counts of strains carrying the type of resistance marker (summary_counts.txt)
 A per-isolate snpprofile.tab file is also generated which displays all the per-isolate SNPs a human-readable format with any accompanying resistance markers.
 
 The "Note" column denotes whether the resistance marker has been confirmed in wild-type virus.
- - confirmed    observed in clinical isolates
- - theoretical  cell culture assays with the mutation demonstrate resistance
+- observed  mutation has been observed in circulating SARS-CoV-2 genomes but has no in vitro results
+- predicted mutation predicted to have resistance functionaility but has not been tested or observed
+- confirmed mutation has been observed and confirmed in vitro to confer resistance
 
 ## Dependencies
 Pandas https://pandas.pydata.org/
