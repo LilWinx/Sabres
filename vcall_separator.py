@@ -32,7 +32,6 @@ def csv_export_pull_resistance(outname, dataframe_file):
             res_data = pd.concat([res_data, res_parsed], axis=1)
     else:
         res_data = dataframe_file[0:0]
-
     res_data.to_csv(sep_outfile, sep="\t", index=False)
     return res_data
 
@@ -53,19 +52,19 @@ def file_folder_loop(input, database, vcall, pango, pango_data, outdir):
     # extract the files to run on from the input path
     files = []
     if os.path.isfile(input):
-        outname = os.path.join( outdir, os.path.splitext(os.path.basename(input))[0] )
-        files.append( (input, outname) )
+        outname = os.path.join(outdir, os.path.splitext(os.path.basename(input))[0])
+        files.append((input, outname))
     elif os.path.isdir(input):
         for file in os.listdir(input):
             filename = os.path.join(input, os.fsdecode(file))
-            outname = os.path.join( outdir, os.path.splitext(os.path.basename(file))[0] )
-            files.append( (filename, outname) )
+            outname = os.path.join(outdir, os.path.splitext(os.path.basename(file))[0])
+            files.append((filename, outname))
     else:
         print("ERROR: input not a valid file or directory path.")
-
     if vcall == "varscan":
         for f in files:
-            filename=f[0]; outname=f[1]
+            filename = f[0]
+            outname = f[1]
             if (
                 filename.endswith((".vcf"))
                 and os.stat(filename).st_size != 0
@@ -82,10 +81,10 @@ def file_folder_loop(input, database, vcall, pango, pango_data, outdir):
                 varscan_file = al.add_pango(filename, database, vcall, pango_data)
                 res_data = csv_export_pull_resistance(outname, varscan_file)
                 data_append(res_data)
-
     elif vcall == "ivar":
         for f in files:
-            filename=f[0]; outname=f[1]
+            filename = f[0]
+            outname = f[1]
 
             if (
                 filename.endswith((".tsv"))
@@ -113,9 +112,7 @@ def format_resistance(input, database, vcall, pango, pango_data, outdir):
     """
 
     res_df = pd.DataFrame
-    import_res_df = file_folder_loop(
-        input, database, vcall, pango, pango_data, outdir
-    )
+    import_res_df = file_folder_loop(input, database, vcall, pango, pango_data, outdir)
 
     if not import_res_df == []:
         res_df = pd.concat(import_res_df)
@@ -124,15 +121,12 @@ def format_resistance(input, database, vcall, pango, pango_data, outdir):
     else:
         string = ""
         counts = ""
-
     ## list of all resistant isolates from the input folder
-    with open("%s/resistant_isolates.tab"%outdir, "w") as output:
+    with open("%s/resistant_isolates.tab" % outdir, "w") as output:
         output.write(string.replace("\r\n", "\n"))
-
     ## list resistant markers and the number of isolates containing that marker
-    with open("%s/summary_counts.txt"%outdir, "w") as summary:
+    with open("%s/summary_counts.txt" % outdir, "w") as summary:
         summary.write(counts.replace("Name: Interest, dtype: int64", ""))
-
     return res_df
 
 
@@ -148,9 +142,9 @@ def split_resistance(s):
     for item in s:
         drug = item.partition("Resistance (")[0].strip()
         fold = item.partition("Resistance (")[2].partition(")")[0].strip()
-        if fold == "": fold = "Y"
+        if fold == "":
+            fold = "Y"
         ret_drugs.append(drug)
         ret_folds.append(fold)
-
     ret = pd.Series(ret_folds, index=ret_drugs)
     return ret

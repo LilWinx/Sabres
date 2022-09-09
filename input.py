@@ -26,7 +26,6 @@ args = vars(parser.parse_args())
 
 if not args["outdir"]:
     args["outdir"] = args["input"]
-
 print(
     "Launching Sabres on %s with variant caller %s and writing output files to directory %s"
     % (args["input"], args["vcall"], args["outdir"])
@@ -47,7 +46,6 @@ if is_lineage:
     pango = os.path.join(args["lineage"])
     pango_data = pp.data_setup(pango)
     print(f"{time_log}: Pangolin Lineage file successfully generated")
-
 if is_medaka:
     mc.format_resistance(
         args["input"],
@@ -57,7 +55,6 @@ if is_medaka:
         args["lineage"],
         args["outdir"],
     )
-
 if args["vcall"] in ["ivar", "varscan"]:
     vs.format_resistance(
         args["input"],
