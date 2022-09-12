@@ -33,11 +33,13 @@ Database Date: 25th May 2022
 
 
 ## Usage
-The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains.
+The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains. You can provide it with either a specific file or a directory containing ivar/varscan (.tsv/.vcf) output files. 
+
+
 Example usage
 
 ```
-python input.py --vcall varscan/ivar [Path to folder with TSV or VCF files]
+python input.py --vcall varscan/ivar --input [Path to folder with TSV or VCF files]
 ```
 
 FLAGS
