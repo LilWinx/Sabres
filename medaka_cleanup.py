@@ -90,7 +90,7 @@ def format_resistance(input_file, database, vcall, pango, pango_data):
     import_res_df = file_folder_loop(input_file, database, vcall, pango, pango_data)
     res_df = pd.concat(import_res_df)
     string = res_df.to_csv(index = False, sep = '\t')
-    counts = str(res_df['Interest'].value_counts())
+    counts = str(res_df['Confers'].value_counts())
 
     ## list of all resistant isolates from the input folder
     with open(os.path.dirname(input_file) + '/resistant_isolates.txt', "w") as output:
@@ -98,5 +98,5 @@ def format_resistance(input_file, database, vcall, pango, pango_data):
 
     ## list resistant markers and the number of isolates containing that marker
     with open(os.path.dirname(input_file) + '/summary_counts.txt', 'w') as summary:
-        summary.write(counts.replace('Name: Interest, dtype: int64', ''))
+        summary.write(counts.replace('Name: Confers, dtype: int64', ''))
         return res_df

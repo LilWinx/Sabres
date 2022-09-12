@@ -21,20 +21,21 @@ parser.add_argument(
     help="Specify variant caller software used",
 )
 parser.add_argument("--outdir", "-o", help="Output directory to write to")
-parser.add_argument("--input", "-i", required=True, help="Input directory or file")
+parser.add_argument("--input", "-i", help="Input directory or file")
 args = vars(parser.parse_args())
 
 if not args["outdir"]:
     args["outdir"] = args["input"]
+
 print(
-    "Launching Sabres on %s with variant caller %s and writing output files to directory %s"
-    % (args["input"], args["vcall"], args["outdir"])
+    "Launching Sabres on %s files in directory %s and writing outdir files to directory %s"
+    % (args["vcall"], args["input"], args["outdir"])
 )
 
 # database locations + time logs
 dirname = os.path.dirname(__file__)
-database = os.path.join(dirname, "database/resistance_markers.txt")
-full_database = os.path.join(dirname, "database/full_resistance_markers.txt")
+database = os.path.join(dirname, "database/resistance_markers.tsv")
+full_database = os.path.join(dirname, "database/full_resistance_markers.tsv")
 now = datetime.datetime.now()
 time_log = now.strftime("%Y-%m-%d %H:%M:%S")
 
@@ -46,15 +47,15 @@ if is_lineage:
     pango = os.path.join(args["lineage"])
     pango_data = pp.data_setup(pango)
     print(f"{time_log}: Pangolin Lineage file successfully generated")
+
 if is_medaka:
     mc.format_resistance(
-        args["input"],
-        database,
-        args["vcall"],
+        args["input"], database, args["vcall"],
         is_lineage,
         args["lineage"],
         args["outdir"],
     )
+
 if args["vcall"] in ["ivar", "varscan"]:
     vs.format_resistance(
         args["input"],

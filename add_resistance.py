@@ -37,8 +37,8 @@ def resistance_addition(file, database, vcall, column):
     preres_df = vcall_selection(file, vcall, column)
     if preres_df.empty is True:
         return preres_df
-    
-    ## adding the interest column
+
+    ## adding the Confers column
     resistance_markers = pd.read_csv(
         database, sep='\t', header = 0
     )
@@ -49,8 +49,8 @@ def resistance_addition(file, database, vcall, column):
     res_merge.drop(drop_columns, axis = 1, inplace = True)
     remain_cols = [col for col in res_merge.columns if col not in strict_cols]
     res_clean = res_merge[strict_cols + remain_cols]
-    
-    ## adding the hotspots into the interest column
+
+    ## adding the hotspots into the Confers column
     for hotspot in hotspots:
-        res_clean.loc[(res_clean['POS'] == hotspot) & (res_clean['Interest'] == '-'), 'Interest'] = 'Nirmatrelvir (Paxlovid) Resistance Hotspot'
+        res_clean.loc[(res_clean['POS'] == hotspot) & (res_clean['Confers'] == '-'), 'Confers'] = 'Nirmatrelvir (Paxlovid) Resistance Hotspot'
     return res_clean
