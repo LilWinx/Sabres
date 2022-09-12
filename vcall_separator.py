@@ -34,7 +34,7 @@ def csv_export_pull_resistance(outname, dataframe_file):
     else:
         res_data = dataframe_file[0:0]
 
-    res_data.to_csv(sep_outfile, sep="\t", index=False)
+    dataframe_file.to_csv(sep_outfile, sep="\t", index=False) # outputs all SNPs found in the VCF for further checking of other SNPs in region.
     return res_data
 
 
