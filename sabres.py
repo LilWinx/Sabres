@@ -9,6 +9,9 @@ import pangolin_parse as pp
 import vcall_separator as vs
 import medaka_cleanup as mc
 
+
+__version__ = "1.1.0"
+
 # argparse
 parser = argparse.ArgumentParser(description="Sabres")
 parser.add_argument("--full", "-f", action="store_true", help="Use Full Database")
@@ -22,14 +25,20 @@ parser.add_argument(
 )
 parser.add_argument("--outdir", "-o", help="Output directory to write to")
 parser.add_argument("--input", "-i", help="Input directory or file")
+parser.add_argument(
+    "--version",
+    action="version",
+    help="get SABRes version",
+    version="SABRes v%s" % __version__,
+)
 args = vars(parser.parse_args())
 
 if not args["outdir"]:
     args["outdir"] = args["input"]
 
 print(
-    "Launching Sabres on %s files in directory %s and writing outdir files to directory %s"
-    % (args["vcall"], args["input"], args["outdir"])
+    "Launching Sabres v %s on %s files in directory %s and writing outdir files to directory %s"
+    % (__version__, args["vcall"], args["input"], args["outdir"])
 )
 
 # database locations + time logs
@@ -50,7 +59,9 @@ if is_lineage:
 
 if is_medaka:
     mc.format_resistance(
-        args["input"], database, args["vcall"],
+        args["input"],
+        database,
+        args["vcall"],
         is_lineage,
         args["lineage"],
         args["outdir"],
