@@ -34,7 +34,7 @@ parser.add_argument(
 args = vars(parser.parse_args())
 
 if not args["outdir"]:
-    args["outdir"] = args["input"]
+    args["outdir"] = "."
 
 print(
     "Launching Sabres v %s on %s files in directory %s and writing outdir files to directory %s"
