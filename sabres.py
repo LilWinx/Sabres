@@ -33,9 +33,12 @@ parser.add_argument(
 )
 args = vars(parser.parse_args())
 
-if not args["outdir"]:
-    args["outdir"] = "."
-
+is_medaka = bool(args["vcall"] == "medaka")  # if medaka is activated - this is true
+if not args["outdir"] and not is_medaka:
+    args["outdir"] = args['input']
+elif is_medaka:
+    args["outdir"] = os.path.dirname(args['input'])
+    
 print(
     "Launching Sabres v %s on %s files in directory %s and writing outdir files to directory %s"
     % (__version__, args["vcall"], args["input"], args["outdir"])
@@ -49,7 +52,7 @@ now = datetime.datetime.now()
 time_log = now.strftime("%Y-%m-%d %H:%M:%S")
 
 is_lineage = bool(args["lineage"] is not None)
-is_medaka = bool(args["vcall"] == "medaka")  # if medaka is activated - this is true
+
 db_selection = full_database if args["full"] else database
 
 if is_lineage:

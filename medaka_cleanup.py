@@ -59,13 +59,13 @@ def splitting_vcf(input_file):
     exploded_df.drop(exploded_df.columns[len(exploded_df.columns)-1], axis=1, inplace=True)
     return exploded_df
 
-def file_folder_loop(input_file, database, vcall, pango, pango_data):
+def file_folder_loop(input_file, database, vcall, pango, pango_data, outdir):
     """
     Loop all the samples based on column.
     """
     import_df = splitting_vcf(input_file)
     for column in import_df.columns[9:]:
-        outname = os.path.join(os.path.dirname(input_file), column)
+        outname = os.path.join(outdir, column)
         if pango is not True:
             medaka_file = ar.resistance_addition(input_file, database, vcall, column)
             res_data = vs.csv_export_pull_resistance(outname, medaka_file)
@@ -83,20 +83,20 @@ def data_append(res_data):
     if res_data is not None and res_data.empty is False:
         output_csvs.append(res_data)
 
-def format_resistance(input_file, database, vcall, pango, pango_data):
+def format_resistance(input_file, database, vcall, pango, pango_data, outdir):
     """
     cleaning up the lines containing resistance markers
     """
-    import_res_df = file_folder_loop(input_file, database, vcall, pango, pango_data)
+    import_res_df = file_folder_loop(input_file, database, vcall, pango, pango_data, outdir)
     res_df = pd.concat(import_res_df)
     string = res_df.to_csv(index = False, sep = '\t')
     counts = str(res_df['Confers'].value_counts())
 
     ## list of all resistant samples from the input folder
-    with open(os.path.dirname(input_file) + '/resistant_samples.tab', "w") as output:
-        output.write(string.replace('\r\n', '\n'))
+    with open("%s/resistant_samples.tab"%outdir, "w") as output:
+        output.write(string.replace("\r\n", "\n"))
 
     ## list resistant markers and the number of samples containing that marker
-    with open(os.path.dirname(input_file) + '/summary_counts.txt', 'w') as summary:
-        summary.write(counts.replace('Name: Confers, dtype: int64', ''))
+    with open("%s/summary_counts.txt"%outdir, "w") as summary:
+        summary.write(counts.replace("Name: Confers, dtype: int64", ""))
         return res_df

@@ -17,6 +17,7 @@ def csv_export_pull_resistance(outname, dataframe_file):
     """
     generates the csv output "snpprofile" and extracts the resistant only lines
     """
+
     sep_outfile = os.path.join(outname + "_snpprofile.tab")
 
     if dataframe_file.empty is False:
@@ -45,29 +46,15 @@ def data_append(res_data):
         output_csvs.append(res_data)
 
 
-def file_folder_loop(input, database, vcall, pango, pango_data, outdir):
+def file_folder_loop(input_file, database, vcall, pango, pango_data, outdir):
     """
     Loop all the varscan and ivar files
     """
-
-    # extract the files to run on from the input path
-    files = []
-    if os.path.isfile(input):
-        outname = os.path.join(outdir, os.path.splitext(os.path.basename(input))[0])
-        files.append((input, outname))
-
-    elif os.path.isdir(input):
-        for file in os.listdir(input):
-            filename = os.path.join(input, os.fsdecode(file))
-            outname = os.path.join(outdir, os.path.splitext(os.path.basename(file))[0])
-            files.append((filename, outname))
-    else:
-        print("ERROR: input not a valid file or directory path.")
-
     if vcall == "varscan":
-        for f in files:
-            filename = f[0]
-            outname = f[1]
+        for file in os.listdir(input_file):
+            filename = os.path.join(input_file, os.fsdecode(file))
+            outname = os.path.join(outdir, file)
+
             if (
                 filename.endswith((".vcf"))
                 and os.stat(filename).st_size != 0
@@ -85,9 +72,10 @@ def file_folder_loop(input, database, vcall, pango, pango_data, outdir):
                 res_data = csv_export_pull_resistance(outname, varscan_file)
                 data_append(res_data)
     elif vcall == "ivar":
-        for f in files:
-            filename = f[0]
-            outname = f[1]
+        for file in os.listdir(input_file):
+
+            filename = os.path.join(input_file, os.fsdecode(file))
+            outname = os.path.join(outdir, file)
 
             if (
                 filename.endswith((".tsv"))
@@ -108,14 +96,15 @@ def file_folder_loop(input, database, vcall, pango, pango_data, outdir):
     return output_csvs
 
 
-def format_resistance(input, database, vcall, pango, pango_data, outdir):
+def format_resistance(input_file, database, vcall, pango, pango_data, outdir):
     """
     cleaning up the lines containing resistance markers
     """
 
     res_df = pd.DataFrame
-    import_res_df = file_folder_loop(input, database, vcall, pango, pango_data, outdir)
-
+    import_res_df = file_folder_loop(
+        input_file, database, vcall, pango, pango_data, outdir
+    )
     if not import_res_df == []:
         res_df = pd.concat(import_res_df)
         string = res_df.to_csv(index=False, sep="\t")
@@ -125,11 +114,11 @@ def format_resistance(input, database, vcall, pango, pango_data, outdir):
         counts = ""
 
     ## list of all resistant samples from the input folder
-    with open("%s/resistant_samples.tab" % outdir, "w") as output:
+    with open("%s/resistant_samples.tab"%outdir, "w") as output:
         output.write(string.replace("\r\n", "\n"))
 
     ## list resistant markers and the number of samples containing that marker
-    with open("%s/summary_counts.txt" % outdir, "w") as summary:
+    with open("%s/summary_counts.txt"%outdir, "w") as summary:
         summary.write(counts.replace("Name: Confers, dtype: int64", ""))
 
     return res_df
@@ -142,13 +131,22 @@ def split_resistance(s):
     ret_drugs = []
     ret_folds = []
 
+    # replace all the separation point "," with ";" for easy splitting
+    s = s.replace("), ", "); ")
+    s = s.replace(") and ", "); ")
+    s = s.replace("K, ", "K; ")
+    s = s.replace("N, ", "N; ")
+    s = s.replace("8, ", "8; ")
+    s = s.replace("7.3, ", "7.3; ")
+    s = s.replace("1, ", "1; ")
+
     s = s.split(";")
     for item in s:
         drug = item.partition("Resistance (")[0].strip()
         fold = item.partition("Resistance (")[2].partition(")")[0].strip()
         if fold == "":
             fold = "Y"
-        ret_drugs.append(drug)
+        ret_drugs.append(re.sub("^and | Resistance$", "", drug))
         ret_folds.append(fold)
 
     ret = pd.Series(ret_folds, index=ret_drugs)

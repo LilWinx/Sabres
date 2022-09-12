@@ -62,7 +62,7 @@ A per-sample snpprofile.tab file is also generated which displays all the per-is
 
 The "Evidence" column denotes whether the resistance marker has been confirmed to confer resistance:
 - *observed*  mutation has been observed in circulating SARS-CoV-2 genomes but has no _in vitro_ results
-- *predicted* mutation predicted to have resistance functionaility but has not been tested or observed in the wild
+- *predicted* mutation predicted to have resistance functionality but has not been tested or observed in the wild
 - *confirmed* mutation has been observed and confirmed in vitro to confer resistance
 - *lineage* mutation is a marker for a specific lineage
 
