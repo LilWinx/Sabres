@@ -68,16 +68,16 @@ Counts of strains carrying the each resistance marker (summary_counts.txt)
 A per-sample snpprofile.tab file is also generated which displays all the per-isolate SNPs a human-readable format with any accompanying resistance markers.
 
 The "Evidence" column denotes whether the resistance marker has been confirmed to confer resistance:
-- *observed*  mutation has been observed in circulating SARS-CoV-2 genomes but has no _in vitro_ results
-- *predicted* mutation predicted to have resistance functionality but has not been tested or observed in the wild
-- *confirmed* mutation has been observed and confirmed in vitro to confer resistance
+- *High*  mutation has been confirmed to confer resistance using _in vitro_ studies using live SARS-CoV-2 virus
+- *Moderate* mutation has either been observed in genomes or reported in case studies but has no in vitro evidence to support.
+- *Low*mutation has been predicted in in vitro pseudovirus studies, however, there have been no in vitro studies confirming its conferral to SARS-CoV-2 resistance
 - *lineage* mutation is a marker for a specific lineage
 
 ## Dependencies
 Pandas https://pandas.pydata.org/
 
 ## Future Additions
- - Add Shiver and LoFreq to input types
+ - Add Shiver, FAtoVCF and LoFreq to input types
  - Continuous updates as resistance markers are identified
 
 ## Nomenclature

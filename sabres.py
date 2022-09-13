@@ -71,7 +71,7 @@ if is_lineage:
 if args["vcall"] == "medaka":
     mc.format_resistance(
         args["input"],
-        database,
+        db_selection,
         args["vcall"],
         is_lineage,
         args["lineage"],
@@ -81,7 +81,7 @@ if args["vcall"] == "medaka":
 if args["vcall"] in ["ivar", "varscan"]:
     vs.format_resistance(
         args["input"],
-        database,
+        db_selection,
         args["vcall"],
         is_lineage,
         args["lineage"],
