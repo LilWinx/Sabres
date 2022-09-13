@@ -70,6 +70,7 @@ The "Evidence" column denotes whether the resistance marker has been confirmed t
 Pandas https://pandas.pydata.org/
 
 ## Future Additions
+ - Add Shiver and LoFreq to input types
  - Continuous updates as resistance markers are identified
 
 ## Nomenclature
