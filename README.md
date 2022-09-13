@@ -49,8 +49,15 @@ FLAGS
 --full, -f uses the full database including drugs that no longer work for Omicron
 --lineage, -l [Folder] adds Lineage data to resistance list
 --vcall, -v [options: ivar, varscan or medaka]
---input, -i [path] path to folder or file to run on
+--input, -i [path] path to folder or file to run on. (must be a file if using medaka)
 ```
+
+
+An optional script "merge_sabres.py" is available for merging multiple SABRes output files (which can contain different column names based on their resistance profiles) into one table. This script can be run by generating a newline-separated text file listing all the files to merge, and running the script as:
+```
+python merge_sabres.py -i sabres_file_list.txt -o output_merged_file.tab
+```
+
 
 OUTPUT
 
