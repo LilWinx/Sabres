@@ -1,4 +1,5 @@
-![sabres_logo](https://user-images.githubusercontent.com/93765714/167744118-11e06611-6f86-47be-86c9-aeadf2c33adb.png)
+
+![sabres_logo_final_nobackg_smol](https://user-images.githubusercontent.com/93765714/190021979-66b08a76-e84d-4661-a66c-2b95781cdbb2.png)
 
 # SABRes
 
