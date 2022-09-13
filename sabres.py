@@ -4,6 +4,7 @@ Welcome to the primary script of Sabres
 
 import datetime
 import os
+import sys
 import argparse
 import pangolin_parse as pp
 import vcall_separator as vs
@@ -33,14 +34,21 @@ parser.add_argument(
 )
 args = vars(parser.parse_args())
 
-is_medaka = bool(args["vcall"] == "medaka")  # if medaka is activated - this is true
-if not args["outdir"] and not is_medaka:
-    args["outdir"] = args['input']
-elif is_medaka:
-    args["outdir"] = os.path.dirname(args['input'])
-    
+# ensure medaka input is a single file not a directory
+if args["vcall"] == "medaka" and not os.path.isfile(args["input"]):
+    print('FATAL ERROR: using --vcall "medaka" but --input is not a file.')
+    sys.exit()
+
+# if outdir wasn't specified, set outdir to dir of input file
+if not args["outdir"]:
+    indir = os.path.dirname(args["input"])
+    if indir == "":
+        args["outdir"] = "."
+    else:
+        args["outdir"] = indir
+
 print(
-    "Launching Sabres v %s on %s files in directory %s and writing outdir files to directory %s"
+    "Launching Sabres v%s with variant caller %s on %s and writing output files to directory %s"
     % (__version__, args["vcall"], args["input"], args["outdir"])
 )
 
@@ -60,7 +68,7 @@ if is_lineage:
     pango_data = pp.data_setup(pango)
     print(f"{time_log}: Pangolin Lineage file successfully generated")
 
-if is_medaka:
+if args["vcall"] == "medaka":
     mc.format_resistance(
         args["input"],
         database,
