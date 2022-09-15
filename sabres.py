@@ -1,5 +1,6 @@
 """
 Welcome to the primary script of Sabres
+Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 
 import datetime
@@ -20,7 +21,7 @@ parser.add_argument("--lineage", "-l", help="Add Lineage Information")
 parser.add_argument(
     "--vcall",
     "-v",
-    choices=["ivar", "varscan", "medaka"],
+    choices=["ivar", "varscan", "medaka", "lofreq"],
     required=True,
     help="Specify variant caller software used",
 )
@@ -78,7 +79,7 @@ if args["vcall"] == "medaka":
         args["outdir"],
     )
 
-if args["vcall"] in ["ivar", "varscan"]:
+if args["vcall"] in ["ivar", "varscan", "lofreq"]:
     vs.format_resistance(
         args["input"],
         db_selection,

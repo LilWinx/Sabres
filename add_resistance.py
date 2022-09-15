@@ -6,6 +6,7 @@ import pandas as pd
 from varscan_parse import varscan_setup
 from ivar_parse import ivar_setup
 from medaka_parse import medaka_setup
+from lofreq_parse import lofreq_setup
 
 drop_columns = ['Nucleotide', 'Mutation']
 strict_cols = ['Filename']
@@ -24,6 +25,8 @@ def vcall_selection(file, vcall, column):
         preres_df = ivar_setup(file)
     elif vcall == 'varscan':
         preres_df  = varscan_setup(file)
+    elif vcall == 'lofreq':
+        preres_df  = lofreq_setup(file)
     elif vcall == 'medaka':
         preres_df = medaka_setup(file, column)
     return preres_df
