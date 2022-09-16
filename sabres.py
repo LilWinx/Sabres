@@ -21,7 +21,7 @@ parser.add_argument("--lineage", "-l", help="Add Lineage Information")
 parser.add_argument(
     "--vcall",
     "-v",
-    choices=["ivar", "varscan", "medaka", "lofreq"],
+    choices=["ivar", "varscan", "medaka", "lofreq", "shiver"],
     required=True,
     help="Specify variant caller software used",
 )
@@ -79,7 +79,7 @@ if args["vcall"] == "medaka":
         args["outdir"],
     )
 
-if args["vcall"] in ["ivar", "varscan", "lofreq"]:
+if args["vcall"] in ["ivar", "varscan", "lofreq", "shiver"]:
     vs.format_resistance(
         args["input"],
         db_selection,

@@ -7,6 +7,7 @@ from varscan_parse import varscan_setup
 from ivar_parse import ivar_setup
 from medaka_parse import medaka_setup
 from lofreq_parse import lofreq_setup
+from shiver_parse import shiver_setup
 
 drop_columns = ['Nucleotide', 'Mutation']
 strict_cols = ['Filename']
@@ -16,7 +17,6 @@ hotspots = [
     *range(10568,10571), # covers H172
     *range(10628,10631) # covers Q192
 ]
-
 def vcall_selection(file, vcall, column):
     """
     makes the selection on what vcall was used and send to resistance_addition.
@@ -29,6 +29,8 @@ def vcall_selection(file, vcall, column):
         preres_df  = lofreq_setup(file)
     elif vcall == 'medaka':
         preres_df = medaka_setup(file, column)
+    elif vcall == 'shiver':
+        preres_df = shiver_setup(file)
     return preres_df
 
 def resistance_addition(file, database, vcall, column):
@@ -56,4 +58,6 @@ def resistance_addition(file, database, vcall, column):
     ## adding the hotspots into the Confers column
     for hotspot in hotspots:
         res_clean.loc[(res_clean['POS'] == hotspot) & (res_clean['Confers'] == '-'), 'Confers'] = 'Nirmatrelvir (Paxlovid) Resistance Hotspot'
+
+    ## adding annotation to new column at the end
     return res_clean
