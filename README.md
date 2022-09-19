@@ -5,7 +5,7 @@
 
 A simple tool that scans VCF files for SARS-CoV-2 Antiviral Resistance
 
-The tool takes output from [iVar](https://github.com/andersen-lab/ivar) (.tsv), [Varscan](http://varscan.sourceforge.net/) (.vcf), or [Medaka](https://github.com/nanoporetech/medaka) (.vcf) and parses it for mutations curated in our database as conferring antiviral resistance. 
+The tool takes output from [iVar](https://github.com/andersen-lab/ivar) (.tsv), [Varscan](http://varscan.sourceforge.net/) (.vcf), [Medaka](https://github.com/nanoporetech/medaka) (.vcf) [LoFreq](https://csb5.github.io/lofreq/) (.vcf), [Shiver](https://github.com/ChrisHIV/shiver) (.csv), [Ucsc faToVCF (from UShER)](https://anaconda.org/bioconda/ucsc-fatovcf) (.vcf) and parses it for mutations curated in our database as conferring antiviral resistance. 
 
 There are two databases available, a filtered and a global antiviral database (--full). This is because the two dominant circulating strains Delta and Omicron inherently carry resistance markers against existing drugs.
 The database was generated using product information sheets for each drug. e.g.
@@ -49,7 +49,7 @@ FLAGS
 --outdir, -o [Folder] optional folder to write output files to
 --full, -f uses the full database including drugs that no longer work for Omicron
 --lineage, -l [Folder] adds Lineage data to resistance list
---vcall, -v [options: ivar, varscan or medaka]
+--vcall, -v [options: ivar, varscan, medaka, lofreq, shiver, fatovcf]
 --input, -i [path] path to folder or file to run on. (must be a file if using medaka)
 ```
 
