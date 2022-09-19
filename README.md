@@ -71,7 +71,7 @@ A per-sample snpprofile.tab file is also generated which displays all the per-is
 The "Evidence" column denotes whether the resistance marker has been confirmed to confer resistance:
 - *High*  mutation has been confirmed to confer resistance using _in vitro_ studies using live SARS-CoV-2 virus
 - *Moderate* mutation has either been observed in genomes or reported in case studies but has no in vitro evidence to support.
-- *Low*mutation has been predicted in in vitro pseudovirus studies, however, there have been no in vitro studies confirming its conferral to SARS-CoV-2 resistance
+- *Low* mutation has been predicted in in vitro pseudovirus studies, however, there have been no in vitro studies confirming its conferral to SARS-CoV-2 resistance
 - *lineage* mutation is a marker for a specific lineage
 
 ## Dependencies
