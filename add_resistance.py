@@ -3,6 +3,7 @@ Subscript of SABres to merge the resistance database per sample
 """
 
 import pandas as pd
+from fatovcf_parse import fatovcf_setup
 from varscan_parse import varscan_setup
 from ivar_parse import ivar_setup
 from medaka_parse import medaka_setup
@@ -31,6 +32,8 @@ def vcall_selection(file, vcall, column):
         preres_df = medaka_setup(file, column)
     elif vcall == 'shiver':
         preres_df = shiver_setup(file)
+    elif vcall == 'fatovcf':
+        preres_df = fatovcf_setup(file)
     return preres_df
 
 def resistance_addition(file, database, vcall, column):

@@ -1,5 +1,5 @@
 """
-Subscript of Sabres to parse lofreq .vcf outputs for resistance detection
+Subscript of Sabres to parse shiver .vcf outputs for resistance detection
 """
 
 import os
