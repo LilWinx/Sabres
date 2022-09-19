@@ -105,6 +105,69 @@ def file_folder_loop(input, database, vcall, pango, pango_data, outdir):
                 ivar_file = al.add_pango(filename, database, vcall, pango_data)
                 res_data = csv_export_pull_resistance(outname, ivar_file)
                 data_append(res_data)
+    elif vcall == "lofreq":
+        for f in files:
+            filename = f[0]
+            outname = f[1]
+
+            if (
+                filename.endswith((".vcf"))
+                and os.stat(filename).st_size != 0
+                and pango is not True
+            ):
+                lofreq_file = ar.resistance_addition(filename, database, vcall, "None")
+                res_data = csv_export_pull_resistance(outname, lofreq_file)
+                data_append(res_data)
+            elif (
+                filename.endswith((".vcf"))
+                and os.stat(filename).st_size != 0
+                and pango is True
+            ):
+                lofreq_file = al.add_pango(filename, database, vcall, pango_data)
+                res_data = csv_export_pull_resistance(outname, lofreq_file)
+                data_append(res_data)
+    elif vcall == "shiver":
+        for f in files:
+            filename = f[0]
+            outname = f[1]
+
+            if (
+                filename.endswith((".csv"))
+                and os.stat(filename).st_size != 0
+                and pango is not True
+            ):
+                shiver_file = ar.resistance_addition(filename, database, vcall, "None")
+                res_data = csv_export_pull_resistance(outname, shiver_file)
+                data_append(res_data)
+            elif (
+                filename.endswith((".csv"))
+                and os.stat(filename).st_size != 0
+                and pango is True
+            ):
+                shiver_file = al.add_pango(filename, database, vcall, pango_data)
+                res_data = csv_export_pull_resistance(outname, shiver_file)
+                data_append(res_data)
+    elif vcall == "fatovcf":
+        for f in files:
+            filename = f[0]
+            outname = f[1]
+
+            if (
+                filename.endswith((".vcf"))
+                and os.stat(filename).st_size != 0
+                and pango is not True
+            ):
+                fatovcf_file = ar.resistance_addition(filename, database, vcall, "None")
+                res_data = csv_export_pull_resistance(outname, fatovcf_file)
+                data_append(res_data)
+            elif (
+                filename.endswith((".vcf"))
+                and os.stat(filename).st_size != 0
+                and pango is True
+            ):
+                fatovcf_file = al.add_pango(filename, database, vcall, pango_data)
+                res_data = csv_export_pull_resistance(outname, fatovcf_file)
+                data_append(res_data)
     return output_csvs
 
 
