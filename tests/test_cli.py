@@ -39,8 +39,7 @@ def test_missing_args(capsys, options, expected):
     assert expected in result
 
 @pytest.fixture()
-def out_dir():
-    OUTDIR = 'tests/outdir/'
+def out_dir(OUTDIR = 'tests/outdir/'):
     try:
         os.mkdir(OUTDIR)
     except FileExistsError:
@@ -51,13 +50,13 @@ def out_dir():
     os.rmdir(OUTDIR)
 
 
-def test_cli_ivar(capsys, out_dir, data_dir = "tests/data/"):
+def test_cli_ivar(out_dir, data_dir = "tests/data/"):
 
     main(["--vcall", "ivar", "--outdir", out_dir, "--input", data_dir])
 
     expected_files = [
-        "covid_res_test_nil.tsv_snpprofile.tab", 
-        "covid_res_test.tsv_snpprofile.tab", 
+        "covid_res_test_nil_snpprofile.tab", 
+        "covid_res_test_snpprofile.tab", 
         "resistant_samples.tab",
         "summary_counts.txt",
     ]
@@ -69,5 +68,5 @@ def test_cli_ivar(capsys, out_dir, data_dir = "tests/data/"):
         with open(data_dir + file) as f:
             expected_lines = f.readlines()
         with open(out_dir + file) as f:
-            # check file contents match 
+            # check file contents match
             assert expected_lines == f.readlines()
