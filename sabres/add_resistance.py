@@ -3,12 +3,13 @@ Subscript of SABres to merge the resistance database per sample
 """
 
 import pandas as pd
-from fatovcf_parse import fatovcf_setup
-from varscan_parse import varscan_setup
-from ivar_parse import ivar_setup
-from medaka_parse import medaka_setup
-from lofreq_parse import lofreq_setup
-from shiver_parse import shiver_setup
+
+from .parsers.fatovcf_parse import fatovcf_setup
+from .parsers.varscan_parse import varscan_setup
+from .parsers.ivar_parse import ivar_setup
+from .parsers.medaka_parse import medaka_setup
+from .parsers.lofreq_parse import lofreq_setup
+from .parsers.shiver_parse import shiver_setup
 
 drop_columns = ['Nucleotide', 'Mutation']
 strict_cols = ['Filename']

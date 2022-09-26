@@ -7,9 +7,10 @@ import datetime
 import os
 import sys
 import argparse
-import pangolin_parse as pp
-import vcall_separator as vs
-import medaka_cleanup as mc
+
+import sabres.parsers.pangolin_parse as pp
+import sabres.vcall_separator as vs
+import sabres.medaka_cleanup as mc
 
 
 __version__ = "1.1.0"

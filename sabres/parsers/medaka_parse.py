@@ -6,7 +6,7 @@ presented from this format would only show consensus level mutations.
 
 import datetime
 import pandas as pd
-import medaka_cleanup as mc
+import sabres.medaka_cleanup as mc
 
 now = datetime.datetime.now()
 time_log = now.strftime("%Y-%m-%d %H:%M:%S")

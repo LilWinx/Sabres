@@ -6,8 +6,8 @@ samples in the script that contains resistance markers.
 import os
 import pandas as pd
 import re
-import add_resistance as ar
-import add_lineage as al
+from sabres import add_resistance as ar
+import sabres.add_lineage as al
 
 
 output_csvs = []
