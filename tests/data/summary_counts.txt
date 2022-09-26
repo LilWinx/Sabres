@@ -1,0 +1,4 @@
+Nirmatrelvir (Paxlovid) Resistance (3.5-fold)    1
+Nirmatrelvir (Paxlovid) Resistance (233-fold)    1
+Sotrovimab Resistance (>192-fold)                1
+Sotrovimab Resistance (>100-fold)                1

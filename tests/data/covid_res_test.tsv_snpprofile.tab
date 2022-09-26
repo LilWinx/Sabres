@@ -1,0 +1,39 @@
+Filename	REF	POS	ALT	REFPOSALT	TOTAL_DP	ALT_FREQ	REF_AA	ALT_AA	SNS	Protein	Confers	Evidence
+covid_res_test	T	10	A	T10A	4	0.25	-	-	NS	-	-	-
+covid_res_test	T	13	A	T13A	4	0.25	-	-	NS	-	-	-
+covid_res_test	G	210	T	G210T	3895	0.999743	-	-	NS	-	-	-
+covid_res_test	C	241	T	C241T	3793	0.999736	-	-	NS	-	Epsilon (B.1.427)	lineage
+covid_res_test	G	1577	A	G1577A	3396	1.0	V	I	NS	-	-	-
+covid_res_test	G	5765	A	G5765A	796	0.330402	G	S	NS	-	-	-
+covid_res_test	G	5766	C	G5766C	811	0.325524	G	A	NS	-	-	-
+covid_res_test	C	6312	A	C6312A	445	1.0	T	K	NS	-	-	-
+covid_res_test	C	10458	T	C10458T	286	0.237762	T	I	NS	NSP5:T135I	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	observed
+covid_res_test	C	10568	T	C10568T	447	0.129754	H	Y	NS	NSP5:H172Y	Nirmatrelvir (Paxlovid) Resistance (233-fold)	observed
+covid_res_test	C	11074	+T	C11074+T	162	0.111111	-	-	NS	-	-	-
+covid_res_test	A	12413	C	A12413C	5465	0.193962	N	H	NS	-	-	-
+covid_res_test	A	12926	+C	A12926+C	7208	0.152192	-	-	NS	-	-	-
+covid_res_test	A	13482	G	A13482G	4459	1.0	V	V	S	-	-	-
+covid_res_test	C	14408	T	C14408T	2922	1.0	P	L	NS	ORF1b:P314L	Eta (B.1.525); Lambda (C.37); Iota (B.1.526); Mu (B.1.621); Delta (AY.4); Omicron (Unassigned)	lineage
+covid_res_test	G	15451	A	G15451A	4496	0.999778	G	S	NS	ORF1b:G662S	Delta (AY.4)	lineage
+covid_res_test	C	16466	T	C16466T	2964	1.0	P	L	NS	ORF1b:P1000L	Delta (AY.4)	lineage
+covid_res_test	T	18402	A	T18402A	4365	0.101489	P	P	S	-	-	-
+covid_res_test	C	18555	T	C18555T	4271	1.0	D	D	S	-	-	-
+covid_res_test	C	19220	T	C19220T	3353	0.999702	A	V	NS	ORF1b:A1918V	Delta (AY.4)	lineage
+covid_res_test	G	21372	T	G21372T	1943	0.996397	Q	H	NS	-	-	-
+covid_res_test	C	21618	G	C21618G	3622	1.0	T	R	NS	S:T19R	Delta (B.1.617.2); Delta (B.1.617.2)+K417N; B.1.617.3	lineage
+covid_res_test	C	21846	T	C21846T	2594	0.999229	T	I	NS	S:T95I	Iota (B.1.526); Mu (B.1.621); Omicron (BA.1); B.1.1.318	lineage
+covid_res_test	A	21949	C	A21949C	2418	0.13689	K	N	NS	-	-	-
+covid_res_test	G	21987	A	G21987A	1988	1.0	G	D	NS	S:G142D	Delta (B.1.617.2); Omicron (Unassigned)	lineage
+covid_res_test	G	22028	-NNNNNN	G22028-NNNNNN	2727	0.903924	-	-	NS	-	-	-
+covid_res_test	A	22029	G	A22029G	53	0.54717	E	G	NS	-	-	-
+covid_res_test	A	22034	C	A22034C	1	1.0	R	R	S	-	-	-
+covid_res_test	G	22203	+TAAAAGAGT	G22203+TAAAAGAGT	1940	0.710309	-	-	NS	-	-	-
+covid_res_test	C	22572	T	C22572T	1498	0.114152	P	L	NS	S:P337L	Sotrovimab Resistance (>192-fold)	observed
+covid_res_test	A	22581	C	A22581C	2680	1.0	E	A	NS	S:E340A	Sotrovimab Resistance (>100-fold)	confirmed
+covid_res_test	C	23595	-NNNNNNNNNNNNNNNNNNNNN	C23595-NNNNNNNNNNNNNNNNNNNNN	5737	0.637615	-	-	NS	-	-	-
+covid_res_test	A	26433	C	A26433C	2188	0.109232	K	N	NS	-	-	-
+covid_res_test	T	27910	G	T27910G	3279	0.977432	F	C	NS	-	-	-
+covid_res_test	T	28144	C	T28144C	2656	1.0	L	S	NS	ORF8:L84S	A.23.1	confirmed
+covid_res_test	C	28531	T	C28531T	2633	0.971895	Y	Y	S	-	-	-
+covid_res_test	G	29868	A	G29868A	33	0.515152	-	-	NS	-	-	-
+covid_res_test	C	29870	A	C29870A	2846	0.978215	-	-	NS	-	-	-
