@@ -26,8 +26,8 @@ def test_helpers(capsys, options, expected):
     "options,expected", 
     [
         (["--vcall"], "argument --vcall/-v: expected one argument"),
-        ([], "the following arguments are required: --vcall/-v, --outdir/-o, --input/-i"),
-        (["--vcall", "ivar"], "the following arguments are required: --outdir/-o, --input/-i"),
+        ([], "the following arguments are required: --vcall/-v, --input/-i"),
+        (["--vcall", "ivar"], "the following arguments are required: --input/-i"),
         (["--vcall", "ivar", "--outdir", 'outdir'], "the following arguments are required: --input/-i"),
 ])
 def test_missing_args(capsys, options, expected):
