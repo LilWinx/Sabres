@@ -56,24 +56,27 @@ ORF1a:L3201P	9867	T9867C	Lambda (C.37); Iota (B.1.526); Theta (P.3)	lineage
 NSP4:A446V	9891	C9891T	B.1.1.318	lineage
 ORF1a:T3255I	10029	C10029T	Lambda (C.37); Mu (B.1.621); Delta (AY.4); Omicron (Unassigned)	lineage
 ORF1a:G3278S	10097	G10097A	Lambda (C.37); Nirmatrelvir (Paxlovid) Resistance (4.4-fold)	moderate
-NSP5:T21I	10116	C10116T	B.1.1.318	lineage
+NSP5:T21I	10116	C10116T	B.1.1.318; Nirmatrelvir (Paxlovid) Resistance (83-fold with E166V); Nirmatrelvir (Paxlovid) Resistance (9.4-fold with S144A); Nirmatrelvir (Paxlovid) Resistance (15-fold with A173V & T304I)	high
 -	10198	C10198T	Omicron (BA.2, BA.4, BA.5)	lineage
-NSP5:L50F	10202	C10202T	Nirmatrelvir (Paxlovid) Resistance (with E166V)	low
+NSP5:L50F	10202	C10202T	Nirmatrelvir (Paxlovid) Resistance (53-fold with E166V)	high
 NSP5:Y54A	10214	TA10214GC	Nirmatrelvir (Paxlovid) Resistance (23.6-fold)	low
 ORF1ab:K3353R	10323	A10323G	Beta (B.1.351)	lineage
 -	10447	G10447A	Omicron (BA.2, BA.3, BA.4, BA.5)	lineage
 ORF1ab:P3395H	10448	C10449A	Omicron (Unassigned)	lineage
 NSP5:T135I	10458	C10458T	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	moderate
 NSP5:F140A	10472	TT10472GC	Nirmatrelvir (Paxlovid) Resistance (39-fold)	low
-NSP5:S144A	10484	T10484G	Nirmatrelvir (Paxlovid) Resistance (91.9-fold)	low
+NSP5:S144A	10484	T10484G	Nirmatrelvir (Paxlovid) Resistance (2.2-fold)	low
 NSP5:H164N	10544	C10544A	Nirmatrelvir (Paxlovid) Resistance (6.4-fold)	low
 NSP5:E166A	10551	A10551C	Nirmatrelvir (Paxlovid) Resistance (33.4-fold)	low
-NSP5:E166V	10551	A10551R	Nirmatrelvir (Paxlovid) Resistance (UFC)	low
+NSP5:E166V	10551	A10551R	Nirmatrelvir (Paxlovid) Resistance (100-fold)	low
 NSP5:H172Y	10568	C10568T	Nirmatrelvir (Paxlovid) Resistance (233-fold)	moderate
+NSP5:A173V	10572	C10572T	Nirmatrelvir (Paxlovid) Resistance (15-fold with T21I & T304I)	high
 NSP5:Q189K	10619	C10619A	Nirmatrelvir (Paxlovid) Resistance (65.4-fold)	moderate
 NSP5:A194S	10634	G10634T	B.1.617.3	lineage
 NSP5:D248E	10798	C10798A	Nirmatrelvir (Paxlovid) Resistance (3.7-fold)	low
 NSP5:D248E	10798	C10798G	Nirmatrelvir (Paxlovid) Resistance (3.7-fold)	low
+NSP5:P252L	10809	C10809T	Nirmatrelvir (Paxlovid) Resistance (5.9-fold)	high
+NSP5:T304I	10965	C10965T	Nirmatrelvir (Paxlovid) Resistance (5.5-fold); Nirmatrelvir (Paxlovid) Resistance (15-fold with T21I & A173V)	high
 ORF1a:T3646A	11201	A11201G	B.1.617.1; Delta (AY.4)	lineage
 NSP6:M86I	11230	G11230T	A.23.1	lineage
 -	11235	C11235T	Omicron (BA.3)	lineage
