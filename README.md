@@ -27,7 +27,7 @@ The full database contains mutations against the following drugs:
 |\-|Bamlanivimab and Etesevimab|FDA and TGA approved|10.1056/NEJMc2119407|Not in default database|
 |Ronapreve|Casirivimab and Imdevimab|FDA and TGA approved|10.1016/j.bbrc.2021.06.016|Not in default database|
 
-Database Date: 25th May 2022
+Database Date: 28th September 2022
 
 ## How it works
 ![sabres_flowchart](https://user-images.githubusercontent.com/93765714/184043283-821ca835-d72c-43ff-8609-1ea5f09b2645.png)
@@ -86,7 +86,6 @@ The "Evidence" column denotes whether the resistance marker has been confirmed t
 Pandas https://pandas.pydata.org/
 
 ## Future Additions
- - Add Shiver, FAtoVCF and LoFreq to input types
  - Continuous updates as resistance markers are identified
 
 ## Nomenclature
