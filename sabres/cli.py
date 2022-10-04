@@ -47,7 +47,7 @@ def main(args=None):
     )
     
     
-    if sys.argv[1:2] == ['merge'] or 'merge' in args:
+    if args and (sys.argv[1:2] == ['merge'] or 'merge' in args):
         args = args[1:] if args else sys.argv[2:]
         args = vars(parser_merge.parse_args(args=args))
         return merge(**args)
