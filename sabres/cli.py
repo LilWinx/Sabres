@@ -12,12 +12,22 @@ import sabres.parsers.pangolin_parse as pp
 import sabres.vcall_separator as vs
 import sabres.medaka_cleanup as mc
 
+from .merge_sabres import merge
 
 __version__ = "1.1.0"
 
 def main(args=None):
     # argparse
     parser = argparse.ArgumentParser(description="Sabres")
+
+    # merge
+    subparsers = parser.add_subparsers(dest='command')
+    parser_merge = subparsers.add_parser('merge', help='Merge a bunch of individual sabres output files into one table')
+    parser_merge.add_argument("--input", "-i", required=True, type=str, help="newline-separated list of sabres result files to merge")
+    parser_merge.add_argument("--outfile","-o", required=True, type=str, help="name of merged file to write to")
+    parser_merge.add_argument("--verbose","-v", action="store_true", help="verbose mode: print info about all files processed")
+
+    # sabres
     parser.add_argument("--full", "-f", action="store_true", help="Use Full Database")
     parser.add_argument("--lineage", "-l", help="Add Lineage Information")
     parser.add_argument(
@@ -35,8 +45,19 @@ def main(args=None):
         help="get SABRes version",
         version="SABRes v%s" % __version__,
     )
+    
+    
+    if sys.argv[1:2] == ['merge'] or 'merge' in args:
+        args = args[1:] if args else sys.argv[2:]
+        args = vars(parser_merge.parse_args(args=args))
+        return merge(**args)
+    
     args = vars(parser.parse_args(args=args))
+    
+    if args['command'] == "merge":
+        return merge(args)
 
+    
     # ensure medaka input is a single file not a directory
     if args["vcall"] == "medaka" and not os.path.isfile(args["input"]):
         print('FATAL ERROR: using --vcall "medaka" but --input is not a file.')

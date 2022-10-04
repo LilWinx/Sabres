@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from sabres.cli import main
+from sabres import merge_sabres
 import pytest
 
 
@@ -38,6 +39,7 @@ def test_missing_args(capsys, options, expected):
     result = capsys.readouterr().err
     assert expected in result
 
+
 @pytest.fixture()
 def out_dir(OUTDIR = 'tests/outdir/'):
     try:
@@ -70,3 +72,21 @@ def test_cli_ivar(out_dir, data_dir = "tests/data/"):
         with open(out_dir + file) as f:
             # check file contents match
             assert expected_lines == f.readlines()
+
+
+def test_cli_merge(out_dir, merge_file = "tests/data/merge.txt"):
+
+    output = f"{out_dir}/merge_out.csv"
+
+
+    main(["merge", "--input", merge_file, "--outfile", output])
+    # merge_sabres.merge(input=merge_file, outfile=output)
+
+    # check files exists
+    assert Path(output).exists
+    
+    with open("tests/data/merge_out.csv") as f:
+        expected_lines = f.readlines()
+    with open(output) as f:
+        # check file contents match
+        assert expected_lines == f.readlines()
