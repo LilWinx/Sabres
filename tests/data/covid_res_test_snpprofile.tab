@@ -28,7 +28,7 @@ covid_res_test	G	22028	-NNNNNN	G22028-NNNNNN	2727	0.903924	-	-	NS	-	-	-
 covid_res_test	A	22029	G	A22029G	53	0.54717	E	G	NS	-	-	-
 covid_res_test	A	22034	C	A22034C	1	1.0	R	R	S	-	-	-
 covid_res_test	G	22203	+TAAAAGAGT	G22203+TAAAAGAGT	1940	0.710309	-	-	NS	-	-	-
-covid_res_test	C	22572	T	C22572T	1498	0.114152	P	L	NS	S:P337L	Sotrovimab Resistance (>192-fold)	moderate
+covid_res_test	C	22572	T	C22572T	1498	0.114152	P	L	NS	S:P337L	Sotrovimab Resistance (>192-fold)	high
 covid_res_test	A	22581	C	A22581C	2680	1.0	E	A	NS	S:E340A	Sotrovimab Resistance (>100-fold)	high
 covid_res_test	C	23595	-NNNNNNNNNNNNNNNNNNNNN	C23595-NNNNNNNNNNNNNNNNNNNNN	5737	0.637615	-	-	NS	-	-	-
 covid_res_test	A	26433	C	A26433C	2188	0.109232	K	N	NS	-	-	-
