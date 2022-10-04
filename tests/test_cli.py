@@ -76,7 +76,7 @@ def test_cli_ivar(out_dir, data_dir = "tests/data/"):
 
 def test_cli_merge(out_dir, merge_file = "tests/data/merge.txt"):
 
-    output = f"{out_dir}/merge_out.csv"
+    output = f"{out_dir}/merge_out.tsv"
 
 
     main(["merge", "--input", merge_file, "--outfile", output])
@@ -85,7 +85,7 @@ def test_cli_merge(out_dir, merge_file = "tests/data/merge.txt"):
     # check files exists
     assert Path(output).exists
     
-    with open("tests/data/merge_out.csv") as f:
+    with open("tests/data/merge_out.tsv") as f:
         expected_lines = f.readlines()
     with open(output) as f:
         # check file contents match
