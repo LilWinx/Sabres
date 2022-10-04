@@ -32,6 +32,13 @@ Database Date: 25th May 2022
 ## How it works
 ![sabres_flowchart](https://user-images.githubusercontent.com/93765714/184043283-821ca835-d72c-43ff-8609-1ea5f09b2645.png)
 
+## Install 
+
+Install Sabres from github using `pip`.
+
+```
+pip install git+https://github.com/LilWinx/Sabres
+```
 
 ## Usage
 The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains. You can provide it with either a specific file or a directory containing ivar/varscan/medaka output files. 
@@ -40,7 +47,7 @@ The tool defaults to drugs that continue to provide effective antiviral suppress
 Example usage
 
 ```
-python sabres.py --vcall ivar --input ivar_output_file.tsv
+sabres --vcall ivar --input ivar_output_file.tsv
 ```
 
 FLAGS
@@ -54,9 +61,10 @@ FLAGS
 ```
 
 
-An optional script "merge_sabres.py" is available for merging multiple SABRes output files (which can contain different column names based on their resistance profiles) into one table. This script can be run by generating a newline-separated text file listing all the files to merge, and running the script as:
+An `merge` subcommand is available for merging multiple SABRes output files (which can contain different column names based on their resistance profiles) into one table. This script can be run by generating a newline-separated text file listing all the files to merge, and running the script as:
+
 ```
-python merge_sabres.py -i sabres_file_list.txt -o output_merged_file.tab
+sabres merge -i sabres_file_list.txt -o output_merged_file.tab
 ```
 
 
