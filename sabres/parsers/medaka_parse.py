@@ -6,6 +6,7 @@ presented from this format would only show consensus level mutations.
 
 import datetime
 import pandas as pd
+
 import medaka_cleanup as mc
 
 now = datetime.datetime.now()
