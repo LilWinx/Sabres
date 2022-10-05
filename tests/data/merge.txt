@@ -1,0 +1,2 @@
+tests/data/covid_res_test_nil.tsv
+tests/data/covid_res_test.tsv
