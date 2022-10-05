@@ -26,7 +26,7 @@ parser.add_argument(
     help="Specify variant caller software used",
 )
 parser.add_argument("--outdir", "-o", help="Output directory to write to")
-parser.add_argument("--input", "-i", help="Input directory or file")
+parser.add_argument("--input", "-i", help="Input directory or file", required=True)
 parser.add_argument(
     "--version",
     action="version",
