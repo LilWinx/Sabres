@@ -13,11 +13,20 @@ import parsers.pangolin_parse as pp
 import medaka_cleanup as mc
 import vcall_separator as vs
 
+from merge_sabres import merge
+
 __version__ = "1.1.0"
 
 def main():
     # argparse
     parser = argparse.ArgumentParser(description="Sabres")
+
+    # merge sub command
+    subparsers = parser.add_subparsers(dest='command')
+    parser_merge = subparsers.add_parser('merge', help='Merge a bunch of individual sabres output files into one table')
+    parser_merge.add_argument("--input", "-i", required=True, type=str, help="newline-separated list of sabres result files to merge")
+    parser_merge.add_argument("--outfile","-o", required=True, type=str, help="name of merged file to write to")
+    parser_merge.add_argument("--verbose","-v", action="store_true", help="verbose mode: print info about all files processed")
 
     # sabres
     parser.add_argument("--full", "-f", action="store_true", help="Use Full Database")
@@ -38,6 +47,12 @@ def main():
         version="SABRes v%s" % __version__,
     )
     
+    # only parse merge args if merge is called
+    if sys.argv[1:2] == ['merge']:
+        # this allows main parser to have required args
+        args = vars(parser_merge.parse_args(args=sys.argv[2:]))
+        return merge(**args)
+
     args = vars(parser.parse_args())
 
     # ensure medaka input is a single file not a directory
