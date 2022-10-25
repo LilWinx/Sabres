@@ -1,0 +1,9 @@
+Filename	REF	POS	ALT	REFPOSALT	TOTAL_DP	ALT_FREQ	REF_AA	ALT_AA	SNS	Protein	Confers	Evidence	Nirmatrelvir (Paxlovid)	Sotrovimab
+merge_out	C	10458	T	C10458T	286	0.237762	T	I	NS	NSP5:T135I	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	moderate	3.5-fold	
+merge_out	C	10568	T	C10568T	447	0.129754	H	Y	NS	NSP5:H172Y	Nirmatrelvir (Paxlovid) Resistance (233-fold)	moderate	233-fold	
+merge_out	C	22572	T	C22572T	1498	0.114152	P	L	NS	S:P337L	Sotrovimab Resistance (>192-fold)	high		>192-fold
+merge_out	A	22581	C	A22581C	2680	1.0	E	A	NS	S:E340A	Sotrovimab Resistance (>100-fold)	high		>100-fold
+covid_res_test	C	10458	T	C10458T	286	0.237762	T	I	NS	NSP5:T135I	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	moderate	3.5-fold	
+covid_res_test	C	10568	T	C10568T	447	0.129754	H	Y	NS	NSP5:H172Y	Nirmatrelvir (Paxlovid) Resistance (233-fold)	moderate	233-fold	
+covid_res_test	C	22572	T	C22572T	1498	0.114152	P	L	NS	S:P337L	Sotrovimab Resistance (>192-fold)	high		>192-fold
+covid_res_test	A	22581	C	A22581C	2680	1.0	E	A	NS	S:E340A	Sotrovimab Resistance (>100-fold)	high		>100-fold
