@@ -3,7 +3,7 @@ Subscript of SABRes to add Lineage column to dataframes should --lineage flag be
 """
 
 import os
-import pangolin_parse as pp
+import parsers.pangolin_parse as pp
 import add_resistance as ar
 
 strict_cols = [
