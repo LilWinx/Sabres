@@ -1,9 +1,9 @@
-Filename	REF	POS	ALT	REFPOSALT	TOTAL_DP	ALT_FREQ	REF_AA	ALT_AA	SNS	Protein	Confers	Evidence	Nirmatrelvir (Paxlovid)	Sotrovimab
-merge_out	C	10458	T	C10458T	286	0.237762	T	I	NS	NSP5:T135I	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	moderate	3.5-fold	
-merge_out	C	10568	T	C10568T	447	0.129754	H	Y	NS	NSP5:H172Y	Nirmatrelvir (Paxlovid) Resistance (233-fold)	moderate	233-fold	
-merge_out	C	22572	T	C22572T	1498	0.114152	P	L	NS	S:P337L	Sotrovimab Resistance (>192-fold)	high		>192-fold
-merge_out	A	22581	C	A22581C	2680	1.0	E	A	NS	S:E340A	Sotrovimab Resistance (>100-fold)	high		>100-fold
-covid_res_test	C	10458	T	C10458T	286	0.237762	T	I	NS	NSP5:T135I	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	moderate	3.5-fold	
-covid_res_test	C	10568	T	C10568T	447	0.129754	H	Y	NS	NSP5:H172Y	Nirmatrelvir (Paxlovid) Resistance (233-fold)	moderate	233-fold	
-covid_res_test	C	22572	T	C22572T	1498	0.114152	P	L	NS	S:P337L	Sotrovimab Resistance (>192-fold)	high		>192-fold
-covid_res_test	A	22581	C	A22581C	2680	1.0	E	A	NS	S:E340A	Sotrovimab Resistance (>100-fold)	high		>100-fold
+ALT	ALT_AA	ALT_FREQ	Confers	Evidence	Filename	Nirmatrelvir (Paxlovid)	POS	Protein	REF	REFPOSALT	REF_AA	SNS	Sotrovimab	TOTAL_DP
+T	I	0.237762	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	moderate	covid_res_test	3.5-fold	10458	NSP5:T135I	C	C10458T	T	NS		286
+T	Y	0.129754	Nirmatrelvir (Paxlovid) Resistance (233-fold)	moderate	covid_res_test	233-fold	10568	NSP5:H172Y	C	C10568T	H	NS		447
+T	L	0.114152	Sotrovimab Resistance (>192-fold)	high	covid_res_test		22572	S:P337L	C	C22572T	P	NS	>192-fold	1498
+C	A	1.0	Sotrovimab Resistance (>100-fold)	high	covid_res_test		22581	S:E340A	A	A22581C	E	NS	>100-fold	2680
+T	I	0.237762	Nirmatrelvir (Paxlovid) Resistance (3.5-fold)	moderate	merge_out	3.5-fold	10458	NSP5:T135I	C	C10458T	T	NS		286
+T	Y	0.129754	Nirmatrelvir (Paxlovid) Resistance (233-fold)	moderate	merge_out	233-fold	10568	NSP5:H172Y	C	C10568T	H	NS		447
+T	L	0.114152	Sotrovimab Resistance (>192-fold)	high	merge_out		22572	S:P337L	C	C22572T	P	NS	>192-fold	1498
+C	A	1.0	Sotrovimab Resistance (>100-fold)	high	merge_out		22581	S:E340A	A	A22581C	E	NS	>100-fold	2680

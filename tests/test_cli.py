@@ -46,7 +46,8 @@ def test_cli_ivar(out_dir):
         # check files exists
         assert os.path.isfile(output_file_path)
         with open(expected_file_path) as expected_file:
-            expected_lines = expected_file.readlines()
+            expected_line = expected_file.readlines()
         with open(output_file_path) as output_file:
             # check file contents match
-            assert expected_lines == output_file.readlines()
+            assert expected_line == output_file.readlines()
+    
