@@ -1,3 +1,5 @@
 __pycache__
 launch.json
 .DS_Store
+.vs_code
+.pytest_cache
