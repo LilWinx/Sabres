@@ -15,7 +15,7 @@ import vcall_separator as vs
 
 from merge_sabres import merge
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 def main():
     # argparse
