@@ -33,6 +33,17 @@ Database Date: 28th September 2022
 ![sabres_flowchart](https://user-images.githubusercontent.com/93765714/184043283-821ca835-d72c-43ff-8609-1ea5f09b2645.png)
 
 
+## Installation
+
+PIP
+```
+pip install git+https://github.com/LilWinx/Sabres
+```
+GITHUB
+```
+git clone https://github.com/LilWinx/Sabres.git
+```
+
 ## Usage
 The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains. You can provide it with either a specific file or a directory containing ivar/varscan/medaka output files. 
 
