@@ -110,6 +110,7 @@ NSP12:F480L	14879	T14879G	Remdesivir Resistance (6-fold)	low
 NSP12:V557I	15109	G15109A	Molnupiravir Resistance (2-fold)	moderate
 NSP12:V557L	15109	G15109C	Remdesivir Resistance (6-fold)	low
 NSP12:V557L	15109	G15109T	Remdesivir Resistance (6-fold)	moderate
+NSP12:S759A	15715	T15715G	Remdesivir Resistance (UFC)	low
 NSP12:V792I	15814	A15814G	Remdesivir Resistance (UFC)	low
 -	15240	C15240T	Omicron (BA.1)	lineage
 -	15279	C15279T	Alpha (B.1.1.7); B.1.1.7+E484K	lineage
