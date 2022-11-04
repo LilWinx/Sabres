@@ -2,6 +2,7 @@
 Utilised with --lineage flag
 Subscript for Sabres that converts the pangolin folder to a concatenated file
 Then turns the newly generated csv file into a readable dataframe
+Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 import os
 import pandas as pd

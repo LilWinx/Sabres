@@ -1,6 +1,7 @@
 """
 Subscript of Sabres - performs a clean up of files all while extracting
 samples in the script that contains resistance markers.
+Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 
 import os

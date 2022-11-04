@@ -1,5 +1,6 @@
 """
 Subscript of SABres to merge the resistance database per sample
+Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 
 import pandas as pd

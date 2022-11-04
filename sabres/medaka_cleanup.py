@@ -2,6 +2,7 @@
 Subscript of Sabres to parse nanopore medaka .vcf outputs for resistance detection
 Unfortunately, medaka does not provide frequency of the mutation, so the mutations
 presented from this format would only show consensus level mutations.
+Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 
 import os

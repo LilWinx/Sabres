@@ -1,5 +1,6 @@
 """
 Subscript of Sabres to parse fatovcf (from UShER) .vcf outputs for resistance detection
+Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 
 import os

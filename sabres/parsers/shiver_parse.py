@@ -1,5 +1,6 @@
 """
-Subscript of Sabres to parse shiver .vcf outputs for resistance detection
+Subscript of Sabres to parse shiver .csv outputs for resistance detection
+Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 
 import os

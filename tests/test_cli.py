@@ -8,6 +8,8 @@ from .utils import CLIRunner
 When running these tests, make sure to copy the test database into the /sabres/database 
 so that no new markers are added during the test, the purpose of this test is if you change the code
 and you want to check the output.
+
+Written by @Wytamma
 """
 
 sabres_cli = CLIRunner(["/usr/local/bin/python3", "sabres"])

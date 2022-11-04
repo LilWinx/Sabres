@@ -4,6 +4,10 @@ from typing import List
 
 from .utils import CLIRunner
 
+"""
+Written by @Wytamma
+"""
+
 merge_cli = CLIRunner(["/usr/local/bin/python3", "sabres", "merge"])
 
 def test_cli_merge(out_dir):

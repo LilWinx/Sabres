@@ -1,5 +1,6 @@
 """
 Subscript of SABRes to add Lineage column to dataframes should --lineage flag be called.
+Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 
 import os
