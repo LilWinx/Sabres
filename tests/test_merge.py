@@ -8,7 +8,7 @@ from .utils import CLIRunner
 Written by @Wytamma
 """
 
-merge_cli = CLIRunner(["/usr/local/bin/python3", "sabres", "merge"])
+merge_cli = CLIRunner(["sabres", "merge"])
 
 def test_cli_merge(out_dir):
     "test_cli_merge"
