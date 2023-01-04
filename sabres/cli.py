@@ -8,12 +8,11 @@ import os
 import sys
 import argparse
 
-import parsers.pangolin_parse as pp
+from .parsers import pangolin_parse as pp
+from .merge_sabres import merge
 
-import medaka_cleanup as mc
-import vcall_separator as vs
-
-from merge_sabres import merge
+from . import medaka_cleanup as mc
+from . import vcall_separator as vs
 
 __version__ = "1.2.0"
 

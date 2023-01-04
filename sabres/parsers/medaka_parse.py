@@ -8,7 +8,7 @@ Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 import datetime
 import pandas as pd
 
-import medaka_cleanup as mc
+from .. import medaka_cleanup as mc
 
 now = datetime.datetime.now()
 time_log = now.strftime("%Y-%m-%d %H:%M:%S")

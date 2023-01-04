@@ -8,8 +8,8 @@ import os
 import pandas as pd
 import re
 
-import add_resistance as ar
-import add_lineage as al
+from . import add_resistance as ar
+from . import add_lineage as al
 
 
 output_csvs = []

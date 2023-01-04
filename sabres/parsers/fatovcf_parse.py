@@ -7,7 +7,6 @@ import os
 import datetime
 from io import StringIO
 import pandas as pd
-import numpy as np
 
 pd.set_option('display.max_rows', None)
 neworder = [

@@ -5,12 +5,12 @@ Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 
 import pandas as pd
 
-from parsers.fatovcf_parse import fatovcf_setup
-from parsers.varscan_parse import varscan_setup
-from parsers.ivar_parse import ivar_setup
-from parsers.medaka_parse import medaka_setup
-from parsers.lofreq_parse import lofreq_setup
-from parsers.shiver_parse import shiver_setup
+from .parsers.fatovcf_parse import fatovcf_setup
+from .parsers.varscan_parse import varscan_setup
+from .parsers.ivar_parse import ivar_setup
+from .parsers.medaka_parse import medaka_setup
+from .parsers.lofreq_parse import lofreq_setup
+from .parsers.shiver_parse import shiver_setup
 
 drop_columns = ['Nucleotide', 'Mutation']
 strict_cols = ['Filename']
