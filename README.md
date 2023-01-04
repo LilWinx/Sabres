@@ -51,7 +51,7 @@ The tool defaults to drugs that continue to provide effective antiviral suppress
 Example usage
 
 ```
-python sabres --vcall ivar --input ivar_output_file.tsv
+sabres --vcall ivar --input ivar_output_file.tsv
 ```
 
 FLAGS
@@ -68,7 +68,7 @@ FLAGS
 An optional `merge` subcommand is available for merging multiple SABRes output files (which can contain different column names based on their resistance profiles) into one table. This script can be run by generating a newline-separated text file listing all the files to merge, and running the script as:
 
 ```
-python sabres merge -i sabres_file_list.txt -o output_merged_file.tab
+sabres merge -i sabres_file_list.txt -o output_merged_file.tab
 ```
 
 
