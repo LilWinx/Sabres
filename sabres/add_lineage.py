@@ -4,8 +4,8 @@ Written by Winkie Fong - winkie.fong@health.nsw.gov.au
 """
 
 import os
-import parsers.pangolin_parse as pp
-import add_resistance as ar
+from .parsers import pangolin_parse as pp
+from . import add_resistance as ar
 
 strict_cols = [
     'Filename',

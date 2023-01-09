@@ -12,7 +12,7 @@ and you want to check the output.
 Written by @Wytamma
 """
 
-sabres_cli = CLIRunner(["/usr/local/bin/python3", "sabres"])
+sabres_cli = CLIRunner(["sabres"])
 
 @pytest.mark.parametrize(
     "options,expected",
