@@ -14,21 +14,25 @@ Written by @Wytamma
 
 sabres_cli = CLIRunner(["sabres"])
 
+
 @pytest.mark.parametrize(
     "options,expected",
     [
         (["--vcall"], "argument --vcall/-v: expected one argument"),
         ([], "the following arguments are required: --vcall/-v, --input/-i"),
         (["--vcall", "ivar"], "the following arguments are required: --input/-i"),
-        (["--vcall", "ivar", "--outdir", 'outdir'],
-    "the following arguments are required: --input/-i"),
-])
-
+        (
+            ["--vcall", "ivar", "--outdir", "outdir"],
+            "the following arguments are required: --input/-i",
+        ),
+    ],
+)
 def test_missing_args(options, expected):
     out, err, code = sabres_cli(options)
     assert code == 2
     assert expected in err
-    assert out == ''
+    assert out == ""
+
 
 def test_cli_ivar(out_dir):
     """
@@ -36,7 +40,9 @@ def test_cli_ivar(out_dir):
     """
     data_dir = "tests/data/"
 
-    out, err, code = sabres_cli(["--vcall", "ivar", "--outdir", out_dir, "--input", data_dir])
+    out, err, code = sabres_cli(
+        ["--vcall", "ivar", "--outdir", out_dir, "--input", data_dir]
+    )
 
     assert code == 0
 
@@ -58,4 +64,3 @@ def test_cli_ivar(out_dir):
         with open(output_file_path) as output_file:
             # check file contents match
             assert expected_line == output_file.readlines()
-    

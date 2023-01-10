@@ -1,4 +1,4 @@
-#===============================================================================
+# ===============================================================================
 # merge_sabres.py
 # J.Draper 20 Sep 2022
 #
@@ -7,10 +7,13 @@
 
 import os, pandas as pd
 
-def merge(input, outfile, verbose=False):
-    print("Launching merge_sabres.py on files in %s and writing to %s"%(input, outfile))
 
-    ret=pd.DataFrame()
+def merge(input, outfile, verbose=False):
+    print(
+        "Launching merge_sabres.py on files in %s and writing to %s" % (input, outfile)
+    )
+
+    ret = pd.DataFrame()
 
     with open(input, "r") as f:
         for fname in f:
@@ -31,7 +34,6 @@ def merge(input, outfile, verbose=False):
                         print(fname + ": empty file")
                 elif verbose:
                     print(fname + ": empty file")
-
 
     ret.fillna("", inplace=True)
     ret.to_csv(outfile, sep="\t", index=False)

@@ -10,6 +10,7 @@ Written by @Wytamma
 
 merge_cli = CLIRunner(["sabres", "merge"])
 
+
 def test_cli_merge(out_dir):
     "test_cli_merge"
     output_path = os.path.join(out_dir, "merge_out.tsv")
@@ -18,8 +19,8 @@ def test_cli_merge(out_dir):
     )
 
     assert code == 0
-    assert 'Done' in out
-    assert err == ''
+    assert "Done" in out
+    assert err == ""
 
     # check files exists
     assert os.path.isfile(output_path)

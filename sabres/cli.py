@@ -7,25 +7,49 @@ import datetime
 import os
 import sys
 import argparse
+import logging
+import warnings
 
 from .parsers import pangolin_parse as pp
 from .merge_sabres import merge
-
 from . import medaka_cleanup as mc
 from . import vcall_separator as vs
 
 __version__ = "1.2.0"
+
+logging.getLogger().setLevel(logging.INFO)
+warnings.simplefilter(action="ignore", category=FutureWarning)
+
 
 def main():
     # argparse
     parser = argparse.ArgumentParser(description="Sabres")
 
     # merge sub command
-    subparsers = parser.add_subparsers(dest='command')
-    parser_merge = subparsers.add_parser('merge', help='Merge a bunch of individual sabres output files into one table')
-    parser_merge.add_argument("--input", "-i", required=True, type=str, help="newline-separated list of sabres result files to merge")
-    parser_merge.add_argument("--outfile","-o", required=True, type=str, help="name of merged file to write to")
-    parser_merge.add_argument("--verbose","-v", action="store_true", help="verbose mode: print info about all files processed")
+    subparsers = parser.add_subparsers(dest="command")
+    parser_merge = subparsers.add_parser(
+        "merge", help="Merge a bunch of individual sabres output files into one table"
+    )
+    parser_merge.add_argument(
+        "--input",
+        "-i",
+        required=True,
+        type=str,
+        help="newline-separated list of sabres result files to merge",
+    )
+    parser_merge.add_argument(
+        "--outfile",
+        "-o",
+        required=True,
+        type=str,
+        help="name of merged file to write to",
+    )
+    parser_merge.add_argument(
+        "--verbose",
+        "-v",
+        action="store_true",
+        help="verbose mode: print info about all files processed",
+    )
 
     # sabres
     parser.add_argument("--full", "-f", action="store_true", help="Use Full Database")
@@ -45,9 +69,9 @@ def main():
         help="get SABRes version",
         version="SABRes v%s" % __version__,
     )
-    
+
     # only parse merge args if merge is called
-    if sys.argv[1:2] == ['merge']:
+    if sys.argv[1:2] == ["merge"]:
         # this allows main parser to have required args
         args = vars(parser_merge.parse_args(args=sys.argv[2:]))
         return merge(**args)
@@ -56,8 +80,9 @@ def main():
 
     # ensure medaka input is a single file not a directory
     if args["vcall"] == "medaka" and not os.path.isfile(args["input"]):
-        print('FATAL ERROR: using --vcall "medaka" but --input is not a file.')
-        sys.exit()
+        msg = 'FATAL ERROR: using --vcall "medaka" but --input is not a file.'
+        logging.error(msg)
+        sys.exit(1)
 
     # if outdir wasn't specified, set outdir to dir of input file
     if not args["outdir"]:
@@ -67,7 +92,7 @@ def main():
         else:
             args["outdir"] = indir
 
-    print(
+    logging.info(
         "Launching Sabres v%s with variant caller %s on %s and writing output files to directory %s"
         % (__version__, args["vcall"], args["input"], args["outdir"])
     )
@@ -86,7 +111,7 @@ def main():
     if is_lineage:
         pango = os.path.join(args["lineage"])
         pango_data = pp.data_setup(pango)
-        print(f"{time_log}: Pangolin Lineage file successfully generated")
+        logging.info(f"{time_log}: Pangolin Lineage file successfully generated")
 
     if args["vcall"] == "medaka":
         mc.format_resistance(
@@ -107,6 +132,7 @@ def main():
             args["lineage"],
             args["outdir"],
         )
+
 
 if __name__ == "__main__":
     main()
