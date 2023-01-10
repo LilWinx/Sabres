@@ -183,7 +183,6 @@ def format_resistance(input, database, vcall, pango, pango_data, outdir):
 
     if not import_res_df == []:
         res_df = pd.concat(import_res_df)
-        res_df = res_df.reindex(sorted(res_df.columns), axis=1)
         string = res_df.to_csv(index=False, sep="\t")
         counts = str(
             res_df["Confers"].value_counts().sort_index(ascending=True)
