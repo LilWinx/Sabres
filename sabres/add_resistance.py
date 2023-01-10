@@ -11,6 +11,7 @@ from .parsers.ivar_parse import ivar_setup
 from .parsers.medaka_parse import medaka_setup
 from .parsers.lofreq_parse import lofreq_setup
 from .parsers.shiver_parse import shiver_setup
+from . import add_annotation as aa
 
 drop_columns = ["Nucleotide", "Mutation"]
 strict_cols = ["Filename"]
@@ -47,7 +48,8 @@ def resistance_addition(file, database, vcall, column):
     &
     Nirmatrelvir has regions of resistance hotspots ∴ markers within these codons need to be marked with "hotspot"
     """
-    preres_df = vcall_selection(file, vcall, column)
+    pre_df = vcall_selection(file, vcall, column)
+    preres_df = aa.annotate(pre_df)
     if preres_df.empty is True:
         return preres_df
 
