@@ -35,7 +35,9 @@ Database Date: 2nd December 2022
 
 ## Installation
 
-PIP
+Firstly have Python3 installed.
+
+PIP (RECOMMENDED)
 ```
 pip install git+https://github.com/LilWinx/Sabres
 ```
@@ -52,6 +54,7 @@ Example usage
 
 ```
 sabres --vcall ivar --input ivar_output_file.tsv
+sabres --vcall varscan -i varscan_output_file.vcf
 ```
 
 FLAGS
@@ -87,10 +90,13 @@ The "Evidence" column denotes whether the resistance marker has been confirmed t
 - *lineage* mutation is a marker for a specific lineage
 
 ## Dependencies
+Python == 3.8.13
 Pandas https://pandas.pydata.org/
 
 ## Future Additions
  - Continuous updates as resistance markers are identified
+ - Webtool
+ - BCFtools capability
 
 ## Nomenclature
 (S)ARS-CoV-2 (A)ntimicro(B)ial (RES)istance
