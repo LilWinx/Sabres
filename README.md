@@ -49,6 +49,8 @@ git clone https://github.com/LilWinx/Sabres.git
 ## Usage
 The tool defaults to drugs that continue to provide effective antiviral suppression against circulating strains. You can provide it with either a specific file or a directory containing ivar/varscan/medaka output files. 
 
+Please note that if your VCF file was not generated using the Genbank references MN908947.3 or NC_045512.2, the results may be misaligned and provide inaccurate resistance calls.
+
 
 Example usage
 
