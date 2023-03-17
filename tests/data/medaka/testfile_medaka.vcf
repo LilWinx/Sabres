@@ -1,0 +1,99 @@
+##fileformat=VCFv4.1
+##FILTER=<ID=PASS,Description="All filters passed">
+##medaka_version=1.4.3
+##bcftools_filterVersion=1.12+htslib-1.12
+##bcftools_filterCommand=filter -e ALT='.' 21-010-24830.merged.vcf.gz; Date=Thu Dec  9 04:01:58 2021
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Depth of reads at pos">
+##INFO=<ID=DPS,Number=2,Type=Integer,Description="Depth of reads at pos by strand (fwd, rev)">
+##INFO=<ID=DPSP,Number=1,Type=Integer,Description="Depth of reads spanning pos +-25">
+##INFO=<ID=SR,Number=.,Type=Integer,Description="Depth of spanning reads by strand which best align to each allele (ref fwd, ref rev, alt1 fwd, alt1 rev, etc.)">
+##INFO=<ID=AR,Number=2,Type=Integer,Description="Depth of ambiguous spanning reads by strand which align equally well to all alleles (fwd, rev)">
+##INFO=<ID=SC,Number=.,Type=Integer,Description="Total alignment score to each allele of spanning reads by strand (ref fwd, ref rev, alt1 fwd, alt1 rev, etc.) aligned with parasail: match 5, mismatch -4, open 5, extend 3">
+##INFO=<ID=Pool,Number=1,Type=String,Description="The pool name">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Medaka genotype.">
+##FORMAT=<ID=GQ,Number=1,Type=Integer,Description="Medaka genotype quality score">
+##contig=<ID=MN908947.3,length=29903>
+##bcftools_normVersion=1.12+htslib-1.12
+##bcftools_normCommand=norm --check-ref x --fasta-ref 21-010-24830.preconsensus.fasta -O z -o 21-010-24830.pass.vcf.gz 21-010-24830.pass.vcf; Date=Thu Dec  9 04:02:08 2021
+##bcftools_normCommand=norm -c s -O z --fasta-ref SARS-CoV-2.reference.fasta 21-010-24830.pass.named.vcf.gz; Date=Thu Dec  9 04:03:56 2021
+##bcftools_mergeVersion=1.12+htslib-1.12
+##bcftools_mergeCommand=merge -o all_variants.vcf.gz -O z norm.21-010-24830.pass.named.vcf.gz norm.21-010-25061.pass.named.vcf.gz norm.21-010-25074.pass.named.vcf.gz norm.21-010-25082.pass.named.vcf.gz norm.21-010-25083.pass.named.vcf.gz norm.21-010-25091.pass.named.vcf.gz norm.21-010-25157.pass.named.vcf.gz norm.21-010-25270.pass.named.vcf.gz norm.80-21-341-6247.pass.named.vcf.gz norm.Negative.pass.named.vcf.gz norm.dog.pass.named.vcf.gz; Date=Thu Dec  9 04:03:56 2021
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	21-010-24830	21-010-25061	21-010-25074	21-010-25082	21-010-25083	21-010-25091	21-010-25157	21-010-25270	80-21-341-6247	Negative	dog
+MN908947.3	210	.	G	T	50.912	PASS	DPS=81,31;Pool=1;DP=727	GT:GQ	1:45	1:47	1:49	1:51	1:49	1:50	1:48	1:50	.:.	.:.	.:.
+MN908947.3	241	.	C	T	44.254	PASS	DPS=84,31;Pool=1;DP=790	GT:GQ	1:37	1:42	1:41	1:41	1:39	1:44	1:39	1:37	.:.	.:.	.:.
+MN908947.3	509	.	GGTCATGTTA	G	285.41	PASS	DPS=127,39;Pool=1;DP=166	GT:GQ	.:.	1:285	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.
+MN908947.3	683	.	C	T	50.316	PASS	DPS=200,45;Pool=1;DP=1462	GT:GQ	1:42	1:44	.:.	1:43	1:50	1:42	1:43	1:47	.:.	.:.	.:.
+MN908947.3	1577	.	G	A	45.933	PASS	DPS=200,200;Pool=2;DP=3132	GT:GQ	1:45	1:38	1:46	1:46	1:46	1:42	1:44	1:43	.:.	.:.	.:.
+MN908947.3	1624	.	A	G	50.545	PASS	DPS=200,200;Pool=2;DP=3139	GT:GQ	1:44	1:44	1:45	1:49	1:51	1:46	1:48	1:45	.:.	.:.	.:.
+MN908947.3	3037	.	C	T	46.015	PASS	DPS=198,133;Pool=1;DP=2651	GT:GQ	1:42	1:46	1:39	1:42	1:43	1:39	1:45	1:44	.:.	.:.	.:.
+MN908947.3	4181	.	G	T	48.481	PASS	DPS=194,31;Pool=2;DP=1809	GT:GQ	1:47	1:47	1:48	1:46	1:44	1:43	1:43	1:46	.:.	.:.	.:.
+MN908947.3	5338	.	T	C	54.052	PASS	DPS=88,198;Pool=2;DP=2112	GT:GQ	1:54	1:50	1:53	1:51	1:49	1:49	1:46	1:52	.:.	.:.	.:.
+MN908947.3	6402	.	C	T	49.552	PASS	DPS=15,190;Pool=1;DP=1719	GT:GQ	1:40	1:48	1:38	1:50	1:38	1:46	1:37	1:42	.:.	.:.	.:.
+MN908947.3	7124	.	C	T	48.097	PASS	DPS=130,81;Pool=1;DP=2167	GT:GQ	1:40	1:43	1:45	1:44	1:48	1:45	1:47	1:45	.:.	.:.	.:.
+MN908947.3	8986	.	C	T	52.802	PASS	DPS=200,200;Pool=1;DP=3072	GT:GQ	1:53	1:52	1:48	1:48	1:50	1:51	1:51	1:50	.:.	.:.	.:.
+MN908947.3	9053	.	G	T	52.424	PASS	DPS=199,200;Pool=1;DP=2978	GT:GQ	1:51	1:51	1:49	1:52	1:51	1:46	1:50	1:52	.:.	.:.	.:.
+MN908947.3	9907	.	C	T	45.793	PASS	DPS=30,37;Pool=2;DP=1216	GT:GQ	1:45	1:45	1:43	1:46	1:46	1:45	1:44	1:39	.:.	.:.	.:.
+MN908947.3	10029	.	C	T	49.281	PASS	DPS=37,30;Pool=2;DP=1206	GT:GQ	1:47	1:49	1:47	1:49	1:45	1:47	1:49	1:48	.:.	.:.	.:.
+MN908947.3	11201	.	A	G	41.897	PASS	DPS=200,200;Pool=1;DP=3092	GT:GQ	1:40	1:42	1:35	1:41	1:38	1:41	1:35	1:39	.:.	.:.	.:.
+MN908947.3	11332	.	A	G	44.988	PASS	DPS=199,189;Pool=1;DP=2519	GT:GQ	1:44	1:39	1:45	1:40	1:42	1:43	1:40	1:42	.:.	.:.	.:.
+MN908947.3	13482	.	A	G	45.292	PASS	DPS=200,81;Pool=1;DP=2187	GT:GQ	1:43	1:37	1:44	1:45	1:43	1:41	1:45	1:45	.:.	.:.	.:.
+MN908947.3	14408	.	C	T	53.439	PASS	DPS=200,200;Pool=2;DP=2815	GT:GQ	1:45	1:43	1:47	1:38	1:43	1:43	1:48	1:45	1:53	.:.	.:.
+MN908947.3	15451	.	G	A	48.863	PASS	DPS=200,200;Pool=1;DP=3150	GT:GQ	1:47	1:49	1:44	1:45	1:42	1:42	1:45	1:42	.:.	.:.	.:.
+MN908947.3	16466	.	C	T	51.755	PASS	DPS=200,169;Pool=2;DP=2785	GT:GQ	1:46	1:47	1:46	1:45	1:45	1:47	1:52	1:47	.:.	.:.	.:.
+MN908947.3	16734	.	A	G	36.58	PASS	DPS=57,195;Pool=1;DP=252	GT:GQ	.:.	.:.	1:37	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.
+MN908947.3	18555	.	C	T	51.833	PASS	DPS=198,107;Pool=2;DP=2522	GT:GQ	1:47	1:51	1:42	1:43	1:43	1:49	1:50	1:52	.:.	.:.	.:.
+MN908947.3	19220	.	C	T	53.109	PASS	DPS=200,200;Pool=1;DP=3200	GT:GQ	1:46	1:52	1:47	1:51	1:53	1:51	1:51	1:53	.:.	.:.	.:.
+MN908947.3	21372	.	G	T	51.384	PASS	DPS=200,200;Pool=1;DP=2960	GT:GQ	1:51	1:50	1:49	1:48	1:50	1:45	1:51	1:50	.:.	.:.	.:.
+MN908947.3	21618	.	C	G	50.664	PASS	DPS=54,194;Pool=2;DP=1826	GT:GQ	1:45	1:47	1:48	1:44	1:39	1:43	1:35	1:51	.:.	.:.	.:.
+MN908947.3	21618	.	C	G	48.409	PASS	DPS=181,3;Pool=1;DP=1816	GT:GQ	1:47	1:43	1:43	1:45	1:48	1:46	1:48	1:42	.:.	.:.	.:.
+MN908947.3	21764	.	ATACATG	A	176.906	PASS	DPS=183,200;Pool=2;DP=383	GT:GQ	.:.	1:177	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.
+MN908947.3	21846	.	C	T	51.455	PASS	DPS=200,200;Pool=2;DP=3165	GT:GQ	1:51	1:45	1:49	1:50	1:47	1:45	1:46	1:47	.:.	.:.	.:.
+MN908947.3	21987	.	G	A	45.206	PASS	DPS=200,200;Pool=2;DP=3200	GT:GQ	1:45	1:41	1:44	1:44	1:44	1:40	1:42	1:42	.:.	.:.	.:.
+MN908947.3	22028	.	GAGTTCA	G	219.122	PASS	DPS=200,200;Pool=2;DP=3200	GT:GQ	1:199	1:215	1:209	1:217	1:201	1:194	1:201	1:219	.:.	.:.	.:.
+MN908947.3	22578	.	G	A	45.327	PASS	DPS=4,49;Pool=1;DP=53	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:45	.:.	.:.
+MN908947.3	22599	.	G	A	44.658	PASS	DPS=4,50;Pool=1;DP=54	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:45	.:.	.:.
+MN908947.3	22673	.	TC	CT	74.106	PASS	DPS=10,50;Pool=1;DP=60	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:74	.:.	.:.
+MN908947.3	22679	.	T	C	44.568	PASS	DPS=10,50;Pool=1;DP=60	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:45	.:.	.:.
+MN908947.3	22686	.	C	T	46.27	PASS	DPS=11,49;Pool=1;DP=60	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:46	.:.	.:.
+MN908947.3	22813	.	G	T	49.194	PASS	DPS=20,33;Pool=1;DP=53	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:49	.:.	.:.
+MN908947.3	22882	.	T	G	48.863	PASS	DPS=25,23;Pool=1;DP=48	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:49	.:.	.:.
+MN908947.3	22898	.	G	A	43.141	PASS	DPS=25,21;Pool=1;DP=46	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:43	.:.	.:.
+MN908947.3	22917	.	T	G	43.662	PASS	DPS=200,200;Pool=1;DP=3200	GT:GQ	1:43	1:41	1:40	1:42	1:44	1:40	1:41	1:36	.:.	.:.	.:.
+MN908947.3	22992	.	G	A	50.786	PASS	DPS=32,16;Pool=1;DP=48	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:51	.:.	.:.
+MN908947.3	22995	.	C	A	47.807	PASS	DPS=200,200;Pool=1;DP=3248	GT:GQ	1:42	1:41	1:48	1:48	1:39	1:42	1:46	1:46	1:48	.:.	.:.
+MN908947.3	23013	.	A	C	46.518	PASS	DPS=35,15;Pool=1;DP=50	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:47	.:.	.:.
+MN908947.3	23040	.	A	G	43.109	PASS	DPS=36,15;Pool=1;DP=51	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:43	.:.	.:.
+MN908947.3	23048	.	G	A	42.872	PASS	DPS=36,13;Pool=1;DP=49	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:43	.:.	.:.
+MN908947.3	23055	.	A	G	42.406	PASS	DPS=36,13;Pool=1;DP=49	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:42	.:.	.:.
+MN908947.3	23063	.	A	T	43.394	PASS	DPS=37,13;Pool=1;DP=50	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:43	.:.	.:.
+MN908947.3	23075	.	T	C	46.015	PASS	DPS=39,13;Pool=1;DP=52	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:46	.:.	.:.
+MN908947.3	23202	.	C	A	40.67	PASS	DPS=44,10;Pool=1;DP=54	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:41	.:.	.:.
+MN908947.3	23311	.	G	C	46.612	PASS	DPS=58,9;Pool=1;DP=67	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:47	.:.	.:.
+MN908947.3	23403	.	A	G	48.518	PASS	DPS=200,200;Pool=1;DP=3267	GT:GQ	1:45	1:39	1:40	1:49	1:42	1:42	1:48	1:41	1:43	.:.	.:.
+MN908947.3	23525	.	C	T	44.213	PASS	DPS=71,7;Pool=1;DP=78	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:44	.:.	.:.
+MN908947.3	23587	.	G	T	51.528	PASS	DPS=4,154;Pool=2;DP=1285	GT:GQ	1:46	1:42	.:.	1:52	1:51	1:48	1:51	1:49	.:.	.:.	.:.
+MN908947.3	23587	.	G	T	49.943	PASS	DPS=195,41;Pool=1;DP=1383	GT:GQ	1:45	1:47	.:.	1:50	1:45	1:47	1:46	1:48	.:.	.:.	.:.
+MN908947.3	23599	.	T	G	41.434	PASS	DPS=67,1;Pool=1;DP=68	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:41	.:.	.:.
+MN908947.3	23604	.	C	G,A	47.142	PASS	DPS=6,156;Pool=2;DP=1499	GT:GQ	1:36	1:37	1:36	1:41	1:47	1:42	1:41	1:37	2:40	.:.	.:.
+MN908947.3	23604	.	C	G	46.077	PASS	DPS=188,8;Pool=1;DP=1551	GT:GQ	1:46	1:43	1:46	1:37	1:39	1:43	1:28	1:42	.:.	.:.	.:.
+MN908947.3	24410	.	G	A	47.998	PASS	DPS=98,24;Pool=2;DP=1553	GT:GQ	1:48	1:44	1:47	1:38	1:44	1:46	1:37	1:38	.:.	.:.	.:.
+MN908947.3	25469	.	C	T	48.233	PASS	DPS=193,84;Pool=1;DP=2253	GT:GQ	1:48	1:47	1:45	1:45	1:45	1:43	1:44	1:47	.:.	.:.	.:.
+MN908947.3	25568	.	C	T	53.674	PASS	DPS=192,63;Pool=1;DP=2057	GT:GQ	1:50	1:50	1:51	1:52	1:51	1:54	1:43	1:52	.:.	.:.	.:.
+MN908947.3	25584	.	C	T	44.158	PASS	DPS=17,3;Pool=1;DP=20	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:44	.:.	.:.
+MN908947.3	26767	.	T	C	51.833	PASS	DPS=196,29;Pool=2;DP=1693	GT:GQ	1:47	1:47	1:47	1:52	1:48	1:51	1:47	1:44	.:.	.:.	.:.
+MN908947.3	26767	.	T	C	50.486	PASS	DPS=5,172;Pool=1;DP=1641	GT:GQ	1:50	1:50	1:48	1:49	1:44	1:48	1:46	1:48	.:.	.:.	.:.
+MN908947.3	27604	.	G	A	36.68	PASS	DPS=200,167;Pool=1;DP=2919	GT:GQ	1:33	1:35	1:37	1:32	1:31	1:36	1:35	1:36	.:.	.:.	.:.
+MN908947.3	27606	.	AAAACACGTCTATCAGTT	A	657.816	PASS	DPS=200,167;Pool=1;DP=2919	GT:GQ	1:631	1:600	1:634	1:658	1:641	1:642	1:535	1:631	.:.	.:.	.:.
+MN908947.3	27638	.	T	C	53.216	PASS	DPS=200,153;Pool=1;DP=2854	GT:GQ	1:46	1:48	1:53	1:49	1:51	1:50	1:48	1:49	.:.	.:.	.:.
+MN908947.3	27752	.	C	T	48.373	PASS	DPS=198,86;Pool=1;DP=2324	GT:GQ	1:45	1:43	1:48	1:44	1:46	1:47	1:46	1:47	.:.	.:.	.:.
+MN908947.3	27807	.	C	T	37.965	PASS	DPS=27,14;Pool=1;DP=41	GT:GQ	.:.	.:.	.:.	.:.	.:.	.:.	.:.	.:.	1:38	.:.	.:.
+MN908947.3	27874	.	C	T	51.755	PASS	DPS=5,97;Pool=2;DP=956	GT:GQ	1:52	1:44	1:48	1:47	1:50	1:46	1:48	1:47	.:.	.:.	.:.
+MN908947.3	28247	.	AGATTTC	A	238.692	PASS	DPS=49,53;Pool=2;DP=1190	GT:GQ	1:195	1:215	1:216	1:205	1:208	1:219	1:239	1:230	.:.	.:.	.:.
+MN908947.3	28270	.	TA	T	48.445	PASS	DPS=54,68;Pool=2;DP=1338	GT:GQ	1:36	1:43	1:47	1:40	1:46	1:48	1:39	1:48	.:.	.:.	.:.
+MN908947.3	28461	.	A	G	49.237	PASS	DPS=86,56;Pool=2;DP=1430	GT:GQ	1:42	1:42	1:49	1:45	1:45	1:44	1:48	1:47	.:.	.:.	.:.
+MN908947.3	28881	.	G	T	48.445	PASS	DPS=111,22;Pool=2;DP=1733	GT:GQ	1:39	1:48	1:41	1:45	1:45	1:44	1:45	1:43	.:.	.:.	.:.
+MN908947.3	28881	.	G	T	46.015	PASS	DPS=82,105;Pool=1;DP=1528	GT:GQ	1:46	1:42	1:42	1:39	1:41	1:43	1:40	1:43	.:.	.:.	.:.
+MN908947.3	28916	.	G	T	52.247	PASS	DPS=110,16;Pool=2;DP=1775	GT:GQ	1:52	1:50	1:50	1:48	1:47	1:48	1:46	1:51	.:.	.:.	.:.
+MN908947.3	28916	.	G	T	52.802	PASS	DPS=95,94;Pool=1;DP=1532	GT:GQ	1:47	1:44	1:50	1:53	1:51	1:51	1:48	1:45	.:.	.:.	.:.
+MN908947.3	29402	.	G	T	53.555	PASS	DPS=95,35;Pool=1;DP=2266	GT:GQ	1:46	1:48	1:47	1:46	1:46	1:40	1:54	1:45	.:.	.:.	.:.
+MN908947.3	29742	.	G	T	50.664	PASS	DPS=81,1;Pool=1;DP=1304	GT:GQ	1:43	1:50	1:51	1:49	1:49	1:45	1:48	1:49	.:.	.:.	.:.
