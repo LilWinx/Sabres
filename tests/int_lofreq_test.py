@@ -1,10 +1,10 @@
 import pytest
 import os
-import sabres.parsers.varscan_parse as vp
+import sabres.parsers.lofreq_parse as lp
 import pandas as pd
 import pandas.testing as pdt
 
-data_dir = "tests/data/varscan/"
+data_dir = "tests/data/lofreq/"
 
 @pytest.mark.parametrize(
     "input, expected",
@@ -31,8 +31,8 @@ data_dir = "tests/data/varscan/"
         ),
     ],
 )
-def test_varscan_parser(input, expected):
+def test_lofreq_parser(input, expected):
     shouldbe = pd.read_csv(os.path.join(data_dir, expected), sep="\t", header=0)
-    result = vp.varscan_setup(os.path.join(data_dir, input))
+    result = lp.lofreq_setup(os.path.join(data_dir, input))
     result = result.astype({"DP": "int64"})
     pdt.assert_frame_equal(result, shouldbe)
