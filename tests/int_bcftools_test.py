@@ -31,7 +31,7 @@ data_dir = "tests/data/bcftools/"
         ),
     ],
 )
-def test_ivar_parser(input, expected):
+def test_bcftools_parser(input, expected):
     shouldbe = pd.read_csv(os.path.join(data_dir, expected), sep="\t", header=0)
     result = bp.bcftools_setup(os.path.join(data_dir, input))
     result = result.astype({"DP": int})

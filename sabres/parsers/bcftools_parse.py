@@ -67,10 +67,6 @@ def bcftools_setup(file):
         for col in row:
             if isinstance(col, str) and col.startswith('DP='):
                 dp_value = col.split('=')[1]
-            elif isinstance(col, str):
-                continue
-            elif isinstance(col, int):
-                continue
         dp_df.loc[index] = [dp_value]
 
     dp4_df = pd.DataFrame(columns=['DP4'])
@@ -79,10 +75,6 @@ def bcftools_setup(file):
         for col in row:
             if isinstance(col, str) and col.startswith('DP4='):
                 dp4_value = col.split('=')[1]
-            elif isinstance(col, str):
-                continue
-            elif isinstance(col, int):
-                continue
         dp4_df.loc[index] = [dp4_value]
 
     # combine the dp and dp4 columns
