@@ -11,6 +11,7 @@ from .parsers.ivar_parse import ivar_setup
 from .parsers.medaka_parse import medaka_setup
 from .parsers.lofreq_parse import lofreq_setup
 from .parsers.shiver_parse import shiver_setup
+from .parsers.bcftools_parse import bcftools_setup
 from . import add_annotation as aa
 
 drop_columns = ["Nucleotide", "Mutation"]
@@ -39,6 +40,8 @@ def vcall_selection(file, vcall, column):
         preres_df = shiver_setup(file)
     elif vcall == "fatovcf":
         preres_df = fatovcf_setup(file)
+    elif vcall == "bcftools":
+        preres_df = bcftools_setup(file)
     return preres_df
 
 
