@@ -27,10 +27,7 @@ def csv_export_pull_resistance(outname, dataframe_file):
             res_data = dataframe_file[0:0]
         else:
             ## parse the resistance strings into separate columns
-            res_parsed = res_data.apply(
-                lambda x: split_resistance(x["Confers"]), axis=1, result_type="expand"
-            )
-            res_parsed = res_parsed.fillna("")
+            res_parsed = res_data["Confers"].apply(split_resistance).fillna("")
             res_data = pd.concat([res_data, res_parsed], axis=1)
     else:
         res_data = dataframe_file[0:0]
@@ -226,17 +223,12 @@ def split_resistance(s):
     """
     split the resistance list string into separate columns per marker/drug
     """
-    ret_drugs = []
-    ret_folds = []
-
+    ret = {}
     s = s.split(";")
     for item in s:
         drug = item.partition("Resistance (")[0].strip()
         fold = item.partition("Resistance (")[2].partition(")")[0].strip()
         if fold == "":
             fold = "Y"
-        ret_drugs.append(drug)
-        ret_folds.append(fold)
-
-    ret = pd.Series(ret_folds, index=ret_drugs)
-    return ret
+        ret[drug] = fold
+    return pd.Series(ret)
