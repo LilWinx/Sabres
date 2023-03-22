@@ -10,8 +10,8 @@ data_dir = "tests/data/lofreq/"
     "input, expected",
     [
         (
-            "bebtelomivab-res.vcf",
-            "bebtelomivab-res.snpprofile",
+            "bebtelovimab-res.vcf",
+            "bebtelovimab-res.snpprofile",
         ),
         (
             "molnupiravir-res.vcf",

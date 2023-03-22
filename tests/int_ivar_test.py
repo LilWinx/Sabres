@@ -10,8 +10,8 @@ data_dir = "tests/data/ivar/"
     "input, expected",
     [
         (
-            "bebtelomivab-res.tsv",
-            "bebtelomivab-res.snpprofile",
+            "bebtelovimab-res.tsv",
+            "bebtelovimab-res.snpprofile",
         ),
         (
             "molnupiravir-res.tsv",
