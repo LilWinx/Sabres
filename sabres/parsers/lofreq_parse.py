@@ -51,5 +51,6 @@ def lofreq_setup(file):
     vcf_df["Filename"] = os.path.splitext(os.path.basename(file))[0]
     str_rm = "|".join([".MN908947.vcf"])
     vcf_df["Filename"] = vcf_df["Filename"].str.replace(str_rm, "")
+    vcf_df[['DP', 'AF']] = vcf_df[['DP', 'AF']].apply(lambda x: x.str.replace('DP=', '').str.replace('AF=', ''))
     vcf_df = vcf_df.reindex(columns=neworder)
     return vcf_df
