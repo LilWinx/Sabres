@@ -3,3 +3,6 @@ launch.json
 .DS_Store
 .vs_code
 .pytest_cache
+*_snpprofile.tab
+tests/data/resistant_samples.tab
+tests/data/summary_counts.txt
