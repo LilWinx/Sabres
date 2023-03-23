@@ -91,6 +91,9 @@ The "Evidence" column denotes whether the resistance marker has been confirmed t
 - *Low* mutation has been predicted in in vitro pseudovirus studies, however, there have been no in vitro studies confirming its conferral to SARS-CoV-2 resistance
 - *lineage* mutation is a marker for a specific lineage
 
+CAUTION!
+It is up to the user to provide high quality VCF files, as SABRes itself does not perform any quality checking. Any genomes with low coverage over certain regions may result in missed detection of mutations
+
 ## Dependencies
 Python == 3.8.13
 Pandas https://pandas.pydata.org/
