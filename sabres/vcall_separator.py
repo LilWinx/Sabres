@@ -177,7 +177,9 @@ def file_folder_loop(input, database, vcall, pango, pango_data, outdir):
                 and os.stat(filename).st_size != 0
                 and pango is not True
             ):
-                bcftools_file = ar.resistance_addition(filename, database, vcall, "None")
+                bcftools_file = ar.resistance_addition(
+                    filename, database, vcall, "None"
+                )
                 res_data = csv_export_pull_resistance(outname, bcftools_file)
                 data_append(res_data)
             elif (

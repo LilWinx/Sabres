@@ -37,5 +37,5 @@ def lineage_addition(pango_data):
     lineage_df = pd.read_csv(pangolin_data, sep=",", header=None)
     filt_lin_df = lineage_df.iloc[:, [0, 1]]
     filt_lin_df.columns = ["name", "Lineage"]
-    filt_lin_df["name"] = filt_lin_df["name"].str.replace("_ivar", "")
+    filt_lin_df["name"] = filt_lin_df["name"].str.replace("_ivar", "", regex=True)
     return filt_lin_df

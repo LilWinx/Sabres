@@ -5,6 +5,7 @@ import sys
 
 data_dir = "tests/data/"
 
+
 @pytest.mark.parametrize(
     "vcall, input",
     [
@@ -17,7 +18,6 @@ data_dir = "tests/data/"
         ("medaka", os.path.join(data_dir, "medaka", "testfile_medaka.vcf")),
     ],
 )
-
 def test_cli(vcall, input, out_dir):
     """
     test_cli
@@ -35,11 +35,11 @@ def test_cli(vcall, input, out_dir):
             out_dir,
         ],
         capture_output=True,
-        check = True
+        check=True,
     )
 
     assert result.returncode == 0
-    
+
     if vcall != "medaka" or vcall != "shiver":
         expected_files = [
             "bebtelovimab-res_snpprofile.tab",
@@ -50,7 +50,7 @@ def test_cli(vcall, input, out_dir):
             "sotrovimab-res_snpprofile.tab",
             "summary_counts.txt",
         ]
-        
+
         for file in expected_files:
             output_file_path = os.path.join(out_dir, file)
 

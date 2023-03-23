@@ -23,7 +23,7 @@ def medaka_setup(input_file, column):
     """
     sample_df = mc.splitting_vcf(input_file)
     sample_df[["DPS", "Pool", "DP"]] = sample_df.INFO.str.split(";", expand=True)
-    sample_df["DP"] = sample_df["DP"].str.replace("DP=", "")
+    sample_df["DP"] = sample_df["DP"].str.replace("DP=", "", regex=True)
     sample_df["Filename"] = str(column)
     sample_df["REFPOSALT"] = (
         sample_df["REF"] + sample_df["POS"].astype(str) + sample_df["ALT"]

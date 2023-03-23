@@ -2,6 +2,7 @@ import argparse
 
 __version__ = "1.2.1"
 
+
 def create_parser():
     parser = argparse.ArgumentParser(description="Sabres", prog="Sabres")
 
@@ -11,7 +12,15 @@ def create_parser():
     parser.add_argument(
         "--vcall",
         "-v",
-        choices=["ivar", "varscan", "medaka", "lofreq", "shiver", "fatovcf", "bcftools"],
+        choices=[
+            "ivar",
+            "varscan",
+            "medaka",
+            "lofreq",
+            "shiver",
+            "fatovcf",
+            "bcftools",
+        ],
         required=True,
         help="Specify variant caller software used",
     )
@@ -23,5 +32,9 @@ def create_parser():
         help="get SABRes version",
         version="SABRes v%s" % __version__,
     )
-    parser.add_argument("--merge", "-m", help="Merge a bunch of individual sabres output files into one table")
+    parser.add_argument(
+        "--merge",
+        "-m",
+        help="Merge a bunch of individual sabres output files into one table",
+    )
     return parser

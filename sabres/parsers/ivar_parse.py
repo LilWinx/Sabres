@@ -55,6 +55,6 @@ def ivar_setup(file):
     tsv_df["SNS"] = np.select(conditions, choices, default="NS")
     tsv_df["Filename"] = os.path.splitext(os.path.basename(file))[0]
     str_rm = "|".join(["_t01", "_q20t01"])
-    tsv_df["Filename"] = tsv_df["Filename"].str.replace(str_rm, "")
+    tsv_df["Filename"] = tsv_df["Filename"].str.replace(str_rm, "", regex=True)
     tsv_df = tsv_df.reindex(columns=neworder)
     return tsv_df

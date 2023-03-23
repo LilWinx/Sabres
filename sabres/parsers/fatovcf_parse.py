@@ -45,6 +45,6 @@ def fatovcf_setup(file):
     vcf_df.rename(columns={"ID": "REFPOSALT"}, inplace=True)
     vcf_df["Filename"] = os.path.splitext(os.path.basename(file))[0]
     str_rm = "|".join([".varscan.snps"])
-    vcf_df["Filename"] = vcf_df["Filename"].str.replace(str_rm, "")
+    vcf_df["Filename"] = vcf_df["Filename"].str.replace(str_rm, "", regex=True)
     snp_df = vcf_df.reindex(columns=neworder)
     return snp_df

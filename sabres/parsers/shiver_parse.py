@@ -69,6 +69,6 @@ def shiver_setup(file):
     snp_df["REFPOSALT"] = snp_df["REF"] + snp_df["POS"].astype(str) + snp_df["ALT"]
     snp_df["Filename"] = os.path.splitext(os.path.basename(file))[0]
     str_rm = "|".join(["_BaseFreqs.csv"])
-    snp_df["Filename"] = snp_df["Filename"].str.replace(str_rm, "")
+    snp_df["Filename"] = snp_df["Filename"].str.replace(str_rm, "", regex=True)
     snp_df = snp_df.reindex(columns=neworder)
     return snp_df

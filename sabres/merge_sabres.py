@@ -17,7 +17,6 @@ def merge(input, outfile, verbose=False):
 
     with open(input, "r") as f:
         for fname in f:
-
             fname = fname.strip()
             if not os.path.isfile(fname):
                 if verbose:

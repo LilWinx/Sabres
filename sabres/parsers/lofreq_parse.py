@@ -50,7 +50,11 @@ def lofreq_setup(file):
     vcf_df["REFPOSALT"] = vcf_df["REF"] + vcf_df["POS"].astype(str) + vcf_df["ALT"]
     vcf_df["Filename"] = os.path.splitext(os.path.basename(file))[0]
     str_rm = "|".join([".MN908947.vcf"])
-    vcf_df["Filename"] = vcf_df["Filename"].str.replace(str_rm, "")
-    vcf_df[['DP', 'AF']] = vcf_df[['DP', 'AF']].apply(lambda x: x.str.replace('DP=', '').str.replace('AF=', ''))
+    vcf_df["Filename"] = vcf_df["Filename"].str.replace(str_rm, "", regex=True)
+    vcf_df[["DP", "AF"]] = vcf_df[["DP", "AF"]].apply(
+        lambda x: x.str.replace("DP=", "", regex=True).str.replace(
+            "AF=", "", regex=True
+        )
+    )
     vcf_df = vcf_df.reindex(columns=neworder)
     return vcf_df

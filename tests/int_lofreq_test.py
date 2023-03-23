@@ -6,6 +6,7 @@ import pandas.testing as pdt
 
 data_dir = "tests/data/lofreq/"
 
+
 @pytest.mark.parametrize(
     "input, expected",
     [
