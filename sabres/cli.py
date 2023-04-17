@@ -16,7 +16,7 @@ from . import medaka_cleanup as mc
 from . import vcall_separator as vs
 from sabres import arguments
 
-__version__ = "1.2.1"
+__version__ = "1.2.2"
 
 logging.getLogger().setLevel(logging.INFO)
 warnings.simplefilter(action="ignore", category=FutureWarning)
