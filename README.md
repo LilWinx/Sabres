@@ -95,8 +95,9 @@ CAUTION!
 It is up to the user to provide high quality VCF files, as SABRes itself does not perform any quality checking. Any genomes with low coverage over certain regions may result in missed detection of mutations
 
 ## Dependencies
-Python == 3.8.13
-Pandas https://pandas.pydata.org/
+- Python == 3.8.13
+- Pandas == 2.0.0
+- Numpy == 1.23.2
 
 ## Future Additions
  - Continuous updates as resistance markers are identified
