@@ -111,4 +111,4 @@ We promise we didn't fat finger the B instead of the V
 
 
 ## Citation
-SABRes: A tool for in silico detection of drug resistance conferring mutations in SARS-CoV-2 genomes. W Fong et al, 2022. https://doi.org/10.21203/rs.3.rs-1683350/v1
+Fong, W., Rockett, R.J., Agius, J.E. et al. SABRes: in silico detection of drug resistance conferring mutations in subpopulations of SARS-CoV-2 genomes. BMC Infect Dis 23, 303 (2023). https://doi.org/10.1186/s12879-023-08236-6
