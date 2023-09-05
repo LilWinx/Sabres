@@ -2,6 +2,7 @@ __pycache__
 launch.json
 .DS_Store
 .vs_code
+.vscode
 .pytest_cache
 *_snpprofile.tab
 tests/data/resistant_samples.tab

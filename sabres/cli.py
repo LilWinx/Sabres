@@ -22,6 +22,23 @@ logging.getLogger().setLevel(logging.INFO)
 warnings.simplefilter(action="ignore", category=FutureWarning)
 
 
+def check_external_db(fp):
+    headers = frozenset(["Protein", "Nucleotide", "Mutation", "Confers", "Evidence"])
+    if not os.path.isfile(fp):
+        logging.error(f"Database file specified {fp} does not appear to exist.")
+        sys.exit(1)
+    with open(fp, "r") as db:
+        fline = set(db.readline().strip().split("\t"))
+        if len(fline) != len(headers):
+            logging.error(f"The database file: {fp} does not have the appropriate number of headers specified.")
+            sys.exit(1)
+        if headers != fline:
+            logging.error(f"Database headers need to match {headers.join(' ')}")
+            logging.error(f"Headers in user specified file: {fline.join(' ')} ")
+            sys.exit(1)
+
+    
+
 def main():
     parser = arguments.create_parser()
     args = parser.parse_args()
@@ -47,14 +64,18 @@ def main():
 
     # database locations + time logs
     dirname = os.path.dirname(__file__)
+
     database = os.path.join(dirname, "database/resistance_markers.tsv")
     full_database = os.path.join(dirname, "database/full_resistance_markers.tsv")
     now = datetime.datetime.now()
     time_log = now.strftime("%Y-%m-%d %H:%M:%S")
 
     is_lineage = bool(args.lineage is not None)
-
-    db_selection = full_database if args.full else database
+    if args.database is None:
+        db_selection = full_database if args.full else database
+    else:
+        check_external_db(args.database)
+        db_selection = args.database
 
     if is_lineage:
         pango = os.path.join(args.lineage)

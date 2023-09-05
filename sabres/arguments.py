@@ -24,6 +24,7 @@ def create_parser():
         required=True,
         help="Specify variant caller software used",
     )
+
     parser.add_argument("--outdir", "-o", help="Output directory to write to")
     parser.add_argument("--input", "-i", help="Input directory or file", required=True)
     parser.add_argument(
@@ -37,4 +38,10 @@ def create_parser():
         "-m",
         help="Merge a bunch of individual sabres output files into one table",
     )
+
+    parser.add_argument(
+        "--database",
+        "-d",
+        help="Specify a custom database file.", default=None)
+
     return parser
