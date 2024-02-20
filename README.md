@@ -95,8 +95,9 @@ CAUTION!
 It is up to the user to provide high quality VCF files, as SABRes itself does not perform any quality checking. Any genomes with low coverage over certain regions may result in missed detection of mutations
 
 ## Dependencies
-Python == 3.8.13
-Pandas https://pandas.pydata.org/
+- Python >= 3.11.3
+- Pandas == 2.0.0
+- Numpy == 1.23.2
 
 ## Future Additions
  - Continuous updates as resistance markers are identified
@@ -110,4 +111,4 @@ We promise we didn't fat finger the B instead of the V
 
 
 ## Citation
-SABRes: A tool for in silico detection of drug resistance conferring mutations in SARS-CoV-2 genomes. W Fong et al, 2022. https://doi.org/10.21203/rs.3.rs-1683350/v1
+Fong, W., Rockett, R.J., Agius, J.E. et al. SABRes: in silico detection of drug resistance conferring mutations in subpopulations of SARS-CoV-2 genomes. BMC Infect Dis 23, 303 (2023). https://doi.org/10.1186/s12879-023-08236-6
